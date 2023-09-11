@@ -3,6 +3,8 @@ public record Motherboard(String manufacturer, String part, String socket, Strin
                           String memorySpeed, int pcieX16Slots, int pcieX8Slots, int pcieX4Slots,
                           int pcieX1Slots, int pciSlots, String m2Slots, int sataPorts,
                           String onboardEthernet, String wirelessNetworking) {
+    
+    
     @Override
     public String toString() {
         return "Motherboard:" +
