@@ -15,7 +15,6 @@ public record PowerSupply(String manufacturer,
                           byte pcie6,
                           byte sata,
                           byte molex4) {
-    
     @Override
     public String toString() {
         return "PowerSupply:\n\n" +
