@@ -7,6 +7,8 @@ public class RAMList {
             "DIMM", 2, 32, 18, 1.4, "18-22-22-42");
     RAM crucialBallix = new RAM("Crucial Ballistix", "4000", "DDR4",
             "DIMM", 2, 64, 19, 1.35, "19-23-23-45");
+    RAM ramProva = new RAM("Crucial Ballistix", "4000", "DDR4",
+            "DIMM", 2, 64, 19, 1.35, "19-23-23-45");
     
     ArrayList<RAM> ramList = new ArrayList<>();
     

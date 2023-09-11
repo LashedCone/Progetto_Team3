@@ -10,5 +10,11 @@ public class TestRAMList {
                 System.out.println(ram.toString());
             }
         }
+        
+        for(RAM ram : ramArrayList) {
+            if(ram.ddrSpeed().equals("4000")) {
+                System.out.println(ram.toString());
+            }
+        }
     }
 }
