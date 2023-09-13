@@ -26,3 +26,4 @@ public record Motherboard(String manufacturer, String part, String socket, Strin
                 "\nWireless networking: " + wirelessNetworking;
     }
 }
+//a
