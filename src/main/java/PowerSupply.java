@@ -87,3 +87,4 @@ public record PowerSupply(String manufacturer,
         return result;
     }
 }
+//commento a caso
