@@ -5,7 +5,7 @@ public record Motherboard(String manufacturer, String part, String socket, Strin
                           String onboardEthernet, String wirelessNetworking) {
     @Override
     public String toString() {
-        return "Motherboard:" +
+        return "\nMotherboard:" +
                 "\nManufacturer: " + manufacturer +
                 "\nPart: " + part +
                 "\nSocket: " + socket +
