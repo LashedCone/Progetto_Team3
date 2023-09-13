@@ -14,3 +14,4 @@ public record RAM(String serialPart, String ddrSpeed, String ddrGen,
                 "\nTiming: " + timing;
     }
 }
+//a
