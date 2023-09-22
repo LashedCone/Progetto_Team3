@@ -1,3 +1,6 @@
+import it.Team3.Lists.RAMList;
+import it.Team3.Records.RAM;
+
 import java.util.ArrayList;
 
 public class TestRAMList {
