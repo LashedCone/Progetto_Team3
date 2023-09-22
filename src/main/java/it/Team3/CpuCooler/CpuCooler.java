@@ -1,4 +1,4 @@
-package it.Team3.Records;
+package it.Team3.CpuCooler;
 
 import java.util.Arrays;
 

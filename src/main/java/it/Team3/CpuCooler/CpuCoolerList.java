@@ -1,6 +1,4 @@
-package it.Team3.Lists;
-
-import it.Team3.Records.CpuCooler;
+package it.Team3.CpuCooler;
 
 import java.util.ArrayList;
 
