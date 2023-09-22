@@ -1,10 +1,12 @@
-package it.Team3.Lists;
+package it.Team3.StorageFile;
+
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class StorageListTest {
     
-    @org.junit.jupiter.api.Test
+    @Test
     void getStorageList() {
         assertTrue(true);
     }
