@@ -1,4 +1,5 @@
-import java.util.Objects;
+package it.Team3.Records;
+
 
 public record PowerSupply(String manufacturer,
                           String model,
@@ -20,7 +21,7 @@ public record PowerSupply(String manufacturer,
 
     @Override
     public String toString() {
-        return "PowerSupply:\n\n" +
+        return "it.Team3.Records.PowerSupply:\n\n" +
                 "Manufacturer: " + manufacturer +
                 "\nModel: " + model +
                 "\nPart: " + part +
