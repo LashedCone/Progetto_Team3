@@ -1,5 +1,7 @@
-import it.Team3.Lists.PowerSupplyList;
-import it.Team3.Records.PowerSupply;
+package it.Team3.Powersupply;
+
+import it.Team3.Powersupply.PowerSupplyList;
+import it.Team3.Powersupply.PowerSupply;
 
 import java.util.ArrayList;
 
