@@ -1,4 +1,4 @@
-package it.Team3.Records;
+package it.Team3.Motherboard;
 
 public record Motherboard(String manufacturer, String part, String socket, String formFactor,
                           String chipset, int memoryCapacity, String memoryType, int memorySlots,
@@ -7,7 +7,7 @@ public record Motherboard(String manufacturer, String part, String socket, Strin
                           String onboardEthernet, String wirelessNetworking) {
     @Override
     public String toString() {
-        return "\nit.Team3.Records.Motherboard:" +
+        return "\nit.Team3.Motherboard.Motherboard:" +
                 "\nManufacturer: " + manufacturer +
                 "\nPart: " + part +
                 "\nSocket: " + socket +
