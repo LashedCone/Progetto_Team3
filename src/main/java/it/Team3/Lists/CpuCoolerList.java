@@ -1,3 +1,7 @@
+package it.Team3.Lists;
+
+import it.Team3.Records.CpuCooler;
+
 import java.util.ArrayList;
 
 public class CpuCoolerList {

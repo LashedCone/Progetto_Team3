@@ -1,3 +1,5 @@
+package it.Team3.Records;
+
 import java.util.Arrays;
 
 public record CpuCooler(String manufacture, String model, String partId,
