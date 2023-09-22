@@ -1,3 +1,5 @@
+package it.Team3.Records;
+
 public record Cpu(String manufacturer,
                   String part,
                   int coreCount,
@@ -10,7 +12,7 @@ public record Cpu(String manufacturer,
                   String maxMemory) {
     @Override
     public String toString() {
-        return "Cpu{" +
+        return "it.Team3.Records.Cpu{" +
                 "manufacturer='" + manufacturer + '\'' +
                 ", part='" + part + '\'' +
                 ", coreCount=" + coreCount +
