@@ -24,6 +24,7 @@ public class MotherboardList {
       motherboardList.add(asusROGStrixB550F);
       motherboardList.add(gigabyteAorusX570Elite);
       motherboardList.add(msiB450Tomahawk);
+      motherboardList.add(msiX670eTomahawk);
     }
     
     public ArrayList<Motherboard> getMotherboardList() {
