@@ -1,4 +1,4 @@
-package it.Team3.Records;
+package it.Team3.RAM;
 
 public record RAM(String serialPart, String ddrSpeed, String ddrGen,
                   String formFactor, int moduleCount, int capacityGb,
