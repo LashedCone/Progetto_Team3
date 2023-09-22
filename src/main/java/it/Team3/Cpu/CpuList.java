@@ -1,6 +1,6 @@
-package it.Team3.Lists;
+package it.Team3.Cpu;
 
-import it.Team3.Records.Cpu;
+import it.Team3.Cpu.Cpu;
 
 import java.util.ArrayList;
 
