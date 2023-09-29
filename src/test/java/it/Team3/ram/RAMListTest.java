@@ -1,4 +1,4 @@
-package it.Team3.RAM;
+package it.Team3.ram;
 
 import org.junit.jupiter.api.Test;
 
