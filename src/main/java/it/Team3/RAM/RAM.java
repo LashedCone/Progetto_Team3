@@ -1,11 +1,11 @@
-package it.Team3.Records;
+package it.Team3.RAM;
 
 public record RAM(String serialPart, String ddrSpeed, String ddrGen,
                   String formFactor, int moduleCount, int capacityGb,
                   int casLatency, double voltage, String timing) {
     @Override
     public String toString() {
-        return "Records.RAM details:\n\nPart: " + serialPart +
+        return "RAM details:\n\nPart: " + serialPart +
                 "\nSpeed: " + ddrSpeed + "MHz" +
                 "\nGen: " + ddrGen +
                 "\nFactor: " + formFactor +
