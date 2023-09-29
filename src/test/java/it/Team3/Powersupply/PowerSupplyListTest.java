@@ -1,10 +1,12 @@
-package it.Team3.Lists;
+package it.Team3.Powersupply;
+
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PowerSupplyListTest {
     
-    @org.junit.jupiter.api.Test
+    @Test
     void getPowerSuppliesList() {
         assertEquals(true, true);
     }
