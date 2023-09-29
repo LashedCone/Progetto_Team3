@@ -5,7 +5,7 @@ public record RAM(String serialPart, String ddrSpeed, String ddrGen,
                   int casLatency, double voltage, String timing) {
     @Override
     public String toString() {
-        return "Records.RAM details:\n\nPart: " + serialPart +
+        return "RAM details:\n\nPart: " + serialPart +
                 "\nSpeed: " + ddrSpeed + "MHz" +
                 "\nGen: " + ddrGen +
                 "\nFactor: " + formFactor +
