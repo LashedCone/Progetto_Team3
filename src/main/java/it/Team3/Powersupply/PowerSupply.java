@@ -21,7 +21,7 @@ public record PowerSupply(String manufacturer,
 
     @Override
     public String toString() {
-        return "it.Team3.Powersupply.PowerSupply:\n\n" +
+        return "PowerSupply:\n\n" +
                 "Manufacturer: " + manufacturer +
                 "\nModel: " + model +
                 "\nPart: " + part +
