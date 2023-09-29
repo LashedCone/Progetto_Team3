@@ -1,4 +1,4 @@
-package it.Team3.Motherboard;
+package it.Team3.motherboard;
 
 public record Motherboard(String manufacturer, String part, String socket, String formFactor,
                           String chipset, int memoryCapacity, String memoryType, int memorySlots,

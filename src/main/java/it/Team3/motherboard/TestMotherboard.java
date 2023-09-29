@@ -1,7 +1,4 @@
-package it.Team3.Motherboard;
-
-import it.Team3.Motherboard.MotherboardList;
-import it.Team3.Motherboard.Motherboard;
+package it.Team3.motherboard;
 
 import java.util.ArrayList;
 
