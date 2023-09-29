@@ -10,4 +10,5 @@ CREATE TABLE final_result (
 	case VARCHAR(255) NULL ,
 	power_supply VARCHAR(255) NULL ,
 )
+
 COMMENT='risultato finale dei componenti scelti '
