@@ -1,3 +1,7 @@
+package it.Team3.Cpu;
+
+import it.Team3.Cpu.Cpu;
+
 import java.util.ArrayList;
 
 public class CpuList {

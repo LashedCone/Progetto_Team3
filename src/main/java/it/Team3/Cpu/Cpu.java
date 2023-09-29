@@ -1,3 +1,4 @@
+package it.Team3.Cpu;
 public record Cpu(String manufacturer,
                   String part,
                   int coreCount,

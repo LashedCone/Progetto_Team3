@@ -1,3 +1,7 @@
+package it.Team3.StorageFile;
+
+import it.Team3.StorageFile.Storage;
+
 import java.util.ArrayList;
 
 public class StorageList {
