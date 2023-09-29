@@ -17,7 +17,8 @@ public record Gpu(
         int tdpWatt) {
     @Override
     public String toString() {
-        return "Manufacturer: " + manufacturer +
+        return "Gpu:" +
+                "\nManufacturer: " + manufacturer +
                 "\nPart Number: " + partNumber +
                 "\nChipset: " + chipset +
                 "\nMemory Size (GB): " + memorySizeGB +
