@@ -22,4 +22,3 @@ public class RAMList {
         return ramList;
     }
 }
-//a
