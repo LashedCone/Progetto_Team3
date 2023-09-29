@@ -1,7 +1,3 @@
-package it.Team3.Lists;
-
-import it.Team3.Records.RAM;
-
 import java.util.ArrayList;
 
 public class RAMList {

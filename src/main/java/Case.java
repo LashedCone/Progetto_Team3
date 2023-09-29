@@ -1,5 +1,3 @@
-package it.Team3.Records;
-
 public record Case(
         String manufacturer,
         String modelName,

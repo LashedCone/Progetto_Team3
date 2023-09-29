@@ -1,6 +1,3 @@
-package it.Team3.Records;
-
-
 public record PowerSupply(String manufacturer,
                           String model,
                           String part,
@@ -21,7 +18,7 @@ public record PowerSupply(String manufacturer,
 
     @Override
     public String toString() {
-        return "it.Team3.Records.PowerSupply:\n\n" +
+        return "PowerSupply:\n\n" +
                 "Manufacturer: " + manufacturer +
                 "\nModel: " + model +
                 "\nPart: " + part +
