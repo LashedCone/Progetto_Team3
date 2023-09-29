@@ -7,7 +7,7 @@ public record CpuCooler(String manufacture, String model, String partId,
                            byte noiseMax, String[] cpuSocket, boolean isWaterCooled) {
     @Override
     public String toString() {
-        return "ObjCpuCooler{" +
+        return "Cpu cooler{" +
                 "manufacture='" + manufacture + '\'' +
                 ", model='" + model + '\'' +
                 ", partId='" + partId + '\'' +
