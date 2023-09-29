@@ -1,12 +1,12 @@
-package it.Team3.Records;
+package it.Team3.Case;
 
 public record Case(
         String manufacturer,
         String modelName,
         String type,
         String color,
-        String[] frontPanelUSB,
-        String[] motherboardFormFactor,
+        String frontPanelUSB,
+        String motherboardFormFactor,
         String maximumVideoCardLength,
         int internal35DriveBays,
         int internal25DriveBays,
