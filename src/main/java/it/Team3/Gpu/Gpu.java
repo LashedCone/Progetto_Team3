@@ -1,7 +1,4 @@
-package it.Team3.Gpu;
-
-import java.util.ArrayList;
-import java.util.List;
+package it.Team3.gpu;
 
 public record Gpu(
         String manufacturer,
