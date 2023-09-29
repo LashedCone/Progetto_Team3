@@ -12,7 +12,7 @@ public record Cpu(String manufacturer,
                   String maxMemory) {
     @Override
     public String toString() {
-        return "it.Team3.Cpu.Cpu{" +
+        return "Cpu{" +
                 "manufacturer='" + manufacturer + '\'' +
                 ", part='" + part + '\'' +
                 ", coreCount=" + coreCount +
