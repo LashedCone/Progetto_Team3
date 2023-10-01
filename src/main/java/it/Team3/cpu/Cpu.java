@@ -1,4 +1,4 @@
-package it.Team3.Cpu;
+package it.Team3.cpu;
 
 public record Cpu(String manufacturer,
                   String part,
