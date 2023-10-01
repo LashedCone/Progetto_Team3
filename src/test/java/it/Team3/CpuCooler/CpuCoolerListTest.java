@@ -1,4 +1,4 @@
-package it.Team3.CpuCooler;
+package it.Team3.cpucooler;
 
 import static org.junit.jupiter.api.Assertions.*;
 
