@@ -1,4 +1,4 @@
-package it.Team3.Powersupply;
+package it.Team3.powersupply;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,7 +1,4 @@
-package it.Team3.Powersupply;
-
-import it.Team3.Powersupply.PowerSupplyList;
-import it.Team3.Powersupply.PowerSupply;
+package it.Team3.powersupply;
 
 import java.util.ArrayList;
 
