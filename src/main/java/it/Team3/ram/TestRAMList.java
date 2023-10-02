@@ -1,7 +1,4 @@
-package it.Team3.RAM;
-
-import it.Team3.RAM.RAMList;
-import it.Team3.RAM.RAM;
+package it.Team3.ram;
 
 import java.util.ArrayList;
 

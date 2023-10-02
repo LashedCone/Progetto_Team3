@@ -1,4 +1,4 @@
-package it.Team3.Lists;
+package it.Team3.ram;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,13 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RAMListTest {
     
-    @org.junit.jupiter.api.Test
-    void getRamList() {
-        assertEquals(true, true);
-    }
-    
     @Test
-    void testGetRamList() {
+    void getRamList() {
         assertEquals(true, true);
     }
 }

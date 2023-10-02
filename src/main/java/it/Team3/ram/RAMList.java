@@ -1,4 +1,4 @@
-package it.Team3.RAM;
+package it.Team3.ram;
 
 import java.util.ArrayList;
 
@@ -22,4 +22,3 @@ public class RAMList {
         return ramList;
     }
 }
-//a
