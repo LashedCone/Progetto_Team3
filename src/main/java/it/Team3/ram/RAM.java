@@ -1,5 +1,4 @@
-package it.Team3.RAM;
-
+package it.Team3.ram;
 public record RAM(String serialPart, String ddrSpeed, String ddrGen,
                   String formFactor, int moduleCount, int capacityGb,
                   int casLatency, double voltage, String timing) {

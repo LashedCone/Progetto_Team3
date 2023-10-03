@@ -1,5 +1,4 @@
 package it.Team3.Case;
-
 public record Case(
         String manufacturer,
         String modelName,
@@ -17,7 +16,8 @@ public record Case(
 
     @Override
     public String toString() {
-        return "Manufacturer: " + manufacturer +
+        return "Case details:" +
+                "\nManufacturer: " + manufacturer +
                 "\nModel Name: " + modelName +
                 "\nType: " + type +
                 "\ncolor: " + color +

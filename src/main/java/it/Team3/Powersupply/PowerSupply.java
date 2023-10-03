@@ -1,6 +1,4 @@
 package it.Team3.Powersupply;
-
-
 public record PowerSupply(String manufacturer,
                           String model,
                           String part,
