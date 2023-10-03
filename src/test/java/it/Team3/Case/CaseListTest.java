@@ -1,11 +1,11 @@
-package it.Team3.Lists;
+package it.Team3.Case;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MotherboardListTest {
+class CaseListTest {
     
     @org.junit.jupiter.api.Test
-    void getMotherboardList() {
+    void getCaseList() {
         assertEquals(true, true);
     }
 }
