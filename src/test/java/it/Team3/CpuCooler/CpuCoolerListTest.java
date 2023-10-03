@@ -1,11 +1,11 @@
-package it.Team3.Lists;
+package it.Team3.cpucooler;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MotherboardListTest {
+class CpuCoolerListTest {
     
     @org.junit.jupiter.api.Test
-    void getMotherboardList() {
+    void getCpuCoolerList() {
         assertEquals(true, true);
     }
 }

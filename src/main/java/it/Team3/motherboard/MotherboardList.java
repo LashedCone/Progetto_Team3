@@ -1,5 +1,4 @@
-package it.Team3.Motherboard;
-
+package it.Team3.motherboard;
 import java.util.ArrayList;
 
 public class MotherboardList {
@@ -33,3 +32,4 @@ public class MotherboardList {
       return motherboardList;
     }
 }
+//test

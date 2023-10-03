@@ -1,4 +1,5 @@
-package it.Team3.Case;
+
+package it.Team3.casefile;
 
 public record Case(
         String manufacturer,

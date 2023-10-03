@@ -1,5 +1,5 @@
-package it.Team3.Motherboard;
 
+package it.Team3.motherboard;
 public record Motherboard(String manufacturer, String part, String socket, String formFactor,
                           String chipset, int memoryCapacity, String memoryType, int memorySlots,
                           String memorySpeed, int pcieX16Slots, int pcieX8Slots, int pcieX4Slots,
@@ -13,10 +13,10 @@ public record Motherboard(String manufacturer, String part, String socket, Strin
                 "\nSocket: " + socket +
                 "\nForm factor: " + formFactor +
                 "\nChipset: " + chipset +
-                "\nMemory capacity: " + memoryCapacity + "GB"+
+                "\nMemory capacity: " + memoryCapacity + "GB" +
                 "\nMemory type: " + memoryType +
                 "\nMemory slots: " + memorySlots +
-                "\nMemory speed: " + memorySpeed + "MHz"+
+                "\nMemory speed: " + memorySpeed + "MHz" +
                 "\nPCIe x16 slots: " + pcieX16Slots +
                 "\nPCIe x8 slots: " + pcieX8Slots +
                 "\nPCIe x4 slots: " + pcieX4Slots +
@@ -28,3 +28,4 @@ public record Motherboard(String manufacturer, String part, String socket, Strin
                 "\nWireless networking: " + wirelessNetworking;
     }
 }
+//test
