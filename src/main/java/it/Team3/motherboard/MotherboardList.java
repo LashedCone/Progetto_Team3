@@ -1,5 +1,4 @@
 package it.Team3.motherboard;
-
 import java.util.ArrayList;
 
 public class MotherboardList {
@@ -20,7 +19,7 @@ public class MotherboardList {
           "6000MHz", 2, 2, 3, 2, 2,
           "2 x M.2", 8, "2.5 Gigabit Ethernet", "Wi-Fi 6");
     
-    ArrayList<Motherboard> motherboardList = new ArrayList<Motherboard>();
+    ArrayList<Motherboard> motherboardList = new ArrayList<>();
     
     public MotherboardList() {
       motherboardList.add(asusROGStrixB550F);
