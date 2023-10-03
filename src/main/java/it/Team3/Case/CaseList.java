@@ -1,5 +1,4 @@
 package it.Team3.Case;
-
 import java.util.ArrayList;
 
 public class CaseList {
