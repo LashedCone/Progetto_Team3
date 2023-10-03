@@ -1,5 +1,9 @@
+<<<<<<< HEAD:src/main/java/it/Team3/casefile/Case.java
 package it.Team3.casefile;
 
+=======
+package it.Team3.Case;
+>>>>>>> d8b1ddac8e8c3cf6383528555b5f8dff2a4e963e:src/main/java/it/Team3/Case/Case.java
 public record Case(
         String manufacturer,
         String modelName,
@@ -17,7 +21,8 @@ public record Case(
 
     @Override
     public String toString() {
-        return "Manufacturer: " + manufacturer +
+        return "Case details:" +
+                "\nManufacturer: " + manufacturer +
                 "\nModel Name: " + modelName +
                 "\nType: " + type +
                 "\ncolor: " + color +

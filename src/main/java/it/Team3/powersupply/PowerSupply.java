@@ -1,6 +1,10 @@
+<<<<<<< HEAD:src/main/java/it/Team3/powersupply/PowerSupply.java
 package it.Team3.powersupply;
 
 
+=======
+package it.Team3.Powersupply;
+>>>>>>> d8b1ddac8e8c3cf6383528555b5f8dff2a4e963e:src/main/java/it/Team3/Powersupply/PowerSupply.java
 public record PowerSupply(String manufacturer,
                           String model,
                           String part,

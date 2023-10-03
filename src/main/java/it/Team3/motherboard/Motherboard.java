@@ -1,5 +1,5 @@
-package it.Team3.motherboard;
 
+package it.Team3.motherboard;
 public record Motherboard(String manufacturer, String part, String socket, String formFactor,
                           String chipset, int memoryCapacity, String memoryType, int memorySlots,
                           String memorySpeed, int pcieX16Slots, int pcieX8Slots, int pcieX4Slots,
@@ -28,3 +28,4 @@ public record Motherboard(String manufacturer, String part, String socket, Strin
                 "\nWireless networking: " + wirelessNetworking;
     }
 }
+//test
