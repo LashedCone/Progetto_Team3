@@ -1,3 +1,5 @@
+package it.Team3.StorageFile;
+
 import java.util.Objects;
 
 public record Storage(String manufacture, String model, String serial,

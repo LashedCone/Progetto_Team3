@@ -1,4 +1,5 @@
-import java.util.Objects;
+package it.Team3.Powersupply;
+
 
 public record PowerSupply(String manufacturer,
                           String model,

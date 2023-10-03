@@ -1,3 +1,5 @@
+package it.Team3.CpuCooler;
+
 import java.util.Arrays;
 
 public record CpuCooler(String manufacture, String model, String partId,
@@ -5,7 +7,7 @@ public record CpuCooler(String manufacture, String model, String partId,
                            byte noiseMax, String[] cpuSocket, boolean isWaterCooled) {
     @Override
     public String toString() {
-        return "ObjCpuCooler{" +
+        return "Cpu cooler{" +
                 "manufacture='" + manufacture + '\'' +
                 ", model='" + model + '\'' +
                 ", partId='" + partId + '\'' +
