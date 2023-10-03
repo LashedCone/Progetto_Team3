@@ -1,4 +1,4 @@
-package it.Team3.Case;
+package it.Team3.casefile;
 
 import static org.junit.jupiter.api.Assertions.*;
 
