@@ -18,12 +18,8 @@ public class MotherboardList {
           "ATX", "X670", 128, "DDR5", 4,
           "6000MHz", 2, 2, 3, 2, 2,
           "2 x M.2", 8, "2.5 Gigabit Ethernet", "Wi-Fi 6");
-    
-<<<<<<< HEAD
+  
     ArrayList<Motherboard> motherboardList = new ArrayList<>();
-=======
-    ArrayList<Motherboard> motherboardList = new ArrayList<Motherboard>();
->>>>>>> d8b1ddac8e8c3cf6383528555b5f8dff2a4e963e
     
     public MotherboardList() {
       motherboardList.add(asusROGStrixB550F);
@@ -36,7 +32,3 @@ public class MotherboardList {
       return motherboardList;
     }
 }
-<<<<<<< HEAD
-=======
-//test
->>>>>>> d8b1ddac8e8c3cf6383528555b5f8dff2a4e963e
