@@ -1,5 +1,4 @@
 package it.Team3.Case;
-
 public record Case(
         String manufacturer,
         String modelName,

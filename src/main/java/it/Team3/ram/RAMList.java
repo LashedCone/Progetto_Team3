@@ -1,5 +1,4 @@
 package it.Team3.ram;
-
 import java.util.ArrayList;
 
 public class RAMList {
@@ -21,4 +20,3 @@ public class RAMList {
     public ArrayList<RAM> getRamList() {
         return ramList;
     }
-}

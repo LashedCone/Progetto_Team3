@@ -1,8 +1,4 @@
 package it.Team3.Motherboard;
-
-import it.Team3.Motherboard.MotherboardList;
-import it.Team3.Motherboard.Motherboard;
-
 import java.util.ArrayList;
 
 public class TestMotherboard {
