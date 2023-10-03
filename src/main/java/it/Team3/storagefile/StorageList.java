@@ -1,6 +1,4 @@
-package it.Team3.StorageFile;
-
-import it.Team3.StorageFile.Storage;
+package it.Team3.storagefile;
 
 import java.util.ArrayList;
 
