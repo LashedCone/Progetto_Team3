@@ -13,10 +13,10 @@ public record Motherboard(String manufacturer, String part, String socket, Strin
                 "\nSocket: " + socket +
                 "\nForm factor: " + formFactor +
                 "\nChipset: " + chipset +
-                "\nMemory capacity: " + memoryCapacity + "GB"+
+                "\nMemory capacity: " + memoryCapacity + "GB" +
                 "\nMemory type: " + memoryType +
                 "\nMemory slots: " + memorySlots +
-                "\nMemory speed: " + memorySpeed + "MHz"+
+                "\nMemory speed: " + memorySpeed + "MHz" +
                 "\nPCIe x16 slots: " + pcieX16Slots +
                 "\nPCIe x8 slots: " + pcieX8Slots +
                 "\nPCIe x4 slots: " + pcieX4Slots +
