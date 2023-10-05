@@ -1,6 +1,7 @@
 --creazione ed utilizzo del database
 CREATE DATABASE IF NOT EXISTS ProjectTeam3;
 USE ProjectTeam3;
+GRANT ALL PRIVILEGES ON `ProjectTeam3` . * TO 'developer'@'localhost';
 --Creazione user list
 CREATE TABLE IF NOT EXISTS user(
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
