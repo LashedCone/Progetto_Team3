@@ -7,7 +7,7 @@ public class TestRAMList {
 
         ArrayList<RAM> ramArrayList = ramList.getRamList();
         for(RAM ram : ramArrayList) {
-            if(ram.ddrSpeed().equals("3200")) {
+            if(ram.getDdrSpeed().equals("3200")) {
                 System.out.println(ram.toString());
             }
         }
