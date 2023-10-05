@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 2d79513ecfec0896bf10c5f2496ecf8397ec1ed5
 package it.Team3.casefile;
 
 import java.util.ArrayList;
