@@ -1,6 +1,6 @@
 package it.Team3.casefile;
 
-package it.Team3.casefile;
+import it.Team3.componentfile.Component;
 
 public class Case extends Component {
         private String manufacturer;
