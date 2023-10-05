@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/it/Team3/casefile/Case.java
 package it.Team3.casefile;
 
 =======
 package it.Team3.Case;
 >>>>>>> d8b1ddac8e8c3cf6383528555b5f8dff2a4e963e:src/main/java/it/Team3/Case/Case.java
+=======
+
+package it.Team3.casefile;
+
+>>>>>>> 2d79513ecfec0896bf10c5f2496ecf8397ec1ed5
 public record Case(
         String manufacturer,
         String modelName,
