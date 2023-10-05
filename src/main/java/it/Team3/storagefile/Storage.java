@@ -1,10 +1,97 @@
 package it.Team3.storagefile;
 
+import it.Team3.componentfile.Component;
+
 import java.util.Objects;
 
-public record Storage(String manufacture, String model, String serial,
-                      short capacity, String type, String formFactor,
-                      String interfaceConnector, boolean isNvme) {
+public class Storage extends Component {
+        String manufacture;
+        String model;
+        String serial;
+        short capacity;
+        String type;
+        String formFactor;
+        String interfaceConnector;
+        boolean isNvme;
+    
+    public Storage(String name, double price, String manufacture, String model,
+                   String serial, short capacity, String type, String formFactor,
+                   String interfaceConnector, boolean isNvme) {
+        super(name, price);
+        this.manufacture = manufacture;
+        this.model = model;
+        this.serial = serial;
+        this.capacity = capacity;
+        this.type = type;
+        this.formFactor = formFactor;
+        this.interfaceConnector = interfaceConnector;
+        this.isNvme = isNvme;
+    }
+    
+    public String getManufacture() {
+        return manufacture;
+    }
+    
+    public void setManufacture(String manufacture) {
+        this.manufacture = manufacture;
+    }
+    
+    public String getModel() {
+        return model;
+    }
+    
+    public void setModel(String model) {
+        this.model = model;
+    }
+    
+    public String getSerial() {
+        return serial;
+    }
+    
+    public void setSerial(String serial) {
+        this.serial = serial;
+    }
+    
+    public short getCapacity() {
+        return capacity;
+    }
+    
+    public void setCapacity(short capacity) {
+        this.capacity = capacity;
+    }
+    
+    public String getType() {
+        return type;
+    }
+    
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+    public String getFormFactor() {
+        return formFactor;
+    }
+    
+    public void setFormFactor(String formFactor) {
+        this.formFactor = formFactor;
+    }
+    
+    public String getInterfaceConnector() {
+        return interfaceConnector;
+    }
+    
+    public void setInterfaceConnector(String interfaceConnector) {
+        this.interfaceConnector = interfaceConnector;
+    }
+    
+    public boolean isNvme() {
+        return isNvme;
+    }
+    
+    public void setNvme(boolean nvme) {
+        isNvme = nvme;
+    }
+    
     @Override
     public String toString() {
         return "ObjStorage{" +
