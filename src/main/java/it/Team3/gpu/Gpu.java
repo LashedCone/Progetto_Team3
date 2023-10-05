@@ -27,6 +27,8 @@ public record Gpu(
                 "\nLength (mm): " + lengthMM +
                 "\nTDP (Watt): " + tdpWatt + "\n";
     }
+    
+    public static class GpuList {}
 }
 
 
