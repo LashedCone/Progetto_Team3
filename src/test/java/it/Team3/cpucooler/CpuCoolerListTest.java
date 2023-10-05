@@ -1,11 +1,11 @@
-package it.Team3.Lists;
+package it.Team3.cpucooler;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PowerSupplyListTest {
+class CpuCoolerListTest {
     
     @org.junit.jupiter.api.Test
-    void getPowerSuppliesList() {
+    void getCpuCoolerList() {
         assertEquals(true, true);
     }
 }
