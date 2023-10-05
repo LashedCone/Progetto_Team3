@@ -3,17 +3,17 @@ package it.Team3.gpu;
 import it.Team3.componentfile.Component;
 
 public class Gpu extends Component{
-        String manufacturer;
-        String partNumber;
-        String chipset;
-        int memorySizeGB;
-        String memoryType;
-        int coreClockMHz;
-        int boostClockMHz;
-        int effectiveMemoryClockMHz;
-        String interfaceType;
-        int lengthMM;
-        int tdpWatt;
+        private String manufacturer;
+        private String partNumber;
+        private String chipset;
+        private int memorySizeGB;
+        private String memoryType;
+        private int coreClockMHz;
+        private int boostClockMHz;
+        private int effectiveMemoryClockMHz;
+        private String interfaceType;
+        private int lengthMM;
+        private int tdpWatt;
     
     public Gpu(String name, double price, String manufacturer,
                String partNumber, String chipset, int memorySizeGB,
