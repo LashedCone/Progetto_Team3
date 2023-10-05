@@ -216,4 +216,3 @@ public class Motherboard extends Component {
                 "\nWireless networking: " + wirelessNetworking;
     }
 }
-//test
