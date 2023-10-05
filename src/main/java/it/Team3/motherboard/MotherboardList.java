@@ -56,6 +56,12 @@ public class MotherboardList {
         motherboardList.add(gigabyteAorusX570Elite);
         motherboardList.add(msiB450Tomahawk);
         motherboardList.add(msiX670eTomahawk);
+        motherboardList.add(asrockB550SteelLegend);
+        motherboardList.add(asusROGStrixX570E);
+        motherboardList.add(gigabyteB450AorusPro);
+        motherboardList.add(msiMAGB550Mortar);
+        motherboardList.add(asrockX570Taichi);
+        motherboardList.add(gigabyteB460MDS3H);
     }
 
     public ArrayList<Motherboard> getMotherboardList() {
