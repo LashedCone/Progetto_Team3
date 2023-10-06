@@ -5,14 +5,14 @@ import it.Team3.componentfile.Component;
 import java.util.Objects;
 
 public class Storage extends Component {
-        String manufacture;
-        String model;
-        String serial;
-        short capacity;
-        String type;
-        String formFactor;
-        String interfaceConnector;
-        boolean isNvme;
+        private String manufacture;
+        private String model;
+        private String serial;
+        private short capacity;
+        private String type;
+        private String formFactor;
+        private String interfaceConnector;
+        private boolean isNvme;
     
     public Storage(String name, double price, String manufacture, String model,
                    String serial, short capacity, String type, String formFactor,
