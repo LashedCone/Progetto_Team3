@@ -1,5 +1,6 @@
 package it.Team3.powersupply;
 
+
 import java.util.ArrayList;
 
 public class PowerSupplyList {
