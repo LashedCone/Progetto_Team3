@@ -1,4 +1,3 @@
-
 package it.Team3.casefile;
 
 import it.Team3.componentfile.Component;
