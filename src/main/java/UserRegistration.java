@@ -8,8 +8,10 @@ public class UserRegistration {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ProjectTeam3", "developer", "passwordhere");
             Statement stmt = connection.createStatement();
             ResultSet resultSet = stmt.executeQuery("SELECT * FROM user");
+
             ArrayList<String> usernameList = new ArrayList<>();
             ArrayList<String> emailList = new ArrayList<>();
+
             while (resultSet.next()) {
                 usernameList.add(resultSet.getString("Username"));
                 emailList.add(resultSet.getString("email"));
@@ -26,6 +28,7 @@ public class UserRegistration {
                     usernameNotExists = true;
                 }
             }
+
             boolean emailNotExists = false;
             String email = "";
             while (!emailNotExists) {
@@ -37,9 +40,9 @@ public class UserRegistration {
                     emailNotExists = true;
                 }
             }
+
             System.out.print("Inserisci la tua password: ");
             String password = scanner.nextLine();
-
             String sql = "INSERT INTO user (Username, email, password) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, username);
