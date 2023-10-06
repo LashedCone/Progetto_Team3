@@ -20,3 +20,4 @@ public class RAMList {
     public ArrayList<RAM> getRamList() {
         return ramList;
     }
+}
