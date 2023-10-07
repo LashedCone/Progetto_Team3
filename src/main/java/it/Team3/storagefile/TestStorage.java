@@ -7,7 +7,7 @@ public class TestStorage {
         StorageList storageList = new StorageList();
         ArrayList<Storage> storageListArray = storageList.getStorageList();
         for (Storage storage : storageListArray) {
-            if (storage.manufacture().equals("Western Digital")) {
+            if (storage.getManufacture().equals("Western Digital")) {
                 System.out.println(storage.toString());
             }
         }
