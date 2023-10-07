@@ -14,7 +14,9 @@ public class Cpu extends Component {
     private String integratedGraphics;
     private String maxMemory;
     
-    public Cpu(String name, double price, String manufacturer, String part, int coreCount, String coreClock, String boostClock, int tdpW, String series, String socket, String integratedGraphics, String maxMemory) {
+    public Cpu(String name, double price, String manufacturer,
+               String part, int coreCount, String coreClock, String boostClock,
+               int tdpW, String series, String socket, String integratedGraphics, String maxMemory) {
         super(name, price);
         this.manufacturer = manufacturer;
         this.part = part;
@@ -111,16 +113,15 @@ public class Cpu extends Component {
     @Override
     public String toString() {
         return "Cpu details:" +
-                "\nManufacturer: " + manufacturer + '\'' +
-                "\nPart: " + part + '\'' +
+                "\nManufacturer: " + manufacturer +
+                "\nPart: " + part +
                 "\nCore count: " + coreCount +
-                "\nCore clock: " + coreClock + '\'' +
-                "\nBoost clock: " + boostClock + '\'' +
+                "\nCore clock: " + coreClock +
+                "\nBoost clock: " + boostClock +
                 "\nThermal design power: " + tdpW + "W" +
                 "\nSeries: " + series +
                 "\nSocket: " + socket +
                 "\nIntegrated graphics: " + integratedGraphics +
                 "\nMax Memory: " + maxMemory;
     }
-
 }

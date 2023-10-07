@@ -6,11 +6,9 @@ public class TestMotherboard {
         MotherboardList motherboardList = new MotherboardList();
         ArrayList<Motherboard> motherboardArrayList = motherboardList.getMotherboardList();
         for(Motherboard motherboard : motherboardArrayList) {
-            if(motherboard.socket().equals("AM4")) {
+            if(motherboard.getSocket().equals("AM4")) {
                 System.out.println(motherboard.toString());
             }
         }
     }
 }
-
-//test
