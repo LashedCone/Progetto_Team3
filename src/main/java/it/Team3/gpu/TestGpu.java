@@ -7,7 +7,7 @@ public class TestGpu {
         GpuList gpuList = new GpuList();
         ArrayList<Gpu> gpuArrayList = gpuList.getGpuList();
         for(Gpu gpu : gpuArrayList) {
-            if(gpu.chipset().equals("GeForce RTX 4080")) {
+            if(gpu.getChipset().equals("GeForce RTX 4080")) {
                 System.out.println(gpu.toString());
             }
         }

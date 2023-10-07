@@ -1,4 +1,5 @@
 package it.Team3.cpu;
+
 public record Cpu(String manufacturer,
                   String part,
                   int coreCount,
