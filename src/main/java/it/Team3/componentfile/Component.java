@@ -1,6 +1,6 @@
 package it.Team3.componentfile;
 
-public abstract class Component {
+public class Component {
     private String name;
     private double price;
     
