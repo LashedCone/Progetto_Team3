@@ -1,8 +1,8 @@
 package it.Team3.exception;
 
 public class MyException extends Exception{
-    MyException(){}
-    MyException(String string){
+    public MyException(){}
+    public MyException(String string){
         super(string);
     }
     
