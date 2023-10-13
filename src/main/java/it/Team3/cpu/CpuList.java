@@ -22,7 +22,11 @@ public class CpuList {
             6, "3.7 GHz", "4.6 GHz", 65,
             "Ryzen 5", "AM4", "No", "128 GB");
     ArrayList<Cpu> CpuList = new ArrayList<>();
-
+    
+    public Cpu getI511600K() {
+        return i511600K;
+    }
+    
     public CpuList() {
         CpuList.add(i911900K);
         CpuList.add(i712700K);
