@@ -21,7 +21,7 @@ public class PC {
     }
 
     public void addComponent(Cpu cpu, CpuCooler cpuCooler, Motherboard motherboard,
-                             RAM ram, Storage storage, Gpu gpu, Case containerCase, PowerSupply powerSupply){
+                             RAM ram, Storage storage, Gpu gpu, Case containerCase, PowerSupply powerSupply) {
         PC pc = new PC(cpu, cpuCooler, motherboard, ram, storage, gpu, containerCase, powerSupply);
 
     }

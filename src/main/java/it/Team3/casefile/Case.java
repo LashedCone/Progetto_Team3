@@ -1,5 +1,6 @@
 package it.Team3.casefile;
 
+import it.Team3.motherboard.Motherboard;
 import it.Team3.utilities.Component;
 
 public class Case extends Component {
@@ -140,6 +141,10 @@ public class Case extends Component {
 
     @Override
     public boolean isCompatibleWith(Component other) {
+        if (other instanceof Motherboard) {
+            Motherboard motherboard = (Motherboard) other;
+            return this.motherboardFormFactor.equals(motherboard.getFormFactor());
+        }
         return false;
     }
 }

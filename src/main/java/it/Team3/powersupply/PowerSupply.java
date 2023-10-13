@@ -1,6 +1,6 @@
 package it.Team3.powersupply;
 
-import it.Team3.componentfile.Component;
+import it.Team3.utilities.Component;
 
 public class PowerSupply extends Component {
     String manufacturer;
@@ -202,5 +202,10 @@ public class PowerSupply extends Component {
                 "\nPCIe 6-Pin connectors: " + pcie6 +
                 "\nSATA Connectors" + sata +
                 "\nMolex 4-Pin Connectors: " + molex4;
+    }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        return false;
     }
 }

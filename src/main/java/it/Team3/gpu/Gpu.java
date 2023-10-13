@@ -136,4 +136,9 @@ public class Gpu extends Component{
                 "\nLength (mm): " + lengthMM +
                 "\nTDP (Watt): " + tdpWatt + "\n";
     }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        return false;
+    }
 }

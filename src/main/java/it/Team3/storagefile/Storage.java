@@ -117,4 +117,9 @@ public class Storage extends Component {
     public int hashCode() {
         return Objects.hash(manufacture, model, serial, capacity, type, formFactor, interfaceConnector, isNvme());
     }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        return false;
+    }
 }

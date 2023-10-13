@@ -1,5 +1,6 @@
 package it.Team3.motherboard;
 
+import it.Team3.cpu.Cpu;
 import it.Team3.utilities.Component;
 
 public class Motherboard extends Component {
@@ -214,5 +215,14 @@ public class Motherboard extends Component {
                 "\nSATA Ports: " + sataPorts +
                 "\nOnboard ethernet: " + onboardEthernet +
                 "\nWireless networking: " + wirelessNetworking;
+    }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        if (other instanceof Cpu) {
+            Cpu cpu = (Cpu) other;
+            return this.socket.equals(cpu.getSocket());
+        }
+        return false;
     }
 }
