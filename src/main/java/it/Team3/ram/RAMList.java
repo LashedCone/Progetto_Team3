@@ -1,6 +1,7 @@
 package it.Team3.ram;
 
 import java.util.ArrayList;
+
 public class RAMList {
     RAM corsairVenganceLpx = new RAM("RAM", 0, "Corsair Vengeance LPX", "3200", "DDR4",
             "DIMM", 2, 16, 16, 1.35, "16-18-18-36");
