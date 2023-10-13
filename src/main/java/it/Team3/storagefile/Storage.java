@@ -1,6 +1,6 @@
 package it.Team3.storagefile;
 
-import it.Team3.componentfile.Component;
+import it.Team3.utilities.Component;
 
 import java.util.Objects;
 

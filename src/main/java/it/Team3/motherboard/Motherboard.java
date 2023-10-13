@@ -1,6 +1,6 @@
 package it.Team3.motherboard;
 
-import it.Team3.componentfile.Component;
+import it.Team3.utilities.Component;
 
 public class Motherboard extends Component {
         private String manufacturer;

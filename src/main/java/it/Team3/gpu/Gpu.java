@@ -1,6 +1,6 @@
 package it.Team3.gpu;
 
-import it.Team3.componentfile.Component;
+import it.Team3.utilities.Component;
 
 public class Gpu extends Component{
         private String manufacturer;

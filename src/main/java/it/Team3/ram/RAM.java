@@ -1,6 +1,6 @@
 package it.Team3.ram;
 
-import it.Team3.componentfile.Component;
+import it.Team3.utilities.Component;
 
 public class RAM extends Component {
     private String serialPart;

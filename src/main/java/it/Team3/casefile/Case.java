@@ -1,6 +1,6 @@
 package it.Team3.casefile;
 
-import it.Team3.componentfile.Component;
+import it.Team3.utilities.Component;
 
 public class Case extends Component {
         private String manufacturer;
@@ -136,6 +136,11 @@ public class Case extends Component {
                 "\nInternal 25 Drive Bays: " + internal25DriveBays +
                 "\nExpansion Slots: " + expansionSlots +
                 "\nRadiator Support: " + radiatorSupport + "\n";
+    }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        return false;
     }
 }
 
