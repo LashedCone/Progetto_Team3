@@ -1,6 +1,7 @@
 package it.Team3.cpu;
 
-import it.Team3.componentfile.Component;
+import it.Team3.motherboard.Motherboard;
+import it.Team3.utilities.Component;
 
 public class Cpu extends Component {
     private String manufacturer;
@@ -123,5 +124,14 @@ public class Cpu extends Component {
                 "\nSocket: " + socket +
                 "\nIntegrated graphics: " + integratedGraphics +
                 "\nMax Memory: " + maxMemory;
+    }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        if (other instanceof Motherboard) {
+            Motherboard motherboard = (Motherboard) other;
+            return this.socket.equals(motherboard.getSocket());
+        }
+        return false;
     }
 }

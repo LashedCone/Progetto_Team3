@@ -1,6 +1,6 @@
 package it.Team3.storagefile;
 
-import it.Team3.componentfile.Component;
+import it.Team3.utilities.Component;
 
 import java.util.Objects;
 
@@ -116,5 +116,10 @@ public class Storage extends Component {
     @Override
     public int hashCode() {
         return Objects.hash(manufacture, model, serial, capacity, type, formFactor, interfaceConnector, isNvme());
+    }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        return false;
     }
 }

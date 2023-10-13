@@ -1,6 +1,7 @@
 package it.Team3.ram;
 
-import it.Team3.componentfile.Component;
+import it.Team3.motherboard.Motherboard;
+import it.Team3.utilities.Component;
 
 public class RAM extends Component {
     private String serialPart;
@@ -111,5 +112,14 @@ public class RAM extends Component {
                 "\nLatency: " + casLatency +
                 "\nVoltage: " + voltage + "V" +
                 "\nTiming: " + timing;
+    }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        if (other instanceof Motherboard) {
+            Motherboard motherboard = (Motherboard) other;
+            return this.ddrGen.equals(motherboard.getMemoryType());
+        }
+        return false;
     }
 }
