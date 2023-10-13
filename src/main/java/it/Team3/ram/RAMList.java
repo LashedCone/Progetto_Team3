@@ -1,7 +1,6 @@
 package it.Team3.ram;
 
 import java.util.ArrayList;
-
 public class RAMList {
     RAM corsairVenganceLpx = new RAM("RAM", 0, "Corsair Vengeance LPX", "3200", "DDR4",
             "DIMM", 2, 16, 16, 1.35, "16-18-18-36");
@@ -21,6 +20,7 @@ public class RAMList {
             "DIMM", 2, 32, 18, 1.35, "18-22-22-42");
     RAM corsairVengeanceLPX = new RAM("RAM", 0, "Corsair Vengeance LPX", "4000", "DDR4",
             "DIMM", 2, 64, 19, 1.35, "19-23-23-45");
+
     ArrayList<RAM> ramList = new ArrayList<>();
 
     public RAMList() {

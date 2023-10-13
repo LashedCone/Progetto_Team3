@@ -17,6 +17,7 @@ public abstract class Component {
         return price;
     }
 
+
     public abstract boolean isCompatibleWith(Component other);
 }
 
