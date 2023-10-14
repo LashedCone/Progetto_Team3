@@ -1,6 +1,7 @@
 package it.Team3.cpucooler;
 
-import it.Team3.componentfile.Component;
+import it.Team3.cpu.Cpu;
+import it.Team3.utilities.Component;
 
 
 public class CpuCooler extends Component {
@@ -31,72 +32,36 @@ public class CpuCooler extends Component {
         return manufacture;
     }
     
-    public void setManufacture(String manufacture) {
-        this.manufacture = manufacture;
-    }
-    
     public String getModel() {
         return model;
-    }
-    
-    public void setModel(String model) {
-        this.model = model;
     }
     
     public String getPartId() {
         return partId;
     }
     
-    public void setPartId(String partId) {
-        this.partId = partId;
-    }
-    
     public short getMinRPM() {
         return minRPM;
-    }
-    
-    public void setMinRPM(short minRPM) {
-        this.minRPM = minRPM;
     }
     
     public short getMaxRPM() {
         return maxRPM;
     }
     
-    public void setMaxRPM(short maxRPM) {
-        this.maxRPM = maxRPM;
-    }
-    
     public byte getNoiseMin() {
         return noiseMin;
-    }
-    
-    public void setNoiseMin(byte noiseMin) {
-        this.noiseMin = noiseMin;
     }
     
     public byte getNoiseMax() {
         return noiseMax;
     }
     
-    public void setNoiseMax(byte noiseMax) {
-        this.noiseMax = noiseMax;
-    }
-    
     public String getCpuSocket() {
         return cpuSocket;
     }
     
-    public void setCpuSocket(String cpuSocket) {
-        this.cpuSocket = cpuSocket;
-    }
-    
     public boolean isWaterCooled() {
         return isWaterCooled;
-    }
-    
-    public void setWaterCooled(boolean waterCooled) {
-        isWaterCooled = waterCooled;
     }
     
     @Override
@@ -111,5 +76,14 @@ public class CpuCooler extends Component {
                 "\nNoise Max: " + noiseMax +
                 "\nCpu socket: " + cpuSocket +
                 "\nWater cooled: " + isWaterCooled;
+    }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        if (other instanceof Cpu) {
+            Cpu cpu = (Cpu) other;
+            return this.cpuSocket.equals(cpu.getSocket());
+        }
+        return false;
     }
 }

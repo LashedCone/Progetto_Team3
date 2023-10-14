@@ -1,6 +1,7 @@
 package it.Team3.ram;
 
-import it.Team3.componentfile.Component;
+import it.Team3.motherboard.Motherboard;
+import it.Team3.utilities.Component;
 
 public class RAM extends Component {
     private String serialPart;
@@ -32,72 +33,36 @@ public class RAM extends Component {
         return serialPart;
     }
     
-    public void setSerialPart(String serialPart) {
-        this.serialPart = serialPart;
-    }
-    
     public String getDdrSpeed() {
         return ddrSpeed;
-    }
-    
-    public void setDdrSpeed(String ddrSpeed) {
-        this.ddrSpeed = ddrSpeed;
     }
     
     public String getDdrGen() {
         return ddrGen;
     }
     
-    public void setDdrGen(String ddrGen) {
-        this.ddrGen = ddrGen;
-    }
-    
     public String getFormFactor() {
         return formFactor;
-    }
-    
-    public void setFormFactor(String formFactor) {
-        this.formFactor = formFactor;
     }
     
     public int getModuleCount() {
         return moduleCount;
     }
     
-    public void setModuleCount(int moduleCount) {
-        this.moduleCount = moduleCount;
-    }
-    
     public int getCapacityGb() {
         return capacityGb;
-    }
-    
-    public void setCapacityGb(int capacityGb) {
-        this.capacityGb = capacityGb;
     }
     
     public int getCasLatency() {
         return casLatency;
     }
     
-    public void setCasLatency(int casLatency) {
-        this.casLatency = casLatency;
-    }
-    
     public double getVoltage() {
         return voltage;
     }
     
-    public void setVoltage(double voltage) {
-        this.voltage = voltage;
-    }
-    
     public String getTiming() {
         return timing;
-    }
-    
-    public void setTiming(String timing) {
-        this.timing = timing;
     }
     
     @Override
@@ -111,5 +76,14 @@ public class RAM extends Component {
                 "\nLatency: " + casLatency +
                 "\nVoltage: " + voltage + "V" +
                 "\nTiming: " + timing;
+    }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        if (other instanceof Motherboard) {
+            Motherboard motherboard = (Motherboard) other;
+            return this.ddrGen.equals(motherboard.getMemoryType());
+        }
+        return false;
     }
 }
