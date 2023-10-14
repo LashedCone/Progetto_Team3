@@ -10,12 +10,14 @@ import it.Team3.motherboard.Motherboard;
 import it.Team3.powersupply.PowerSupply;
 import it.Team3.ram.RAM;
 import it.Team3.storagefile.Storage;
+import it.Team3.utilities.Components;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PC {
     private List<Component> components;
+    private Components component;
     private Cpu cpu;
     private CpuCooler cpuCooler;
     private Motherboard motherboard;
