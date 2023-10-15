@@ -14,7 +14,7 @@ public class Start {
         PC pc = new PC();
         CpuList cpuList = new CpuList();
         
-        pc.addCpu(cpuList.getI511600K());
+//        pc.addCpu(cpuList.getI511600K());
 //        pc.addCpuCooler();
         System.out.println(pc);
     }
