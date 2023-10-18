@@ -1,7 +1,5 @@
 package it.Team3.utilities;
 
-import java.util.ArrayList;
-
 public abstract class Component {
     private String name;
     private double price;
