@@ -53,4 +53,4 @@ public class RAMList implements SelectComponent<RAM> {
         throw new IllegalArgumentException("Component not found: " + partName);
     }
     }
-}
+

@@ -1,6 +1,5 @@
 package it.Team3.cpu;
 
-import it.Team3.casefile.Case;
 import it.Team3.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public class CpuList implements SelectComponent<Cpu> {
             "Ryzen 5", "AM4", "No", "128 GB");
 
     ArrayList<Cpu> cpuList = new ArrayList<>();
-    
+
     public Cpu getI511600K() {
         return i511600K;
     }
@@ -54,4 +53,4 @@ public class CpuList implements SelectComponent<Cpu> {
         throw new IllegalArgumentException("Component not found: " + partName);
     }
 }
-//t
+

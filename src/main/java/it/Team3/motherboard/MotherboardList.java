@@ -46,9 +46,9 @@ public class MotherboardList implements SelectComponent<Motherboard> {
             "Micro-ATX", "B460", 64, "DDR4", 4,
             "2933MHz", 1, 1, 1, 1, 2,
             "1 x M.2", 6, "1 Gigabit Ethernet", "None");
-    
+
     ArrayList<Motherboard> motherboardList = new ArrayList<>();
-    
+
     public MotherboardList() {
         motherboardList.add(asusROGStrixB550F);
         motherboardList.add(gigabyteAorusX570Elite);
@@ -74,6 +74,5 @@ public class MotherboardList implements SelectComponent<Motherboard> {
             }
         }
         throw new IllegalArgumentException("Component not found: " + partName);
-    }
     }
 }
