@@ -21,8 +21,17 @@ public class CpuList {
     Cpu r55600x = new Cpu("CPU", 0, "AMD", "Ryzen 5 5600X",
             6, "3.7 GHz", "4.6 GHz", 65,
             "Ryzen 5", "AM4", "No", "128 GB");
+<<<<<<< HEAD
     ArrayList<Cpu> cpuList = new ArrayList<>();
 
+=======
+    ArrayList<Cpu> CpuList = new ArrayList<>();
+    
+    public Cpu getI511600K() {
+        return i511600K;
+    }
+    
+>>>>>>> b7fa0d646922e427658697e47cf3201feec2d710
     public CpuList() {
         cpuList.add(i911900K);
         cpuList.add(i712700K);
