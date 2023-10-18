@@ -1,11 +1,13 @@
 package it.Team3.storagefile;
 
 import it.Team3.utilities.Component;
+import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
-public class Storage extends Component implements isCompatibleWith {
+public class Storage extends Component implements isCompatibleWith, SelectComponent {
         private String manufacture;
         private String model;
         private String serial;
@@ -90,5 +92,10 @@ public class Storage extends Component implements isCompatibleWith {
     @Override
     public boolean isCompatibleWith(Component other) {
         return false;
+    }
+
+    @Override
+    public Component componentSelector(ArrayList parts, String partName) {
+        return null;
     }
 }

@@ -1,11 +1,8 @@
 import it.Team3.casefile.Case;
 import it.Team3.casefile.CaseList;
-import it.Team3.pc.Computer;
-import it.Team3.utilities.Component;
 import it.Team3.utilities.SelectComponent;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Start {

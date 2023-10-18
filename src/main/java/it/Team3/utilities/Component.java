@@ -18,5 +18,4 @@ public abstract class Component {
     public double getPrice() {
         return price;
     }
-
-    public abstract boolean isCompatibleWith(Component other);}
+}

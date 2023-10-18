@@ -2,9 +2,12 @@ package it.Team3.ram;
 
 import it.Team3.motherboard.Motherboard;
 import it.Team3.utilities.Component;
+import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
-public class RAM extends Component  implements isCompatibleWith {
+import java.util.ArrayList;
+
+public class RAM extends Component  implements isCompatibleWith, SelectComponent {
     private String serialPart;
     private String ddrSpeed;
     private String ddrGen;
@@ -86,5 +89,10 @@ public class RAM extends Component  implements isCompatibleWith {
             return this.ddrGen.equals(motherboard.getMemoryType());
         }
         return false;
+    }
+
+    @Override
+    public Component componentSelector(ArrayList parts, String partName) {
+        return null;
     }
 }

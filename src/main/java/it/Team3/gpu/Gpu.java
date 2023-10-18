@@ -1,9 +1,12 @@
 package it.Team3.gpu;
 
 import it.Team3.utilities.Component;
+import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
-public class Gpu extends Component implements isCompatibleWith {
+import java.util.ArrayList;
+
+public class Gpu extends Component implements isCompatibleWith, SelectComponent {
         private String manufacturer;
         private String partNumber;
         private String chipset;
@@ -97,5 +100,10 @@ public class Gpu extends Component implements isCompatibleWith {
     @Override
     public boolean isCompatibleWith(Component other) {
         return false;
+    }
+
+    @Override
+    public Component componentSelector(ArrayList parts, String partName) {
+        return null;
     }
 }

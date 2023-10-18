@@ -1,9 +1,12 @@
 package it.Team3.powersupply;
 
 import it.Team3.utilities.Component;
+import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
-public class PowerSupply extends Component  implements isCompatibleWith {
+import java.util.ArrayList;
+
+public class PowerSupply extends Component  implements isCompatibleWith, SelectComponent {
     String manufacturer;
     String model;
     String part;
@@ -140,5 +143,10 @@ public class PowerSupply extends Component  implements isCompatibleWith {
     @Override
     public boolean isCompatibleWith(Component other) {
         return false;
+    }
+
+    @Override
+    public Component componentSelector(ArrayList parts, String partName) {
+        return null;
     }
 }

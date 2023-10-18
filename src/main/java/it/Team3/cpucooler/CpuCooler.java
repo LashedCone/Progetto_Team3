@@ -2,10 +2,13 @@ package it.Team3.cpucooler;
 
 import it.Team3.cpu.Cpu;
 import it.Team3.utilities.Component;
+import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
+import java.util.ArrayList;
 
-public class CpuCooler extends Component implements isCompatibleWith {
+
+public class CpuCooler extends Component implements isCompatibleWith, SelectComponent {
     String manufacture;
     String model;
     String partId;
@@ -86,5 +89,10 @@ public class CpuCooler extends Component implements isCompatibleWith {
             return this.cpuSocket.equals(cpu.getSocket());
         }
         return false;
+    }
+
+    @Override
+    public Component componentSelector(ArrayList parts, String partName) {
+        return null;
     }
 }

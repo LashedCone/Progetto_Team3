@@ -4,13 +4,11 @@ import it.Team3.casefile.Case;
 import it.Team3.utilities.Component;
 import it.Team3.cpu.Cpu;
 import it.Team3.cpucooler.CpuCooler;
-import it.Team3.exception.MyException;
 import it.Team3.gpu.Gpu;
 import it.Team3.motherboard.Motherboard;
 import it.Team3.powersupply.PowerSupply;
 import it.Team3.ram.RAM;
 import it.Team3.storagefile.Storage;
-import it.Team3.utilities.Components;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,9 +2,12 @@ package it.Team3.cpu;
 
 import it.Team3.motherboard.Motherboard;
 import it.Team3.utilities.Component;
+import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
-public class Cpu extends Component implements isCompatibleWith {
+import java.util.ArrayList;
+
+public class Cpu extends Component implements isCompatibleWith, SelectComponent {
     private String manufacturer;
     private String part;
     private int coreCount;
@@ -94,5 +97,10 @@ public class Cpu extends Component implements isCompatibleWith {
             return this.socket.equals(motherboard.getSocket());
         }
         return false;
+    }
+
+    @Override
+    public Component componentSelector(ArrayList parts, String partName) {
+        return null;
     }
 }
