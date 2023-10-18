@@ -1,6 +1,6 @@
 package it.Team3.gpu;
 
-import it.Team3.componentfile.Component;
+import it.Team3.utilities.Component;
 
 public class Gpu extends Component{
         private String manufacturer;
@@ -135,5 +135,10 @@ public class Gpu extends Component{
                 "\nInterface Type: " + interfaceType +
                 "\nLength (mm): " + lengthMM +
                 "\nTDP (Watt): " + tdpWatt + "\n";
+    }
+
+    @Override
+    public boolean isCompatibleWith(Component other) {
+        return false;
     }
 }

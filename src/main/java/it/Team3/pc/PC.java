@@ -1,7 +1,7 @@
 package it.Team3.pc;
 
 import it.Team3.casefile.Case;
-import it.Team3.componentfile.Component;
+import it.Team3.utilities.Component;
 import it.Team3.cpu.Cpu;
 import it.Team3.cpucooler.CpuCooler;
 import it.Team3.gpu.Gpu;
@@ -112,5 +112,15 @@ public class PC {
         return "PC details:" + "\nCPU: " + cpu + "\nCPU Cooler: " + cpuCooler +
                 "\nMotherboard: " + motherboard + "\nRAM: " + ram + "\nStorage Memory: " + storage +
                 "\nGPU: " + gpu + "\nCase: " + container + "\nPower supply: " + powerSupply;
+=======
+
+    public PC(Cpu cpu, CpuCooler cpuCooler, Motherboard motherboard,
+              RAM ram, Storage storage, Gpu gpu, Case containerCase, PowerSupply powerSupply) {
+
+    }
+
+    public void addComponent(Cpu cpu, CpuCooler cpuCooler, Motherboard motherboard,
+                             RAM ram, Storage storage, Gpu gpu, Case containerCase, PowerSupply powerSupply) {
+        PC pc = new PC(cpu, cpuCooler, motherboard, ram, storage, gpu, containerCase, powerSupply);
     }
 }
