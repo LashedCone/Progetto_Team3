@@ -1,8 +1,9 @@
 package it.Team3.gpu;
 
 import it.Team3.utilities.Component;
+import it.Team3.utilities.isCompatibleWith;
 
-public class Gpu extends Component{
+public class Gpu extends Component implements isCompatibleWith {
         private String manufacturer;
         private String partNumber;
         private String chipset;

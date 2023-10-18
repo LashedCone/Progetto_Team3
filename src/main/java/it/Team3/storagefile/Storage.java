@@ -1,10 +1,11 @@
 package it.Team3.storagefile;
 
 import it.Team3.utilities.Component;
+import it.Team3.utilities.isCompatibleWith;
 
 import java.util.Objects;
 
-public class Storage extends Component {
+public class Storage extends Component implements isCompatibleWith {
         private String manufacture;
         private String model;
         private String serial;

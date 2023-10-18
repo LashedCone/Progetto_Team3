@@ -2,8 +2,9 @@ package it.Team3.ram;
 
 import it.Team3.motherboard.Motherboard;
 import it.Team3.utilities.Component;
+import it.Team3.utilities.isCompatibleWith;
 
-public class RAM extends Component {
+public class RAM extends Component  implements isCompatibleWith {
     private String serialPart;
     private String ddrSpeed;
     private String ddrGen;

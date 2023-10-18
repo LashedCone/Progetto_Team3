@@ -1,8 +1,9 @@
 package it.Team3.casefile;
+import it.Team3.utilities.SelectComponent;
 
 import java.util.ArrayList;
 
-public class CaseList {
+public class CaseList implements SelectComponent<Case> {
     Case lianLi = new Case("CASE", 0, "Lian Li", "PC-O11DEX", "ATX Mid Tower", "Black",
             "USB 3.2 Gen 2 Type-C, USB 3.2 Gen 1 Type-A", "ATX, EATX, Micro ATX, Mini ITX", "422 mm / 16.614",
             6, 3, 8, "360mm × 1 or 280mm × 1");
@@ -28,20 +29,31 @@ public class CaseList {
             "USB 3.1 Gen 2 Type-C, USB 3.0 × 2", "ATX, EATX, Micro ATX, Mini ITX", "330 mm / 13.0",
             3, 2, 8, "360mm × 2 or 280mm × 2");
 
-    ArrayList<Case> CaseList = new ArrayList<>();
+    ArrayList<Case> caseList = new ArrayList<>();
 
     public CaseList() {
-        CaseList.add(lianLi);
-        CaseList.add(nzxtH510i);
-        CaseList.add(fractalDesignMeshifyC);
-        CaseList.add(coolerMaster);
-        CaseList.add(phanteksEnthooProM);
-        CaseList.add(nzxtH710i);
-        CaseList.add(fractalDesignDefineR6);
-        CaseList.add(corsairC680x);
+        caseList.add(lianLi);
+        caseList.add(nzxtH510i);
+        caseList.add(fractalDesignMeshifyC);
+        caseList.add(coolerMaster);
+        caseList.add(phanteksEnthooProM);
+        caseList.add(nzxtH710i);
+        caseList.add(fractalDesignDefineR6);
+        caseList.add(corsairC680x);
     }
 
     public ArrayList<Case> getCaseList() {
-        return CaseList;
+        return caseList;
+    }
+
+    @Override
+    public Case componentSelector(ArrayList<Case> parts, String partName) {
+        for (Case part : parts) {
+            if (part.getName().equals(partName)) {
+                return part;
+            }
+        }
+        throw new IllegalArgumentException("Component not found: " + partName);
     }
 }
+

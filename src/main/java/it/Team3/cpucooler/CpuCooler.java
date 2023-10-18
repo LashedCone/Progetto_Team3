@@ -2,9 +2,10 @@ package it.Team3.cpucooler;
 
 import it.Team3.cpu.Cpu;
 import it.Team3.utilities.Component;
+import it.Team3.utilities.isCompatibleWith;
 
 
-public class CpuCooler extends Component {
+public class CpuCooler extends Component implements isCompatibleWith {
     String manufacture;
     String model;
     String partId;

@@ -21,19 +21,19 @@ public class CpuList {
     Cpu r55600x = new Cpu("CPU", 0, "AMD", "Ryzen 5 5600X",
             6, "3.7 GHz", "4.6 GHz", 65,
             "Ryzen 5", "AM4", "No", "128 GB");
-    ArrayList<Cpu> CpuList = new ArrayList<>();
+    ArrayList<Cpu> cpuList = new ArrayList<>();
 
     public CpuList() {
-        CpuList.add(i911900K);
-        CpuList.add(i712700K);
-        CpuList.add(i511600K);
-        CpuList.add(r95900x);
-        CpuList.add(r75800x);
-        CpuList.add(r55600x);
+        cpuList.add(i911900K);
+        cpuList.add(i712700K);
+        cpuList.add(i511600K);
+        cpuList.add(r95900x);
+        cpuList.add(r75800x);
+        cpuList.add(r55600x);
     }
 
     public ArrayList<Cpu> getCpuList() {
-        return CpuList;
+        return cpuList;
     }
 }
 //t

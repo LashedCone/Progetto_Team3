@@ -1,8 +1,9 @@
 package it.Team3.powersupply;
 
 import it.Team3.utilities.Component;
+import it.Team3.utilities.isCompatibleWith;
 
-public class PowerSupply extends Component {
+public class PowerSupply extends Component  implements isCompatibleWith {
     String manufacturer;
     String model;
     String part;

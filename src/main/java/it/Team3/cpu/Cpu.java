@@ -2,8 +2,9 @@ package it.Team3.cpu;
 
 import it.Team3.motherboard.Motherboard;
 import it.Team3.utilities.Component;
+import it.Team3.utilities.isCompatibleWith;
 
-public class Cpu extends Component {
+public class Cpu extends Component implements isCompatibleWith {
     private String manufacturer;
     private String part;
     private int coreCount;

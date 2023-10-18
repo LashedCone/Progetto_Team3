@@ -2,8 +2,9 @@ package it.Team3.casefile;
 
 import it.Team3.motherboard.Motherboard;
 import it.Team3.utilities.Component;
+import it.Team3.utilities.isCompatibleWith;
 
-public class Case extends Component {
+public class Case extends Component implements isCompatibleWith {
         private String manufacturer;
         private String modelName;
         private String type;
@@ -43,7 +44,7 @@ public class Case extends Component {
         this.manufacturer = manufacturer;
     }
     
-    public String getModelName() {
+    public String getName() {
         return modelName;
     }
     
