@@ -56,7 +56,11 @@ public class Start {
         System.out.print("Selezionare un Case dalla seguente lista:\n");
         cases.forEach(i -> System.out.printf("%s\n", i.getName()));
         Case selectedCase = caseSelectorComponent.componentSelector(cases, scanner1.nextLine());
-        System.out.println(selectedCpu.getPart() + selectedCpuCooler.getModel()+ selectedMobo.getPart()+ selectedRam.getSerialPart()+ selectedStorage.getModel() + selectedGpu.getChipset() + selectedPsu.getModel() + selectedCase.getName());
+        if (selectedCpu.isCompatibleWith(selectedMobo)) {
+            System.out.println(selectedCpu.getPart() + selectedCpuCooler.getModel() + selectedMobo.getPart() + selectedRam.getSerialPart() + selectedStorage.getModel() + selectedGpu.getChipset() + selectedPsu.getModel() + selectedCase.getName());
+        }else{
+            System.out.println("mobo e cpu non compatibili");
+        }
         //Computer myPc = new Computer(selectedCpu.getPart(), selectedCpuCooler.getModel(), selectedMobo.getPart(), selectedRam.getSerialPart(), selectedStorage.getModel(), selectedGpu.getChipset(), selectedPsu.getModel(), selectedCase.getName());
         System.out.println("Fine!");
     }
