@@ -1,4 +1,5 @@
 package it.Team3.PCBuilder.casefile;
+import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -47,13 +48,13 @@ public class CaseList implements SelectComponent<Case> {
     }
 
     @Override
-    public Case componentSelector(ArrayList<Case> parts, String partName) {
+    public Case componentSelector(ArrayList<Case> parts, int partId) throws MyException {
         for (Case part : parts) {
-            if (part.getName().equals(partName)) {
+            if (part.getId() == partId) {
                 return part;
             }
         }
-        throw new IllegalArgumentException("Component not found: " + partName);
+        throw new MyException("INVALID INPUT, CHOOSE A VALID ID");
     }
 }
 

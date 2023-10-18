@@ -1,5 +1,6 @@
 package it.Team3.PCBuilder.cpu;
 
+import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -38,18 +39,15 @@ public class CpuList implements SelectComponent<Cpu> {
     public ArrayList<Cpu> getCpuList() {
         return cpuList;
     }
-    //DA AGGIUNGERE IL VALORE ID A TUTTE LE COMPONENTI (fatto)
-    // E MODIFICARE I METODI componentSelector DAL "NOME" AD UN ID ,PARTNAME  DIVENTA UN INT ID
-    //CREARE EXCEPTION DEDICATA
-    //PART.GETPART DIVENTA PART.GETID
+
     @Override
-    public Cpu componentSelector(ArrayList<Cpu> parts, String partName) {
+    public Cpu componentSelector(ArrayList<Cpu> parts, int partId) throws MyException {
         for (Cpu part : parts) {
-            if (part.getPart().equals(partName)) {
+            if (part.getId() == partId) {
                 return part;
             }
         }
-        throw new IllegalArgumentException("Component not found: " + partName);
+        throw new MyException("INVALID INPUT, CHOOSE A VALID ID");
     }
 }
 

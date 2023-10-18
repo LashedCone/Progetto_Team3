@@ -1,5 +1,6 @@
 package it.Team3.PCBuilder.cpucooler;
 
+import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -49,12 +50,12 @@ public class CpuCoolerList implements SelectComponent<CpuCooler> {
     }
 
     @Override
-    public CpuCooler componentSelector(ArrayList<CpuCooler> parts, String partName) {
+    public CpuCooler componentSelector(ArrayList<CpuCooler> parts, int partId) throws MyException {
         for (CpuCooler part : parts) {
-            if (part.getModel().equals(partName)) {
+            if (part.getId() == partId) {
                 return part;
             }
         }
-        throw new IllegalArgumentException("Component not found: " + partName);
+        throw new MyException("INVALID INPUT, CHOOSE A VALID ID");
     }
 }
