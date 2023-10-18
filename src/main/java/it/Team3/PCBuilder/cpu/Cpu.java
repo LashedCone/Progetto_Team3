@@ -17,10 +17,10 @@ public class Cpu extends Component implements isCompatibleWith {
     private String integratedGraphics;
     private String maxMemory;
 
-    public Cpu(String name, double price, String manufacturer,
+    public Cpu(int id, double price, String manufacturer,
                String part, int coreCount, String coreClock, String boostClock,
                int tdpW, String series, String socket, String integratedGraphics, String maxMemory) {
-        super(name, price);
+        super(id, price);
         this.manufacturer = manufacturer;
         this.part = part;
         this.coreCount = coreCount;

@@ -17,12 +17,12 @@ public class Case extends Component implements isCompatibleWith {
         private int expansionSlots;
         private String radiatorSupport;
     
-    public Case(String name, double price, String manufacturer,
+    public Case(int id, double price, String manufacturer,
                 String modelName, String type, String color, String frontPanelUSB,
                 String motherboardFormFactor, String maximumVideoCardLength,
                 int internal35DriveBays, int internal25DriveBays, int expansionSlots,
                 String radiatorSupport) {
-        super(name, price);
+        super(id, price);
         this.manufacturer = manufacturer;
         this.modelName = modelName;
         this.type = type;

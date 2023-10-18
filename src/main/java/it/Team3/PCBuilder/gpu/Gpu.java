@@ -18,11 +18,11 @@ public class Gpu extends Component implements isCompatibleWith {
     private int lengthMM;
     private int tdpWatt;
 
-    public Gpu(String name, double price, String manufacturer,
+    public Gpu(int id, double price, String manufacturer,
                String partNumber, String chipset, int memorySizeGB,
                String memoryType, int coreClockMHz, int boostClockMHz,
                int effectiveMemoryClockMHz, String interfaceType, int lengthMM, int tdpWatt) {
-        super(name, price);
+        super(id, price);
         this.manufacturer = manufacturer;
         this.partNumber = partNumber;
         this.chipset = chipset;

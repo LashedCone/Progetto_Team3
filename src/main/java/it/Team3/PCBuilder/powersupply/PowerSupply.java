@@ -23,12 +23,12 @@ public class PowerSupply extends Component implements isCompatibleWith {
     byte sata;
     byte molex4;
 
-    public PowerSupply(String name, double price, String manufacturer,
+    public PowerSupply(int id, double price, String manufacturer,
                        String model, String part, String type, String efficiencyRating,
                        short wattage, boolean modular, String color, byte atx4PinConnectors,
                        byte eps8PinConnectors, byte pcie12_4, byte pcie12, byte pcie8,
                        byte pcie6_2, byte pcie6, byte sata, byte molex4) {
-        super(name, price);
+        super(id, price);
         this.manufacturer = manufacturer;
         this.model = model;
         this.part = part;

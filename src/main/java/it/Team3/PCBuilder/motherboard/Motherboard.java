@@ -24,13 +24,13 @@ public class Motherboard extends Component implements isCompatibleWith {
     private String onboardEthernet;
     private String wirelessNetworking;
 
-    public Motherboard(String name, double price, String manufacturer,
+    public Motherboard(int id, double price, String manufacturer,
                        String part, String socket, String formFactor, String chipset,
                        int memoryCapacity, String memoryType, int memorySlots,
                        String memorySpeed, int pcieX16Slots, int pcieX8Slots,
                        int pcieX4Slots, int pcieX1Slots, int pciSlots, String m2Slots,
                        int sataPorts, String onboardEthernet, String wirelessNetworking) {
-        super(name, price);
+        super(id, price);
         this.manufacturer = manufacturer;
         this.part = part;
         this.socket = socket;

@@ -5,25 +5,25 @@ import it.Team3.PCBuilder.utilities.SelectComponent;
 import java.util.ArrayList;
 
 public class StorageList implements SelectComponent<Storage> {
-    Storage samsung870Evo1Tb = new Storage("MEMORY STORAGE", 0, "Samsung", "870 Evo 1TB",
+    Storage samsung870Evo1Tb = new Storage(1, 0, "Samsung", "870 Evo 1TB",
             "MZ-77E1T0BW", (short) 1000, "SSD", "2.5", "SATA", false);
-    Storage westernDigitalBlackSn7702Tb = new Storage("MEMORY STORAGE", 0, "Western Digital", "Black SN770 2TB",
+    Storage westernDigitalBlackSn7702Tb = new Storage(2, 0, "Western Digital", "Black SN770 2TB",
             "WDS200T3X0E", (short) 2000, "SSD", "M.2-2280", "M.2 PCIe 4.0 X4", true);
-    Storage crucialMx5001Tb = new Storage("MEMORY STORAGE", 0, "Crucial", "MX500 1TB",
+    Storage crucialMx5001Tb = new Storage(3, 0, "Crucial", "MX500 1TB",
             "CT1000MX500SSD1", (short) 1000, "SSD", "2.5", "SATA", false);
-    Storage westernDigitalBlackSn850x1Tb = new Storage("MEMORY STORAGE", 0, "Western Digital", "Black SN850X 1TB",
+    Storage westernDigitalBlackSn850x1Tb = new Storage(4, 0, "Western Digital", "Black SN850X 1TB",
             "WDS100T2X0E", (short) 1000, "SSD", "M.2-2280", "M.2 PCIe 4.0 X4", true);
-    Storage samsung990Pro1Tb = new Storage("MEMORY STORAGE", 0, "Samsung", "990 Pro 1TB",
+    Storage samsung990Pro1Tb = new Storage(5, 0, "Samsung", "990 Pro 1TB",
             "MZ-V9P1T0BW", (short) 1000, "SSD", "M.2-2280", "M.2 PCIe 4.0 X4", true);
-    Storage kingstonA2000 = new Storage("MEMORY STORAGE", 0, "Kingston", "A2000",
+    Storage kingstonA2000 = new Storage(6, 0, "Kingston", "A2000",
             "SA2000M8/1000G", (short) 1000, "SSD", "M.2-2280", "M.2 PCIe 3.0 X4", true);
-    Storage samsung970EvoPlus500Gb = new Storage("MEMORY STORAGE", 0, "Samsung", "970 Evo Plus 500GB",
+    Storage samsung970EvoPlus500Gb = new Storage(7, 0, "Samsung", "970 Evo Plus 500GB",
             "MZ-V7S500BW", (short) 500, "SSD", "M.2-2280", "M.2 PCIe 3.0 X4", true);
-    Storage seagateBarraCuda4Tb = new Storage("MEMORY STORAGE", 0, "Seagate", "BarraCuda 4TB",
+    Storage seagateBarraCuda4Tb = new Storage(8, 0, "Seagate", "BarraCuda 4TB",
             "ST4000DM004", (short) 4000, "HDD", "3.5", "SATA", false);
-    Storage sandiskExtremePro2Tb = new Storage("MEMORY STORAGE", 0, "SanDisk", "Extreme Pro 2TB",
+    Storage sandiskExtremePro2Tb = new Storage(9, 0, "SanDisk", "Extreme Pro 2TB",
             "SDSSDXPM2-2T00-G25", (short) 2000, "SSD", "M.2-2280", "M.2 PCIe 3.0 X4", true);
-    Storage wdRedPro10Tb = new Storage("MEMORY STORAGE", 0, "Western Digital", "Red Pro 10TB",
+    Storage wdRedPro10Tb = new Storage(10, 0, "Western Digital", "Red Pro 10TB",
             "WD101KFBX", (short) 10000, "HDD", "3.5", "SATA", false);
     ArrayList<Storage> storageList = new ArrayList<>();
 

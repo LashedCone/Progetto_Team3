@@ -3,16 +3,16 @@ package it.Team3.PCBuilder.utilities;
 import java.util.ArrayList;
 
 public class Component {
-    private String name;
+    private int id;
     private double price;
 
-    public Component(String name, double price) {
-        this.name = name;
+    public Component(int id, double price) {
+        this.id = id;
         this.price = price;
     }
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
     public double getPrice() {

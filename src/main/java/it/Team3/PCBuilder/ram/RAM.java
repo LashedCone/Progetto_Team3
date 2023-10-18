@@ -16,10 +16,10 @@ public class RAM extends Component implements isCompatibleWith {
     private double voltage;
     private String timing;
 
-    public RAM(String name, double price, String serialPart, String ddrSpeed, String ddrGen,
+    public RAM(int id, double price, String serialPart, String ddrSpeed, String ddrGen,
                String formFactor, int moduleCount, int capacityGb, int casLatency,
                double voltage, String timing) {
-        super(name, price);
+        super(id, price);
         this.serialPart = serialPart;
         this.ddrSpeed = ddrSpeed;
         this.ddrGen = ddrGen;

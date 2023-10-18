@@ -3,7 +3,6 @@ package it.Team3.PCBuilder.storagefile;
 import it.Team3.PCBuilder.utilities.Component;
 import it.Team3.PCBuilder.utilities.isCompatibleWith;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Storage extends Component implements isCompatibleWith {
@@ -16,10 +15,10 @@ public class Storage extends Component implements isCompatibleWith {
     private String interfaceConnector;
     private boolean isNvme;
 
-    public Storage(String name, double price, String manufacture, String model,
+    public Storage(int id, double price, String manufacture, String model,
                    String serial, short capacity, String type, String formFactor,
                    String interfaceConnector, boolean isNvme) {
-        super(name, price);
+        super(id, price);
         this.manufacture = manufacture;
         this.model = model;
         this.serial = serial;

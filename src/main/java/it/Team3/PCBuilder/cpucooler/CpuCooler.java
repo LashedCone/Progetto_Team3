@@ -15,8 +15,8 @@ public class CpuCooler extends Component implements isCompatibleWith {
     String cpuSocket;
     boolean isWaterCooled;
 
-    public CpuCooler(String name, double price, String manufacture, String model, String partId, short minRPM, short maxRPM, byte noiseMin, byte noiseMax, String cpuSocket, boolean isWaterCooled) {
-        super(name, price);
+    public CpuCooler(int id, double price, String manufacture, String model, String partId, short minRPM, short maxRPM, byte noiseMin, byte noiseMax, String cpuSocket, boolean isWaterCooled) {
+        super(id, price);
         this.manufacture = manufacture;
         this.model = model;
         this.partId = partId;
