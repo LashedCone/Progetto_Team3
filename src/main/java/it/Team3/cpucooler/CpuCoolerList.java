@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class CpuCoolerList implements SelectComponent<CpuCooler> {
     CpuCooler coolerMasterHyper212RbgCM = new CpuCooler("CPU COOLER", 0, "CoolerMaster",
             "Hyper 212 RGB", "CM-HYPER212RGB", (short) 600,
-            (short) 2000, (byte) 10, (byte) 30, "LGA1200, AM4", false);
+            (short) 2000, (byte) 10, (byte) 30, "LGA 1200, AM4", false);
     CpuCooler noctuaNHD15 = new CpuCooler("CPU COOLER", 0, "Noctua",
             "NH-D15", "NOCT-NHD15", (short) 300,
             (short) 1500, (byte) 15, (byte) 25, "LGA1151, AM4", false);
@@ -25,7 +25,7 @@ public class CpuCoolerList implements SelectComponent<CpuCooler> {
             (short)2000, (byte)8, (byte)30, "LGA1151, AM4", false);
     CpuCooler nzxtKrakenX63 = new CpuCooler("CPU COOLER", 0, "NZXT",
             "Kraken X63", "RL-KRX63-01", (short)500,
-            (short)1800, (byte)22, (byte)36, "LGA1200, AM4", true);
+            (short)1800, (byte)22, (byte)36, "LGA 1200, AM4", true);
     CpuCooler deepcool = new CpuCooler("CPU COOLER", 0, "Deepcool",
             "Gammaxx GT BK", "DP-MCH4-GMX-GT-BK", (short)500,
             (short)1500, (byte)30, (byte)35, "LGA1151, AM4", false);

@@ -42,7 +42,9 @@ public class CpuList implements SelectComponent<Cpu> {
     public ArrayList<Cpu> getCpuList() {
         return cpuList;
     }
-
+    //DA AGGIUNGERE IL VALORE ID A TUTTE LE COMPONENTI E MODIFICARE I METODI componentSelector DAL "NOME" AD UN ID ,PARTNAME  DIVENTA UN INT ID
+    //CREARE EXCEPTION DEDICATA
+    //PART.GETPART DIVENTA PART.GETID
     @Override
     public Cpu componentSelector(ArrayList<Cpu> parts, String partName) {
         for (Cpu part : parts) {

@@ -17,12 +17,17 @@ import it.Team3.storagefile.Storage;
 import it.Team3.storagefile.StorageList;
 import it.Team3.utilities.SelectComponent;
 
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Start {
 
     public static void main(String[] args) {
+        // CAMBIARE LA SCELTA DELLO SCANNER CON UN INT QUINDI DA NEXTLINE DIVENTA NEXTINT
+        // QUANDO VENGONO A SCHERMO LE INFORMAZIONI CI DEVE ESSER L'ID ED IL NOME DELL ITEM
+        //ESEMPIO cpus.forEach(i -> System.out.printf("%s%S\n", I.GETID(),i.getPart()));
         Scanner scanner1 = new Scanner(System.in);
         //scelta Cpu
         System.out.println("Selezionare una Cpu dalla Lista:\n");
@@ -56,12 +61,37 @@ public class Start {
         System.out.print("Selezionare un Case dalla seguente lista:\n");
         cases.forEach(i -> System.out.printf("%s\n", i.getName()));
         Case selectedCase = caseSelectorComponent.componentSelector(cases, scanner1.nextLine());
-        if (selectedCpu.isCompatibleWith(selectedMobo)) {
-            System.out.println(selectedCpu.getPart() + selectedCpuCooler.getModel() + selectedMobo.getPart() + selectedRam.getSerialPart() + selectedStorage.getModel() + selectedGpu.getChipset() + selectedPsu.getModel() + selectedCase.getName());
-        }else{
-            System.out.println("mobo e cpu non compatibili");
+        if (selectedCpu.isCompatibleWith(selectedMobo) && selectedCpuCooler.isCompatibleWith(selectedCpu) && selectedRam.isCompatibleWith(selectedMobo)) {
+//           DA NON MODIFICARE!!!!!!!!!!
+//            try {
+//                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ProjectTeam3", "developer", "passwordhere");
+//                Statement stmt = connection.createStatement();
+//                ResultSet resultSet = stmt.executeQuery("SELECT * FROM final_result");
+//                String sqlPcCreating = "INSERT INTO final_result (Cpu, Cpucooler, Motherboard, Memory, Storage, Gpu, Casepc, Power_supply) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+//                PreparedStatement preparedStatement = connection.prepareStatement(sqlPcCreating);
+//                preparedStatement.setString(1, selectedCpu.getPart());
+//                preparedStatement.setString(2, selectedCpuCooler.getModel());
+//                preparedStatement.setString(3, selectedMobo.getPart());
+//                preparedStatement.setString(4, selectedRam.getSerialPart());
+//                preparedStatement.setString(5, selectedStorage.getModel());
+//                preparedStatement.setString(6, selectedGpu.getChipset());
+//                preparedStatement.setString(7, selectedCase.getName());
+//                preparedStatement.setString(8, selectedPsu.getModel());
+//                if (preparedStatement.executeUpdate() > 0) {
+//                    System.out.println("Pc registrato con successo!");
+//                }
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//                System.out.println("Errore !");
+//            }
+            System.out.printf("Pc creato con le seguenti componenti %s, %s, %s, %s, %s, %s, %s, %s !",
+                    selectedCpu.getPart(), selectedCpuCooler.getModel(), selectedMobo.getPart(),
+                    selectedRam.getSerialPart(), selectedStorage.getModel(),
+                    selectedGpu.getChipset(), selectedPsu.getModel(), selectedCase.getName());
+        } else {
+            System.out.println("COMPONENTI ERRATI");
         }
-        //Computer myPc = new Computer(selectedCpu.getPart(), selectedCpuCooler.getModel(), selectedMobo.getPart(), selectedRam.getSerialPart(), selectedStorage.getModel(), selectedGpu.getChipset(), selectedPsu.getModel(), selectedCase.getName());
+
         System.out.println("Fine!");
     }
 

@@ -82,7 +82,7 @@ public class CpuCooler extends Component implements isCompatibleWith {
     public boolean isCompatibleWith(Component other) {
         if (other instanceof Cpu) {
             Cpu cpu = (Cpu) other;
-            return this.cpuSocket.equals(cpu.getSocket());
+            return this.cpuSocket.contains(cpu.getSocket());
         }
         return false;
     }

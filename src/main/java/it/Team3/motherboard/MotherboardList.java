@@ -42,7 +42,7 @@ public class MotherboardList implements SelectComponent<Motherboard> {
             "ATX", "X570", 128, "DDR4", 4,
             "3600MHz", 2, 3, 1, 3, 3,
             "3 x M.2", 10, "2.5 Gigabit Ethernet", "Wi-Fi 6");
-    Motherboard gigabyteB460MDS3H = new Motherboard("MOTHERBOARD", 0, "GIGABYTE", "B460M DS3H", "LGA1200",
+    Motherboard gigabyteB460MDS3H = new Motherboard("MOTHERBOARD", 0, "GIGABYTE", "B460M DS3H", "LGA 1200",
             "Micro-ATX", "B460", 64, "DDR4", 4,
             "2933MHz", 1, 1, 1, 1, 2,
             "1 x M.2", 6, "1 Gigabit Ethernet", "None");
