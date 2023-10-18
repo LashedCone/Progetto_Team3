@@ -1,8 +1,11 @@
 package it.Team3.ram;
 
+import it.Team3.casefile.Case;
+import it.Team3.utilities.SelectComponent;
+
 import java.util.ArrayList;
 
-public class RAMList {
+public class RAMList implements SelectComponent<RAM> {
     RAM corsairVenganceLpx = new RAM("RAM", 0, "Corsair Vengeance LPX", "3200", "DDR4",
             "DIMM", 2, 16, 16, 1.35, "16-18-18-36");
     RAM gSkillRipjawsV = new RAM("RAM", 0, "G.Skill Ripjaws V", "3600", "DDR4",
@@ -38,5 +41,16 @@ public class RAMList {
 
     public ArrayList<RAM> getRamList() {
         return ramList;
+    }
+
+    @Override
+    public RAM componentSelector(ArrayList<RAM> parts, String partName) {
+        for (RAM part : parts) {
+            if (part.getSerialPart().equals(partName)) {
+                return part;
+            }
+        }
+        throw new IllegalArgumentException("Component not found: " + partName);
+    }
     }
 }

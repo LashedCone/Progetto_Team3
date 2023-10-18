@@ -1,9 +1,12 @@
 package it.Team3.powersupply;
 
 
+import it.Team3.casefile.Case;
+import it.Team3.utilities.SelectComponent;
+
 import java.util.ArrayList;
 
-public class PowerSupplyList {
+public class PowerSupplyList implements SelectComponent<PowerSupply> {
     PowerSupply msiPowerSupply = new PowerSupply("POWERSUPPLY", 0, "MSI", "A1000G PCIE5", "MPG A1000G PCIE 5",
             "ATX", "80+ Gold", (short) 1000, true, "Black",
             (byte) 0, (byte) 2, (byte) 1, (byte) 0, (byte) 0, (byte) 6, (byte) 0, (byte) 12, (byte) 4);
@@ -26,5 +29,16 @@ public class PowerSupplyList {
     
     public ArrayList<PowerSupply> getPowerSuppliesList() {
         return powerSuppliesList;
+    }
+
+    @Override
+    public PowerSupply componentSelector(ArrayList<PowerSupply> parts, String partName) {
+        for (PowerSupply part : parts) {
+            if (part.getModel().equals(partName)) {
+                return part;
+            }
+        }
+        throw new IllegalArgumentException("Component not found: " + partName);
+    }
     }
 }

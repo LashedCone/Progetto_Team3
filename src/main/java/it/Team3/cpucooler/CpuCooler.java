@@ -2,13 +2,9 @@ package it.Team3.cpucooler;
 
 import it.Team3.cpu.Cpu;
 import it.Team3.utilities.Component;
-import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
-import java.util.ArrayList;
-
-
-public class CpuCooler extends Component implements isCompatibleWith, SelectComponent {
+public class CpuCooler extends Component implements isCompatibleWith {
     String manufacture;
     String model;
     String partId;
@@ -18,7 +14,7 @@ public class CpuCooler extends Component implements isCompatibleWith, SelectComp
     byte noiseMax;
     String cpuSocket;
     boolean isWaterCooled;
-    
+
     public CpuCooler(String name, double price, String manufacture, String model, String partId, short minRPM, short maxRPM, byte noiseMin, byte noiseMax, String cpuSocket, boolean isWaterCooled) {
         super(name, price);
         this.manufacture = manufacture;
@@ -31,43 +27,43 @@ public class CpuCooler extends Component implements isCompatibleWith, SelectComp
         this.cpuSocket = cpuSocket;
         this.isWaterCooled = isWaterCooled;
     }
-    
+
     public String getManufacture() {
         return manufacture;
     }
-    
+
     public String getModel() {
         return model;
     }
-    
+
     public String getPartId() {
         return partId;
     }
-    
+
     public short getMinRPM() {
         return minRPM;
     }
-    
+
     public short getMaxRPM() {
         return maxRPM;
     }
-    
+
     public byte getNoiseMin() {
         return noiseMin;
     }
-    
+
     public byte getNoiseMax() {
         return noiseMax;
     }
-    
+
     public String getCpuSocket() {
         return cpuSocket;
     }
-    
+
     public boolean isWaterCooled() {
         return isWaterCooled;
     }
-    
+
     @Override
     public String toString() {
         return "Cpu cooler details: " +
@@ -89,10 +85,5 @@ public class CpuCooler extends Component implements isCompatibleWith, SelectComp
             return this.cpuSocket.equals(cpu.getSocket());
         }
         return false;
-    }
-
-    @Override
-    public Component componentSelector(ArrayList parts, String partName) {
-        return null;
     }
 }

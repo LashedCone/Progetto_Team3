@@ -1,8 +1,11 @@
 package it.Team3.motherboard;
 
+import it.Team3.casefile.Case;
+import it.Team3.utilities.SelectComponent;
+
 import java.util.ArrayList;
 
-public class MotherboardList {
+public class MotherboardList implements SelectComponent<Motherboard> {
     Motherboard asusROGStrixB550F = new Motherboard("MOTHERBOARD", 0, "ASUS", "ROG Strix B550-F", "AM4",
             "ATX", "B550", 128, "DDR4", 4,
             "3200MHz", 2, 1, 1, 2, 3,
@@ -61,5 +64,16 @@ public class MotherboardList {
 
     public ArrayList<Motherboard> getMotherboardList() {
         return motherboardList;
+    }
+
+    @Override
+    public Motherboard componentSelector(ArrayList<Motherboard> parts, String partName) {
+        for (Motherboard part : parts) {
+            if (part.getPart().equals(partName)) {
+                return part;
+            }
+        }
+        throw new IllegalArgumentException("Component not found: " + partName);
+    }
     }
 }

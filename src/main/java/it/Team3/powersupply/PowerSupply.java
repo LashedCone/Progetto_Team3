@@ -1,12 +1,10 @@
 package it.Team3.powersupply;
 
 import it.Team3.utilities.Component;
-import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
-import java.util.ArrayList;
 
-public class PowerSupply extends Component  implements isCompatibleWith, SelectComponent {
+public class PowerSupply extends Component implements isCompatibleWith {
     String manufacturer;
     String model;
     String part;
@@ -24,7 +22,7 @@ public class PowerSupply extends Component  implements isCompatibleWith, SelectC
     byte pcie6;
     byte sata;
     byte molex4;
-    
+
     public PowerSupply(String name, double price, String manufacturer,
                        String model, String part, String type, String efficiencyRating,
                        short wattage, boolean modular, String color, byte atx4PinConnectors,
@@ -49,75 +47,75 @@ public class PowerSupply extends Component  implements isCompatibleWith, SelectC
         this.sata = sata;
         this.molex4 = molex4;
     }
-    
+
     public String getManufacturer() {
         return manufacturer;
     }
-    
+
     public String getModel() {
         return model;
     }
-    
+
     public String getPart() {
         return part;
     }
-    
+
     public String getType() {
         return type;
     }
-    
+
     public String getEfficiencyRating() {
         return efficiencyRating;
     }
-    
+
     public short getWattage() {
         return wattage;
     }
-    
+
     public boolean isModular() {
         return modular;
     }
-    
+
     public String getColor() {
         return color;
     }
-    
+
     public byte getAtx4PinConnectors() {
         return atx4PinConnectors;
     }
-    
+
     public byte getEps8PinConnectors() {
         return eps8PinConnectors;
     }
-    
+
     public byte getPcie12_4() {
         return pcie12_4;
     }
-    
+
     public byte getPcie12() {
         return pcie12;
     }
-    
+
     public byte getPcie8() {
         return pcie8;
     }
-    
+
     public byte getPcie6_2() {
         return pcie6_2;
     }
-    
+
     public byte getPcie6() {
         return pcie6;
     }
-    
+
     public byte getSata() {
         return sata;
     }
-    
+
     public byte getMolex4() {
         return molex4;
     }
-    
+
     @Override
     public String toString() {
         return "PowerSupply:\n\n" +
@@ -143,10 +141,5 @@ public class PowerSupply extends Component  implements isCompatibleWith, SelectC
     @Override
     public boolean isCompatibleWith(Component other) {
         return false;
-    }
-
-    @Override
-    public Component componentSelector(ArrayList parts, String partName) {
-        return null;
     }
 }

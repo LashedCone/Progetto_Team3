@@ -1,8 +1,11 @@
 package it.Team3.cpu;
 
+import it.Team3.casefile.Case;
+import it.Team3.utilities.SelectComponent;
+
 import java.util.ArrayList;
 
-public class CpuList {
+public class CpuList implements SelectComponent<Cpu> {
     Cpu i911900K = new Cpu("CPU", 0, "Intel", "Core i9-11900K",
             8, "3.5 GHz", "5.3 GHz", 125,
             "Core i9", "LGA 1200", "No", "128 GB");
@@ -21,17 +24,13 @@ public class CpuList {
     Cpu r55600x = new Cpu("CPU", 0, "AMD", "Ryzen 5 5600X",
             6, "3.7 GHz", "4.6 GHz", 65,
             "Ryzen 5", "AM4", "No", "128 GB");
-<<<<<<< HEAD
-    ArrayList<Cpu> cpuList = new ArrayList<>();
 
-=======
-    ArrayList<Cpu> CpuList = new ArrayList<>();
+    ArrayList<Cpu> cpuList = new ArrayList<>();
     
     public Cpu getI511600K() {
         return i511600K;
     }
-    
->>>>>>> b7fa0d646922e427658697e47cf3201feec2d710
+
     public CpuList() {
         cpuList.add(i911900K);
         cpuList.add(i712700K);
@@ -43,6 +42,16 @@ public class CpuList {
 
     public ArrayList<Cpu> getCpuList() {
         return cpuList;
+    }
+
+    @Override
+    public Cpu componentSelector(ArrayList<Cpu> parts, String partName) {
+        for (Cpu part : parts) {
+            if (part.getPart().equals(partName)) {
+                return part;
+            }
+        }
+        throw new IllegalArgumentException("Component not found: " + partName);
     }
 }
 //t

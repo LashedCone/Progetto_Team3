@@ -1,22 +1,21 @@
 package it.Team3.storagefile;
 
 import it.Team3.utilities.Component;
-import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Storage extends Component implements isCompatibleWith, SelectComponent {
-        private String manufacture;
-        private String model;
-        private String serial;
-        private short capacity;
-        private String type;
-        private String formFactor;
-        private String interfaceConnector;
-        private boolean isNvme;
-    
+public class Storage extends Component implements isCompatibleWith {
+    private String manufacture;
+    private String model;
+    private String serial;
+    private short capacity;
+    private String type;
+    private String formFactor;
+    private String interfaceConnector;
+    private boolean isNvme;
+
     public Storage(String name, double price, String manufacture, String model,
                    String serial, short capacity, String type, String formFactor,
                    String interfaceConnector, boolean isNvme) {
@@ -30,39 +29,39 @@ public class Storage extends Component implements isCompatibleWith, SelectCompon
         this.interfaceConnector = interfaceConnector;
         this.isNvme = isNvme;
     }
-    
+
     public String getManufacture() {
         return manufacture;
     }
-    
+
     public String getModel() {
         return model;
     }
-    
+
     public String getSerial() {
         return serial;
     }
-    
+
     public short getCapacity() {
         return capacity;
     }
-    
+
     public String getType() {
         return type;
     }
-    
+
     public String getFormFactor() {
         return formFactor;
     }
-    
+
     public String getInterfaceConnector() {
         return interfaceConnector;
     }
-    
+
     public boolean isNvme() {
         return isNvme;
     }
-    
+
     @Override
     public String toString() {
         return "ObjStorage{" +
@@ -92,10 +91,5 @@ public class Storage extends Component implements isCompatibleWith, SelectCompon
     @Override
     public boolean isCompatibleWith(Component other) {
         return false;
-    }
-
-    @Override
-    public Component componentSelector(ArrayList parts, String partName) {
-        return null;
     }
 }

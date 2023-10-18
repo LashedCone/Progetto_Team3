@@ -2,12 +2,10 @@ package it.Team3.ram;
 
 import it.Team3.motherboard.Motherboard;
 import it.Team3.utilities.Component;
-import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
-import java.util.ArrayList;
 
-public class RAM extends Component  implements isCompatibleWith, SelectComponent {
+public class RAM extends Component implements isCompatibleWith {
     private String serialPart;
     private String ddrSpeed;
     private String ddrGen;
@@ -17,7 +15,7 @@ public class RAM extends Component  implements isCompatibleWith, SelectComponent
     private int casLatency;
     private double voltage;
     private String timing;
-    
+
     public RAM(String name, double price, String serialPart, String ddrSpeed, String ddrGen,
                String formFactor, int moduleCount, int capacityGb, int casLatency,
                double voltage, String timing) {
@@ -32,43 +30,43 @@ public class RAM extends Component  implements isCompatibleWith, SelectComponent
         this.voltage = voltage;
         this.timing = timing;
     }
-    
+
     public String getSerialPart() {
         return serialPart;
     }
-    
+
     public String getDdrSpeed() {
         return ddrSpeed;
     }
-    
+
     public String getDdrGen() {
         return ddrGen;
     }
-    
+
     public String getFormFactor() {
         return formFactor;
     }
-    
+
     public int getModuleCount() {
         return moduleCount;
     }
-    
+
     public int getCapacityGb() {
         return capacityGb;
     }
-    
+
     public int getCasLatency() {
         return casLatency;
     }
-    
+
     public double getVoltage() {
         return voltage;
     }
-    
+
     public String getTiming() {
         return timing;
     }
-    
+
     @Override
     public String toString() {
         return "RAM details:\n\nPart: " + serialPart +
@@ -91,8 +89,4 @@ public class RAM extends Component  implements isCompatibleWith, SelectComponent
         return false;
     }
 
-    @Override
-    public Component componentSelector(ArrayList parts, String partName) {
-        return null;
-    }
 }

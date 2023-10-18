@@ -1,8 +1,11 @@
 package it.Team3.cpucooler;
 
+import it.Team3.casefile.Case;
+import it.Team3.utilities.SelectComponent;
+
 import java.util.ArrayList;
 
-public class CpuCoolerList {
+public class CpuCoolerList implements SelectComponent<CpuCooler> {
     CpuCooler coolerMasterHyper212RbgCM = new CpuCooler("CPU COOLER", 0, "CoolerMaster",
             "Hyper 212 RGB", "CM-HYPER212RGB", (short) 600,
             (short) 2000, (byte) 10, (byte) 30, "LGA1200, AM4", false);
@@ -43,5 +46,15 @@ public class CpuCoolerList {
 
     public ArrayList<CpuCooler> getCpuCoolerList() {
         return CpuCoolerList;
+    }
+
+    @Override
+    public CpuCooler componentSelector(ArrayList<CpuCooler> parts, String partName) {
+        for (CpuCooler part : parts) {
+            if (part.getModel().equals(partName)) {
+                return part;
+            }
+        }
+        throw new IllegalArgumentException("Component not found: " + partName);
     }
 }

@@ -1,24 +1,23 @@
 package it.Team3.gpu;
 
 import it.Team3.utilities.Component;
-import it.Team3.utilities.SelectComponent;
 import it.Team3.utilities.isCompatibleWith;
 
 import java.util.ArrayList;
 
-public class Gpu extends Component implements isCompatibleWith, SelectComponent {
-        private String manufacturer;
-        private String partNumber;
-        private String chipset;
-        private int memorySizeGB;
-        private String memoryType;
-        private int coreClockMHz;
-        private int boostClockMHz;
-        private int effectiveMemoryClockMHz;
-        private String interfaceType;
-        private int lengthMM;
-        private int tdpWatt;
-    
+public class Gpu extends Component implements isCompatibleWith {
+    private String manufacturer;
+    private String partNumber;
+    private String chipset;
+    private int memorySizeGB;
+    private String memoryType;
+    private int coreClockMHz;
+    private int boostClockMHz;
+    private int effectiveMemoryClockMHz;
+    private String interfaceType;
+    private int lengthMM;
+    private int tdpWatt;
+
     public Gpu(String name, double price, String manufacturer,
                String partNumber, String chipset, int memorySizeGB,
                String memoryType, int coreClockMHz, int boostClockMHz,
@@ -36,51 +35,51 @@ public class Gpu extends Component implements isCompatibleWith, SelectComponent 
         this.lengthMM = lengthMM;
         this.tdpWatt = tdpWatt;
     }
-    
+
     public String getManufacturer() {
         return manufacturer;
     }
-    
+
     public String getPartNumber() {
         return partNumber;
     }
-    
+
     public String getChipset() {
         return chipset;
     }
-    
+
     public int getMemorySizeGB() {
         return memorySizeGB;
     }
-    
+
     public String getMemoryType() {
         return memoryType;
     }
-    
+
     public int getCoreClockMHz() {
         return coreClockMHz;
     }
-    
+
     public int getBoostClockMHz() {
         return boostClockMHz;
     }
-    
+
     public int getEffectiveMemoryClockMHz() {
         return effectiveMemoryClockMHz;
     }
-    
+
     public String getInterfaceType() {
         return interfaceType;
     }
-    
+
     public int getLengthMM() {
         return lengthMM;
     }
-    
+
     public int getTdpWatt() {
         return tdpWatt;
     }
-    
+
     @Override
     public String toString() {
         return "Gpu details:" +
@@ -102,8 +101,4 @@ public class Gpu extends Component implements isCompatibleWith, SelectComponent 
         return false;
     }
 
-    @Override
-    public Component componentSelector(ArrayList parts, String partName) {
-        return null;
-    }
 }

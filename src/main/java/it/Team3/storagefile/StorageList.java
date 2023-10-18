@@ -1,8 +1,10 @@
 package it.Team3.storagefile;
 
+import it.Team3.utilities.SelectComponent;
+
 import java.util.ArrayList;
 
-public class StorageList {
+public class StorageList implements SelectComponent<Storage> {
     Storage samsung870Evo1Tb = new Storage("MEMORY STORAGE", 0, "Samsung", "870 Evo 1TB",
             "MZ-77E1T0BW", (short) 1000, "SSD", "2.5", "SATA", false);
     Storage westernDigitalBlackSn7702Tb = new Storage("MEMORY STORAGE", 0, "Western Digital", "Black SN770 2TB",
@@ -40,5 +42,15 @@ public class StorageList {
 
     public ArrayList<Storage> getStorageList() {
         return storageList;
+    }
+
+    @Override
+    public Storage componentSelector(ArrayList<Storage> parts, String partName) {
+        for (Storage part : parts) {
+            if (part.getModel().equals(partName)) {
+                return part;
+            }
+        }
+        throw new IllegalArgumentException("Component not found: " + partName);
     }
 }
