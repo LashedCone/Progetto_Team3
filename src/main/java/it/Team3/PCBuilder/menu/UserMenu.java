@@ -1,6 +1,7 @@
-package it.Team3.PCBuilder.utilities;
+package it.Team3.PCBuilder.menu;
 
 import it.Team3.PCBuilder.exception.MyException;
+import it.Team3.PCBuilder.utilities.ComponentSelection;
 
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class UserMenu {
             String[] options2 = {
                     "Creare una Build",
                     "Vedere la tua lista di build",
-                    "Tornare al Menu Iniziale",
+                    "Tornare al MainMenu Iniziale",
                     "Exit!"
             };
             for (int i = 0; i < options2.length; i++) {
@@ -22,7 +23,7 @@ public class UserMenu {
             switch (option) {
                 case 1 -> ComponentSelection.componentSelection(user);
                 case 2 -> System.out.println("Da implementare");
-                case 3 -> Menu.Menu();
+                case 3 -> MainMenu.mainMenu();
                 case 4 -> {
                     System.out.println("Fine!");
                     System.exit(0);

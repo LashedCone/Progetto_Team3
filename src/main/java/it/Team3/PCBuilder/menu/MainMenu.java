@@ -1,12 +1,14 @@
-package it.Team3.PCBuilder.utilities;
+package it.Team3.PCBuilder.menu;
 
 import it.Team3.PCBuilder.exception.MyException;
+import it.Team3.PCBuilder.utilities.UserCheck;
+import it.Team3.PCBuilder.utilities.UserRegistration;
 
 import java.util.Scanner;
 
 
-public class Menu {
-    public static void Menu() throws MyException {
+public class MainMenu {
+    public static void mainMenu() throws MyException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Benvenuto!");
         while (true) {
