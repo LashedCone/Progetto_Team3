@@ -5,11 +5,11 @@ import java.util.Scanner;
 import java.sql.*;
 
 public class UserRegistration {
-    public static void main(String[] args) {
+    public static void creationUser() {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ProjectTeam3", "developer", "passwordhere");
             Statement stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM user");
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM user_table");
 
             ArrayList<String> usernameList = new ArrayList<>();
             ArrayList<String> emailList = new ArrayList<>();
@@ -45,7 +45,7 @@ public class UserRegistration {
 
             System.out.print("Inserisci la tua password: ");
             String password = scanner.nextLine();
-            String sql = "INSERT INTO user (Username, email, password) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO user_table (Username, email, password) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, email);

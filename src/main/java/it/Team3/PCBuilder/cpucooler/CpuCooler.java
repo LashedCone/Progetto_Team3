@@ -2,9 +2,9 @@ package it.Team3.PCBuilder.cpucooler;
 
 import it.Team3.PCBuilder.cpu.Cpu;
 import it.Team3.PCBuilder.utilities.Component;
-import it.Team3.PCBuilder.utilities.isCompatibleWith;
+import it.Team3.PCBuilder.utilities.IsCompatibleWith;
 
-public class CpuCooler extends Component implements isCompatibleWith {
+public class CpuCooler extends Component implements IsCompatibleWith {
     String manufacture;
     String model;
     String partId;
@@ -28,42 +28,14 @@ public class CpuCooler extends Component implements isCompatibleWith {
         this.isWaterCooled = isWaterCooled;
     }
 
-    public String getManufacture() {
-        return manufacture;
-    }
-
     public String getModel() {
         return model;
-    }
-
-    public String getPartId() {
-        return partId;
-    }
-
-    public short getMinRPM() {
-        return minRPM;
-    }
-
-    public short getMaxRPM() {
-        return maxRPM;
-    }
-
-    public byte getNoiseMin() {
-        return noiseMin;
-    }
-
-    public byte getNoiseMax() {
-        return noiseMax;
     }
 
     public String getCpuSocket() {
         return cpuSocket;
     }
-
-    public boolean isWaterCooled() {
-        return isWaterCooled;
-    }
-
+    
     @Override
     public String toString() {
         return "Cpu cooler details: " +
@@ -79,9 +51,9 @@ public class CpuCooler extends Component implements isCompatibleWith {
     }
 
     @Override
-    public boolean isCompatibleWith(Component other) {
-        if (other instanceof Cpu) {
-            Cpu cpu = (Cpu) other;
+    public boolean isCompatibleWith(Component component) {
+        if (component instanceof Cpu) {
+            Cpu cpu = (Cpu) component;
             return this.cpuSocket.contains(cpu.getSocket());
         }
         return false;

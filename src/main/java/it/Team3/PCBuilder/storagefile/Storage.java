@@ -1,11 +1,11 @@
 package it.Team3.PCBuilder.storagefile;
 
 import it.Team3.PCBuilder.utilities.Component;
-import it.Team3.PCBuilder.utilities.isCompatibleWith;
+import it.Team3.PCBuilder.utilities.IsCompatibleWith;
 
 import java.util.Objects;
 
-public class Storage extends Component implements isCompatibleWith {
+public class Storage extends Component implements IsCompatibleWith {
     private String manufacture;
     private String model;
     private String serial;
@@ -88,7 +88,7 @@ public class Storage extends Component implements isCompatibleWith {
     }
 
     @Override
-    public boolean isCompatibleWith(Component other) {
+    public boolean isCompatibleWith(Component component) {
         return false;
     }
 }

@@ -1,5 +1,6 @@
 package it.Team3.PCBuilder.storagefile;
 
+import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -45,12 +46,12 @@ public class StorageList implements SelectComponent<Storage> {
     }
 
     @Override
-    public Storage componentSelector(ArrayList<Storage> parts, String partName) {
+    public Storage componentSelector(ArrayList<Storage> parts, int partId) throws MyException {
         for (Storage part : parts) {
-            if (part.getModel().equals(partName)) {
+            if (part.getId() == partId) {
                 return part;
             }
         }
-        throw new IllegalArgumentException("Component not found: " + partName);
+        throw new MyException("INVALID INPUT, CHOOSE A VALID ID");
     }
 }

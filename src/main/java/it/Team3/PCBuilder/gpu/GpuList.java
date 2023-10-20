@@ -1,6 +1,7 @@
 package it.Team3.PCBuilder.gpu;
 
 import it.Team3.PCBuilder.casefile.Case;
+import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -61,13 +62,13 @@ public class GpuList implements SelectComponent<Gpu> {
     }
 
     @Override
-    public Gpu componentSelector(ArrayList<Gpu> parts, String partName) {
+    public Gpu componentSelector(ArrayList<Gpu> parts, int partId) throws MyException {
         for (Gpu part : parts) {
-            if (part.getChipset().equals(partName)) {
+            if (part.getId() == partId) {
                 return part;
             }
         }
-        throw new IllegalArgumentException("Component not found: " + partName);
+        throw new MyException("INVALID INPUT, CHOOSE A VALID ID");
     }
 }
 

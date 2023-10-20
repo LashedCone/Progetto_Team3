@@ -2,9 +2,9 @@ package it.Team3.PCBuilder.casefile;
 
 import it.Team3.PCBuilder.motherboard.Motherboard;
 import it.Team3.PCBuilder.utilities.Component;
-import it.Team3.PCBuilder.utilities.isCompatibleWith;
+import it.Team3.PCBuilder.utilities.IsCompatibleWith;
 
-public class Case extends Component implements isCompatibleWith {
+public class Case extends Component implements IsCompatibleWith {
         private String manufacturer;
         private String modelName;
         private String type;
@@ -36,92 +36,12 @@ public class Case extends Component implements isCompatibleWith {
         this.radiatorSupport = radiatorSupport;
     }
     
-    public String getManufacturer() {
-        return manufacturer;
-    }
-    
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-    
     public String getName() {
         return modelName;
     }
     
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
-    }
-    
-    public String getType() {
-        return type;
-    }
-    
-    public void setType(String type) {
-        this.type = type;
-    }
-    
-    public String getColor() {
-        return color;
-    }
-    
-    public void setColor(String color) {
-        this.color = color;
-    }
-    
-    public String getFrontPanelUSB() {
-        return frontPanelUSB;
-    }
-    
-    public void setFrontPanelUSB(String frontPanelUSB) {
-        this.frontPanelUSB = frontPanelUSB;
-    }
-    
     public String getMotherboardFormFactor() {
         return motherboardFormFactor;
-    }
-    
-    public void setMotherboardFormFactor(String motherboardFormFactor) {
-        this.motherboardFormFactor = motherboardFormFactor;
-    }
-    
-    public String getMaximumVideoCardLength() {
-        return maximumVideoCardLength;
-    }
-    
-    public void setMaximumVideoCardLength(String maximumVideoCardLength) {
-        this.maximumVideoCardLength = maximumVideoCardLength;
-    }
-    
-    public int getInternal35DriveBays() {
-        return internal35DriveBays;
-    }
-    
-    public void setInternal35DriveBays(int internal35DriveBays) {
-        this.internal35DriveBays = internal35DriveBays;
-    }
-    
-    public int getInternal25DriveBays() {
-        return internal25DriveBays;
-    }
-    
-    public void setInternal25DriveBays(int internal25DriveBays) {
-        this.internal25DriveBays = internal25DriveBays;
-    }
-    
-    public int getExpansionSlots() {
-        return expansionSlots;
-    }
-    
-    public void setExpansionSlots(int expansionSlots) {
-        this.expansionSlots = expansionSlots;
-    }
-    
-    public String getRadiatorSupport() {
-        return radiatorSupport;
-    }
-    
-    public void setRadiatorSupport(String radiatorSupport) {
-        this.radiatorSupport = radiatorSupport;
     }
     
     @Override
@@ -141,9 +61,9 @@ public class Case extends Component implements isCompatibleWith {
     }
 
     @Override
-    public boolean isCompatibleWith(Component other) {
-        if (other instanceof Motherboard) {
-            Motherboard motherboard = (Motherboard) other;
+    public boolean isCompatibleWith(Component component) {
+        if (component instanceof Motherboard) {
+            Motherboard motherboard = (Motherboard) component;
             return this.motherboardFormFactor.equals(motherboard.getFormFactor());
         }
         return false;
