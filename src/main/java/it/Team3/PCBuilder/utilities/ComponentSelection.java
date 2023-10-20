@@ -63,7 +63,7 @@ public class ComponentSelection {
         
         //Scelta case
         System.out.print("Selezionare un Case dalla seguente lista:\n");
-        cases.forEach(i -> System.out.printf("ID: %d CASE: %s MOBO FORM FACTOR: %s\n", i.getId(), i.getName(), i.getMotherboardFormFactor()));
+        cases.forEach(i -> System.out.printf("ID: %d CASE: %s MOBO FORM FACTOR: %s\n", i.getId(), i.getModelName(), i.getMotherboardFormFactor()));
         Case selectedCase = caseSelectorComponent.componentSelector(cases, scanner.nextInt());
         
         if(selectedCpu.isCompatibleWith(selectedMobo) && selectedCpuCooler.isCompatibleWith(selectedCpu) && selectedRam.isCompatibleWith(selectedMobo)) {
@@ -80,7 +80,7 @@ public class ComponentSelection {
                 preparedStatement.setString(4, selectedRam.getSerialPart());
                 preparedStatement.setString(5, selectedStorage.getModel());
                 preparedStatement.setString(6, selectedGpu.getChipset());
-                preparedStatement.setString(7, selectedCase.getName());
+                preparedStatement.setString(7, selectedCase.getModelName());
                 preparedStatement.setString(8, selectedPsu.getModel());
                 if(preparedStatement.executeUpdate() > 0) {
                     System.out.println("Pc registrato con successo!");
@@ -89,7 +89,9 @@ public class ComponentSelection {
                 e.printStackTrace();
                 System.out.println("Errore !");
             }
-            System.out.printf("Pc creato con le seguenti componenti CPU: %s, CPU COOLER: %s, MOBO: %s, RAM: %s, STORAGE: %s %s, GPU: %s, PSU: %s, CASE: %s", selectedCpu.getPart(), selectedCpuCooler.getModel(), selectedMobo.getPart(), selectedRam.getSerialPart(), selectedStorage.getModel(), selectedStorage.getType(), selectedGpu.getChipset(), selectedPsu.getModel(), selectedCase.getName());
+            System.out.printf("Pc creato con le seguenti componenti CPU: %s, CPU COOLER: %s, MOBO: %s, RAM: %s, STORAGE: %s %s, GPU: %s, PSU: %s, CASE: %s",
+                    selectedCpu.getPart(), selectedCpuCooler.getModel(), selectedMobo.getPart(), selectedRam.getSerialPart(), selectedStorage.getModel(),
+                    selectedStorage.getType(), selectedGpu.getChipset(), selectedPsu.getModel(), selectedCase.getModelName());
         } else {
             System.out.println("COMPONENTI ERRATI");
         }

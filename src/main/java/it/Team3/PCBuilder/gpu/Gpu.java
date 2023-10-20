@@ -2,7 +2,9 @@ package it.Team3.PCBuilder.gpu;
 
 import it.Team3.PCBuilder.utilities.Component;
 import it.Team3.PCBuilder.utilities.IsCompatibleWith;
+import lombok.Data;
 
+@Data
 public class Gpu extends Component implements IsCompatibleWith {
     private String manufacturer;
     private String partNumber;
@@ -33,14 +35,6 @@ public class Gpu extends Component implements IsCompatibleWith {
         this.lengthMM = lengthMM;
         this.tdpWatt = tdpWatt;
     }
-    public String getChipset() {
-        return chipset;
-    }
-
-    public int getTdpWatt() {
-        return tdpWatt;
-    }
-
     @Override
     public String toString() {
         return "Gpu details:" +

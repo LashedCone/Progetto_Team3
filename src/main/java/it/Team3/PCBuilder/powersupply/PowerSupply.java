@@ -2,8 +2,9 @@ package it.Team3.PCBuilder.powersupply;
 
 import it.Team3.PCBuilder.utilities.Component;
 import it.Team3.PCBuilder.utilities.IsCompatibleWith;
+import lombok.Data;
 
-
+@Data
 public class PowerSupply extends Component implements IsCompatibleWith {
     String manufacturer;
     String model;
@@ -47,17 +48,6 @@ public class PowerSupply extends Component implements IsCompatibleWith {
         this.sata = sata;
         this.molex4 = molex4;
     }
-    public String getModel() {
-        return model;
-    }
-
-    public String getPart() {
-        return part;
-    }
-    public short getWattage() {
-        return wattage;
-    }
-
     @Override
     public String toString() {
         return "PowerSupply:\n\n" +
