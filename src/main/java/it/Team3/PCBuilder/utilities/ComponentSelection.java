@@ -81,7 +81,7 @@ public class ComponentSelection {
                 preparedStatement.setString(5, selectedRam.getSerialPart());
                 preparedStatement.setString(6, selectedStorage.getModel());
                 preparedStatement.setString(7, selectedGpu.getChipset());
-                preparedStatement.setString(8, selectedCase.getName());
+                preparedStatement.setString(8, selectedCase.getModelName());
                 preparedStatement.setString(9, selectedPsu.getModel());
                 if (preparedStatement.executeUpdate() > 0) {
                     System.out.println("Pc registrato con successo!");
