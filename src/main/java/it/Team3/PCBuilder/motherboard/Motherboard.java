@@ -3,7 +3,9 @@ package it.Team3.PCBuilder.motherboard;
 import it.Team3.PCBuilder.cpu.Cpu;
 import it.Team3.PCBuilder.utilities.Component;
 import it.Team3.PCBuilder.utilities.IsCompatibleWith;
+import lombok.Data;
 
+@Data
 public class Motherboard extends Component implements IsCompatibleWith {
     private String manufacturer;
     private String part;
@@ -50,30 +52,6 @@ public class Motherboard extends Component implements IsCompatibleWith {
         this.onboardEthernet = onboardEthernet;
         this.wirelessNetworking = wirelessNetworking;
     }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public String getPart() {
-        return part;
-    }
-    
-    public String getSocket() {
-        return socket;
-    }
-
-    public String getFormFactor() {
-        return formFactor;
-    }
-    public String getMemoryType() {
-        return memoryType;
-    }
-
     @Override
     public String toString() {
         return "\nMotherboard details:" +

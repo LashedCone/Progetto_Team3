@@ -3,7 +3,9 @@ package it.Team3.PCBuilder.casefile;
 import it.Team3.PCBuilder.motherboard.Motherboard;
 import it.Team3.PCBuilder.utilities.Component;
 import it.Team3.PCBuilder.utilities.IsCompatibleWith;
+import lombok.Data;
 
+@Data
 public class Case extends Component implements IsCompatibleWith {
         private String manufacturer;
         private String modelName;
@@ -34,14 +36,6 @@ public class Case extends Component implements IsCompatibleWith {
         this.internal25DriveBays = internal25DriveBays;
         this.expansionSlots = expansionSlots;
         this.radiatorSupport = radiatorSupport;
-    }
-    
-    public String getName() {
-        return modelName;
-    }
-    
-    public String getMotherboardFormFactor() {
-        return motherboardFormFactor;
     }
     
     @Override

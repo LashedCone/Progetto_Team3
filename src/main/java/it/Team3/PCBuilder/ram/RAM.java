@@ -3,8 +3,9 @@ package it.Team3.PCBuilder.ram;
 import it.Team3.PCBuilder.motherboard.Motherboard;
 import it.Team3.PCBuilder.utilities.Component;
 import it.Team3.PCBuilder.utilities.IsCompatibleWith;
+import lombok.Data;
 
-
+@Data
 public class RAM extends Component implements IsCompatibleWith {
     private String serialPart;
     private String ddrSpeed;
@@ -30,26 +31,6 @@ public class RAM extends Component implements IsCompatibleWith {
         this.voltage = voltage;
         this.timing = timing;
     }
-
-    public String getSerialPart() {
-        return serialPart;
-    }
-
-    public String getDdrSpeed() {
-        return ddrSpeed;
-    }
-
-    public String getDdrGen() {
-        return ddrGen;
-    }
-    public int getCapacityGb() {
-        return capacityGb;
-    }
-    public double getVoltage() {
-        return voltage;
-    }
-
-
     @Override
     public String toString() {
         return "RAM details:\n\nPart: " + serialPart +

@@ -2,9 +2,10 @@ package it.Team3.PCBuilder.storagefile;
 
 import it.Team3.PCBuilder.utilities.Component;
 import it.Team3.PCBuilder.utilities.IsCompatibleWith;
+import lombok.Data;
 
 import java.util.Objects;
-
+@Data
 public class Storage extends Component implements IsCompatibleWith {
     private String manufacture;
     private String model;
@@ -29,38 +30,6 @@ public class Storage extends Component implements IsCompatibleWith {
         this.isNvme = isNvme;
     }
 
-    public String getManufacture() {
-        return manufacture;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public String getSerial() {
-        return serial;
-    }
-
-    public short getCapacity() {
-        return capacity;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getFormFactor() {
-        return formFactor;
-    }
-
-    public String getInterfaceConnector() {
-        return interfaceConnector;
-    }
-
-    public boolean isNvme() {
-        return isNvme;
-    }
-
     @Override
     public String toString() {
         return "ObjStorage{" +
@@ -73,18 +42,6 @@ public class Storage extends Component implements IsCompatibleWith {
                 ", interfaceConnector='" + interfaceConnector + '\'' +
                 ", isNvme=" + isNvme +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Storage that)) return false;
-        return capacity == that.capacity && isNvme() == that.isNvme() && Objects.equals(manufacture, that.manufacture) && Objects.equals(model, that.model) && Objects.equals(serial, that.serial) && Objects.equals(type, that.type) && Objects.equals(formFactor, that.formFactor) && Objects.equals(interfaceConnector, that.interfaceConnector);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(manufacture, model, serial, capacity, type, formFactor, interfaceConnector, isNvme());
     }
 
     @Override

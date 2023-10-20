@@ -3,8 +3,9 @@ package it.Team3.PCBuilder.cpu;
 import it.Team3.PCBuilder.motherboard.Motherboard;
 import it.Team3.PCBuilder.utilities.Component;
 import it.Team3.PCBuilder.utilities.IsCompatibleWith;
+import lombok.Data;
 
-
+@Data
 public class Cpu extends Component implements IsCompatibleWith {
     private String manufacturer;
     private String part;
@@ -31,15 +32,6 @@ public class Cpu extends Component implements IsCompatibleWith {
         this.socket = socket;
         this.integratedGraphics = integratedGraphics;
         this.maxMemory = maxMemory;
-    }
-    public String getPart() {
-        return part;
-    }
-    public int getTdpW() {
-        return tdpW;
-    }
-    public String getSocket() {
-        return socket;
     }
     @Override
     public String toString() {

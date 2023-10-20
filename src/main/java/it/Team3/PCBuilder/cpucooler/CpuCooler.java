@@ -3,7 +3,9 @@ package it.Team3.PCBuilder.cpucooler;
 import it.Team3.PCBuilder.cpu.Cpu;
 import it.Team3.PCBuilder.utilities.Component;
 import it.Team3.PCBuilder.utilities.IsCompatibleWith;
+import lombok.Data;
 
+@Data
 public class CpuCooler extends Component implements IsCompatibleWith {
     String manufacture;
     String model;
@@ -27,15 +29,6 @@ public class CpuCooler extends Component implements IsCompatibleWith {
         this.cpuSocket = cpuSocket;
         this.isWaterCooled = isWaterCooled;
     }
-
-    public String getModel() {
-        return model;
-    }
-
-    public String getCpuSocket() {
-        return cpuSocket;
-    }
-    
     @Override
     public String toString() {
         return "Cpu cooler details: " +
