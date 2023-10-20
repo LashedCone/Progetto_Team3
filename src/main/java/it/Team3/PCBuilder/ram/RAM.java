@@ -2,10 +2,10 @@ package it.Team3.PCBuilder.ram;
 
 import it.Team3.PCBuilder.motherboard.Motherboard;
 import it.Team3.PCBuilder.utilities.Component;
-import it.Team3.PCBuilder.utilities.isCompatibleWith;
+import it.Team3.PCBuilder.utilities.IsCompatibleWith;
 
 
-public class RAM extends Component implements isCompatibleWith {
+public class RAM extends Component implements IsCompatibleWith {
     private String serialPart;
     private String ddrSpeed;
     private String ddrGen;
@@ -42,30 +42,13 @@ public class RAM extends Component implements isCompatibleWith {
     public String getDdrGen() {
         return ddrGen;
     }
-
-    public String getFormFactor() {
-        return formFactor;
-    }
-
-    public int getModuleCount() {
-        return moduleCount;
-    }
-
     public int getCapacityGb() {
         return capacityGb;
     }
-
-    public int getCasLatency() {
-        return casLatency;
-    }
-
     public double getVoltage() {
         return voltage;
     }
 
-    public String getTiming() {
-        return timing;
-    }
 
     @Override
     public String toString() {
@@ -81,9 +64,9 @@ public class RAM extends Component implements isCompatibleWith {
     }
 
     @Override
-    public boolean isCompatibleWith(Component other) {
-        if (other instanceof Motherboard) {
-            Motherboard motherboard = (Motherboard) other;
+    public boolean isCompatibleWith(Component component) {
+        if (component instanceof Motherboard) {
+            Motherboard motherboard = (Motherboard) component;
             return this.ddrGen.equals(motherboard.getMemoryType());
         }
         return false;

@@ -1,10 +1,10 @@
 package it.Team3.PCBuilder.powersupply;
 
 import it.Team3.PCBuilder.utilities.Component;
-import it.Team3.PCBuilder.utilities.isCompatibleWith;
+import it.Team3.PCBuilder.utilities.IsCompatibleWith;
 
 
-public class PowerSupply extends Component implements isCompatibleWith {
+public class PowerSupply extends Component implements IsCompatibleWith {
     String manufacturer;
     String model;
     String part;
@@ -47,11 +47,6 @@ public class PowerSupply extends Component implements isCompatibleWith {
         this.sata = sata;
         this.molex4 = molex4;
     }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
     public String getModel() {
         return model;
     }
@@ -59,61 +54,8 @@ public class PowerSupply extends Component implements isCompatibleWith {
     public String getPart() {
         return part;
     }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getEfficiencyRating() {
-        return efficiencyRating;
-    }
-
     public short getWattage() {
         return wattage;
-    }
-
-    public boolean isModular() {
-        return modular;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public byte getAtx4PinConnectors() {
-        return atx4PinConnectors;
-    }
-
-    public byte getEps8PinConnectors() {
-        return eps8PinConnectors;
-    }
-
-    public byte getPcie12_4() {
-        return pcie12_4;
-    }
-
-    public byte getPcie12() {
-        return pcie12;
-    }
-
-    public byte getPcie8() {
-        return pcie8;
-    }
-
-    public byte getPcie6_2() {
-        return pcie6_2;
-    }
-
-    public byte getPcie6() {
-        return pcie6;
-    }
-
-    public byte getSata() {
-        return sata;
-    }
-
-    public byte getMolex4() {
-        return molex4;
     }
 
     @Override
@@ -139,7 +81,7 @@ public class PowerSupply extends Component implements isCompatibleWith {
     }
 
     @Override
-    public boolean isCompatibleWith(Component other) {
+    public boolean isCompatibleWith(Component component) {
         return false;
     }
 }

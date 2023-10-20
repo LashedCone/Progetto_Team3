@@ -1,11 +1,9 @@
 package it.Team3.PCBuilder.gpu;
 
 import it.Team3.PCBuilder.utilities.Component;
-import it.Team3.PCBuilder.utilities.isCompatibleWith;
+import it.Team3.PCBuilder.utilities.IsCompatibleWith;
 
-import java.util.ArrayList;
-
-public class Gpu extends Component implements isCompatibleWith {
+public class Gpu extends Component implements IsCompatibleWith {
     private String manufacturer;
     private String partNumber;
     private String chipset;
@@ -35,45 +33,8 @@ public class Gpu extends Component implements isCompatibleWith {
         this.lengthMM = lengthMM;
         this.tdpWatt = tdpWatt;
     }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public String getPartNumber() {
-        return partNumber;
-    }
-
     public String getChipset() {
         return chipset;
-    }
-
-    public int getMemorySizeGB() {
-        return memorySizeGB;
-    }
-
-    public String getMemoryType() {
-        return memoryType;
-    }
-
-    public int getCoreClockMHz() {
-        return coreClockMHz;
-    }
-
-    public int getBoostClockMHz() {
-        return boostClockMHz;
-    }
-
-    public int getEffectiveMemoryClockMHz() {
-        return effectiveMemoryClockMHz;
-    }
-
-    public String getInterfaceType() {
-        return interfaceType;
-    }
-
-    public int getLengthMM() {
-        return lengthMM;
     }
 
     public int getTdpWatt() {
@@ -97,8 +58,7 @@ public class Gpu extends Component implements isCompatibleWith {
     }
 
     @Override
-    public boolean isCompatibleWith(Component other) {
+    public boolean isCompatibleWith(Component component) {
         return false;
     }
-
 }
