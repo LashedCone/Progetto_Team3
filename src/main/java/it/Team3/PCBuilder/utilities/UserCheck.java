@@ -18,16 +18,16 @@ public class UserCheck {
             }
 
             while (!usernameList.contains(username)) {
-                System.out.print("Inserisci il tuo username: ");
+                System.out.print("Inserisci l'username da utilizzare: ");
                 username = scanner.nextLine();
                 if (!usernameList.contains(username)) {
-                    System.out.println("Errore: utente non esiste!");
+                    System.out.println("Errore: l'username scelto non esiste!");
                 }
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Errore !");
+            System.out.println("Errore!");
         }
         return username;
     }

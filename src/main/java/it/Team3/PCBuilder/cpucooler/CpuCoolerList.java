@@ -17,7 +17,7 @@ public class CpuCoolerList implements SelectComponent<CpuCooler> {
             (short) 2400, (byte) 20, (byte) 40, "LGA 1200, AM4", true);
     CpuCooler beQuiet = new CpuCooler(4, 0, "Be Quiet!",
             "Dark Rock Pro 4", "BK022", (short)600,
-            (short)1500, (byte)12, (byte)24, "LGA1200, AM4", false);
+            (short)1500, (byte)12, (byte)24, "LGA 1200, AM4", false);
     CpuCooler corsairH115i = new CpuCooler(5, 0, "Corsair",
             "H115i RGB Platinum", "CW-9060038-WW", (short)400,
             (short)2400, (byte)18, (byte)35, "LGA 1200, AM4", true);

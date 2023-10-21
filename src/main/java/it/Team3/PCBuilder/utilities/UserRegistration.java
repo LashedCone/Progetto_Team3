@@ -22,7 +22,7 @@ public class UserRegistration {
             boolean usernameNotExists = false;
             String username = "";
             while (!usernameNotExists) {
-                System.out.print("Inserisci il tuo username: ");
+                System.out.print("Inserisci l'username per un nuovo utente: ");
                 username = scanner.nextLine();
                 if (usernameList.contains(username)) {
                     System.out.println("Errore: Questo username è già in uso!");
@@ -34,7 +34,7 @@ public class UserRegistration {
             boolean emailNotExists = false;
             String email = "";
             while (!emailNotExists) {
-                System.out.print("Inserisci la tua email: ");
+                System.out.print("Inserisci una email: ");
                 email = scanner.nextLine();
                 if (emailList.contains(email)) {
                     System.out.println("Errore: Questa email è già in uso!");
@@ -43,7 +43,7 @@ public class UserRegistration {
                 }
             }
 
-            System.out.print("Inserisci la tua password: ");
+            System.out.print("Inserisci una password: ");
             String password = scanner.nextLine();
             String sql = "INSERT INTO user_table (Username, email, password) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -56,7 +56,7 @@ public class UserRegistration {
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Errore !");
+            System.out.println("Errore!");
         }
     }
 }
