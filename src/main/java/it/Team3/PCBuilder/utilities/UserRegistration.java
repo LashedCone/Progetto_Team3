@@ -22,10 +22,10 @@ public class UserRegistration {
             boolean usernameNotExists = false;
             String username = "";
             while (!usernameNotExists) {
-                System.out.print("Inserisci l'username per un nuovo utente: ");
+                System.out.print("Choose a username: ");
                 username = scanner.nextLine();
                 if (usernameList.contains(username)) {
-                    System.out.println("Errore: Questo username è già in uso!");
+                    System.out.println("Error: Username already exists!");
                 } else {
                     usernameNotExists = true;
                 }
@@ -34,16 +34,16 @@ public class UserRegistration {
             boolean emailNotExists = false;
             String email = "";
             while (!emailNotExists) {
-                System.out.print("Inserisci una email: ");
+                System.out.print("Insert a valid email: ");
                 email = scanner.nextLine();
                 if (emailList.contains(email)) {
-                    System.out.println("Errore: Questa email è già in uso!");
+                    System.out.println("Error: Email already exists!");
                 } else {
                     emailNotExists = true;
                 }
             }
 
-            System.out.print("Inserisci una password: ");
+            System.out.print("Choose a password: ");
             String password = scanner.nextLine();
             String sql = "INSERT INTO user_table (Username, email, password) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -51,12 +51,12 @@ public class UserRegistration {
             preparedStatement.setString(2, email);
             preparedStatement.setString(3, password);
             if (preparedStatement.executeUpdate() > 0) {
-                System.out.println("Utente registrato con successo!");
+                System.out.println("User created successfully!");
             }
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Errore!");
+            System.out.println("Error!");
         }
     }
 }

@@ -9,7 +9,6 @@ import it.Team3.PCBuilder.cpucooler.CpuCoolerList;
 import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.gpu.Gpu;
 import it.Team3.PCBuilder.gpu.GpuList;
-import it.Team3.PCBuilder.menu.UserMenu;
 import it.Team3.PCBuilder.motherboard.Motherboard;
 import it.Team3.PCBuilder.motherboard.MotherboardList;
 import it.Team3.PCBuilder.powersupply.PowerSupply;
@@ -28,42 +27,42 @@ public class ComponentSelection {
         Scanner scanner = new Scanner(System.in);
 
         //scelta Cpu
-        System.out.println("Selezionare una Cpu dalla Lista:\n");
+        System.out.println("Select a Cpu from the list:\n");
         cpus.forEach(i -> System.out.printf("ID: %d CPU: %s SOCKET: %s\n", i.getId(), i.getPart(), i.getSocket()));
         Cpu selectedCpu = cpuSelectComponent.componentSelector(cpus, scanner.nextInt());
 
         //scelta cooler
-        System.out.println("Selezionare un CpuCooler dalla Lista:\n");
+        System.out.println("Select a CpuCooler from the list:\n");
         cpuCoolers.forEach(i -> System.out.printf("ID: %d CPU COOLER: %s SOCKET: %s\n", i.getId(), i.getModel(), i.getCpuSocket()));
         CpuCooler selectedCpuCooler = cpuCoolerSelectComponent.componentSelector(cpuCoolers, scanner.nextInt());
 
         //scelta Mobo
-        System.out.println("Selezionare una Mobo dalla Lista:\n");
+        System.out.println("Select a Motherboard from the list:\n");
         moderboards.forEach(i -> System.out.printf("ID: %d MOTHERBOARD: %s SOCKET: %s MEMORY TYPE: %s FORM FACTOR: %s\n", i.getId(), i.getPart(), i.getSocket(), i.getMemoryType(), i.getFormFactor()));
         Motherboard selectedMobo = motherboardSelectComponent.componentSelector(moderboards, scanner.nextInt());
 
         //scelta Ram
-        System.out.println("Selezionare le Ram dalla Lista:\n");
+        System.out.println("Select a Ram from the list:\n");
         rams.forEach(i -> System.out.printf("ID: %d RAM: %s GB: %d DDR GEN: %s\n", i.getId(), i.getSerialPart(), i.getCapacityGb(), i.getDdrGen()));
         RAM selectedRam = ramSelectComponent.componentSelector(rams, scanner.nextInt());
 
         //Scelta Storage
-        System.out.println("Selezionare una Storage dalla Lista:\n");
+        System.out.println("Select a Storage from the list:\n");
         storages.forEach(i -> System.out.printf("ID: %d STORAGE: %s TYPE: %s\n", i.getId(), i.getModel(), i.getType()));
         Storage selectedStorage = storageSelectComponent.componentSelector(storages, scanner.nextInt());
 
         //Scelta Gpu
-        System.out.println("Selezionare una Gpu dalla Lista:\n");
+        System.out.println("Select a Gpu from the list:\n");
         gpus.forEach(i -> System.out.printf("ID: %d GPU: %s\n", i.getId(), i.getChipset()));
         Gpu selectedGpu = gpuSelectComponent.componentSelector(gpus, scanner.nextInt());
 
         //Scelta Psu
-        System.out.println("Selezionare una Psu dalla Lista:\n");
+        System.out.println("Select a Power supply from the list:\n");
         powerSupplies.forEach(i -> System.out.printf("ID: %d POWER SUPPLY: %s WATTAGE: %d\n", i.getId(), i.getModel(), i.getWattage()));
         PowerSupply selectedPsu = powerSupplySelectComponent.componentSelector(powerSupplies, scanner.nextInt());
 
         //Scelta case
-        System.out.print("Selezionare un Case dalla seguente lista:\n");
+        System.out.print("Select a Case from the list:\n");
         cases.forEach(i -> System.out.printf("ID: %d CASE: %s MOBO FORM FACTOR: %s\n", i.getId(), i.getModelName(), i.getMotherboardFormFactor()));
         Case selectedCase = caseSelectorComponent.componentSelector(cases, scanner.nextInt());
 
@@ -85,18 +84,18 @@ public class ComponentSelection {
                 preparedStatement.setString(8, selectedCase.getModelName());
                 preparedStatement.setString(9, selectedPsu.getModel());
                 if (preparedStatement.executeUpdate() > 0) {
-                    System.out.println("Pc registrato con successo!");
+                    System.out.println("Pc created successfully!");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-                System.out.println("Errore!");
+                System.out.println("Error!");
             }
-            System.out.printf("Pc creato con le seguenti componenti CPU: %s, CPU COOLER: %s, MOBO: %s, RAM: %s, STORAGE: %s %s, GPU: %s, PSU: %s, CASE: %s",
+            System.out.printf("Pc created with the following components: CPU: %s, CPU COOLER: %s, MOBO: %s, RAM: %s, STORAGE: %s %s, GPU: %s, PSU: %s, CASE: %s",
                     selectedCpu.getPart(), selectedCpuCooler.getModel(), selectedMobo.getPart(), selectedRam.getSerialPart(), selectedStorage.getModel(),
                     selectedStorage.getType(), selectedGpu.getChipset(), selectedPsu.getModel(), selectedCase.getModelName());
-            System.out.println("\nCome vuoi procedere?");
+            System.out.println("\nWhat would you like to do?");
         } else {
-            System.out.println("COMPONENTI ERRATI");
+            System.out.println("UNCOMPATIBLE COMPONENT SELECTED!");
         }
     }
 
