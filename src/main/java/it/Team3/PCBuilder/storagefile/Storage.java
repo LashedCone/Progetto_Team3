@@ -32,16 +32,15 @@ public class Storage extends Component implements IsCompatibleWith {
 
     @Override
     public String toString() {
-        return "ObjStorage{" +
-                "manufacture='" + manufacture + '\'' +
-                ", model='" + model + '\'' +
-                ", serial='" + serial + '\'' +
-                ", capacity=" + capacity +
-                ", type='" + type + '\'' +
-                ", formFactor='" + formFactor + '\'' +
-                ", interfaceConnector='" + interfaceConnector + '\'' +
-                ", isNvme=" + isNvme +
-                '}';
+        return "Storage details:" +
+                "\nManufacture: " + manufacture + '\'' +
+                "\nModel: " + model +
+                "\nSerial: " + serial +
+                "\nCapacity: " + capacity +
+                "\nType: " + type + '\'' +
+                "\nForm factor: " + formFactor + '\'' +
+                "\nInterface connector: " + interfaceConnector + '\'' +
+                "\nIs nvme=" + isNvme;
     }
 
     @Override

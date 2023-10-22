@@ -50,7 +50,7 @@ public class PowerSupply extends Component implements IsCompatibleWith {
     }
     @Override
     public String toString() {
-        return "PowerSupply:\n\n" +
+        return "PowerSupply details:\n\n" +
                 "Manufacturer: " + manufacturer +
                 "\nModel: " + model +
                 "\nPart: " + part +

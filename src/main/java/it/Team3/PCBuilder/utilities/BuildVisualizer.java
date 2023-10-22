@@ -12,22 +12,17 @@ public class BuildVisualizer {
             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
             preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
+            int buildId = 1;
             while (resultSet.next()) {
-                System.out.println("Username: " + resultSet.getString("Username"));
-                System.out.println("Cpu: " + resultSet.getString("Cpu"));
-                System.out.println("Cpucooler: " + resultSet.getString("Cpucooler"));
-                System.out.println("Motherboard: " + resultSet.getString("Motherboard"));
-                System.out.println("Memory: " + resultSet.getString("Memory"));
-                System.out.println("Storage: " + resultSet.getString("Storage"));
-                System.out.println("Gpu: " + resultSet.getString("Gpu"));
-                System.out.println("Casepc: " + resultSet.getString("Casepc"));
-                System.out.println("Power_supply: " + resultSet.getString("Power_supply"));
+                System.out.printf("Build n°%s: \nCpu: %s\nCpu cooler: %s\nMotherboard: %s\nMemory: %s\nStorage: %s\nGpu: %s\nCase: %s\nPower supply: %s\n\n",
+                        buildId++, resultSet.getString("Cpu"), resultSet.getString("CpuCooler"), resultSet.getString("Motherboard"),
+                        resultSet.getString("Memory"), resultSet.getString("Storage"), resultSet.getString("Gpu"), resultSet.getString("Casepc"),
+                        resultSet.getString("Power_supply"));
             }
             System.out.println("Thank you for using our program!");
+            System.out.println("\nWhat would you like to do?\n");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        
-        
     }
 }

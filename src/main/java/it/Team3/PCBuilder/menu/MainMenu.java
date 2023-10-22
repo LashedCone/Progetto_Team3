@@ -10,14 +10,14 @@ import java.util.Scanner;
 public class MainMenu {
     public static void mainMenu() throws MyException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Benvenuto!");
+        System.out.println("Welcome!");
         while (true) {
             String[] options = {
                     "Create user",
                     "Login",
                     "Exit"
             };
-            System.out.println("Selezionare un opzione:");
+            System.out.println("Select an option:");
             for (int i = 0; i < options.length; i++) {
                 System.out.println(i + 1 + " " + options[i]);
             }
@@ -35,11 +35,11 @@ public class MainMenu {
                         UserMenu.userMenu(user);
                         break;
                     case 3:
-                        System.out.println("Fine!");
+                        System.out.println("Thank you for using our program!");
                         System.exit(0);
                         break;
                     default:
-                        System.out.println("Errore: opzione non valida!");
+                        System.out.println("Error: not valid option!");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Error: Enter a valid number.");
