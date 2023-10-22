@@ -10,35 +10,39 @@ import java.util.Scanner;
 public class MainMenu {
     public static void mainMenu() throws MyException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome!");
+        System.out.println("Benvenuto!");
         while (true) {
             String[] options = {
                     "Create user",
                     "Login",
                     "Exit"
             };
-            System.out.println("\nChoose an option:");
+            System.out.println("Selezionare un opzione:");
             for (int i = 0; i < options.length; i++) {
                 System.out.println(i + 1 + " " + options[i]);
             }
-            int option = scanner.nextInt();
-            switch (option) {
-                case 1 -> {
-                    UserRegistration.creationUser();
-                }
-                case 2 -> {
-                    {
+
+            try {
+                String input = scanner.next();
+                int option = Integer.parseInt(input);
+
+                switch (option) {
+                    case 1:
+                        UserRegistration.creationUser();
+                        break;
+                    case 2:
                         String user = UserCheck.userCheck();
                         UserMenu.userMenu(user);
-                    }
+                        break;
+                    case 3:
+                        System.out.println("Fine!");
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("Errore: opzione non valida!");
                 }
-                case 3 -> {
-                    System.out.println("Thanks for using our program!");
-                    System.exit(0);
-                }
-                default -> {
-                    System.out.println("Error: Not valid option!");
-                }
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Enter a valid number.");
             }
         }
     }
