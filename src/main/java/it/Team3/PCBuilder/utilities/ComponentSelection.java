@@ -9,6 +9,7 @@ import it.Team3.PCBuilder.cpucooler.CpuCoolerList;
 import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.gpu.Gpu;
 import it.Team3.PCBuilder.gpu.GpuList;
+import it.Team3.PCBuilder.menu.UserMenu;
 import it.Team3.PCBuilder.motherboard.Motherboard;
 import it.Team3.PCBuilder.motherboard.MotherboardList;
 import it.Team3.PCBuilder.powersupply.PowerSupply;
@@ -88,16 +89,15 @@ public class ComponentSelection {
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-                System.out.println("Errore !");
+                System.out.println("Errore!");
             }
             System.out.printf("Pc creato con le seguenti componenti CPU: %s, CPU COOLER: %s, MOBO: %s, RAM: %s, STORAGE: %s %s, GPU: %s, PSU: %s, CASE: %s",
                     selectedCpu.getPart(), selectedCpuCooler.getModel(), selectedMobo.getPart(), selectedRam.getSerialPart(), selectedStorage.getModel(),
                     selectedStorage.getType(), selectedGpu.getChipset(), selectedPsu.getModel(), selectedCase.getModelName());
+            System.out.println("\nCome vuoi procedere?");
         } else {
             System.out.println("COMPONENTI ERRATI");
         }
-
-        System.out.println("\nFine!");
     }
 
     //CpuList import

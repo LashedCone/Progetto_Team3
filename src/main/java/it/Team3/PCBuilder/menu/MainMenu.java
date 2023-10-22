@@ -17,7 +17,7 @@ public class MainMenu {
                     "Login",
                     "Exit"
             };
-            System.out.println("Selezionare un opzione:");
+            System.out.println("Selezionare un'opzione:");
             for (int i = 0; i < options.length; i++) {
                 System.out.println(i + 1 + " " + options[i]);
             }
@@ -25,8 +25,6 @@ public class MainMenu {
             switch (option) {
                 case 1 -> {
                     UserRegistration.creationUser();
-//                String user = UserCheck.userCheck();
-//                ComponentSelection.componentSelection(user);
                 }
                 case 2 -> {
                     {
@@ -35,14 +33,12 @@ public class MainMenu {
                     }
                 }
                 case 3 -> {
-                    System.out.println("Fine!");
+                    System.out.println("Grazie per aver usato il nostro programma!");
                     System.exit(0);
                 }
                 default -> {
-                    System.out.println("Errore:opzione non valida!");
-
+                    System.out.println("Errore: Opzione non valida!");
                 }
-
             }
         }
     }
