@@ -1,6 +1,7 @@
 package it.Team3.PCBuilder.menu;
 
 import it.Team3.PCBuilder.exception.MyException;
+import it.Team3.PCBuilder.utilities.BuildVisualizer;
 import it.Team3.PCBuilder.utilities.ComputerBuilder;
 
 import java.util.Scanner;
@@ -24,7 +25,7 @@ public class UserMenu {
                 int option = Integer.parseInt(input);
                 switch (option) {
                     case 1 -> ComputerBuilder.computerBuilder(user);
-                    case 2 -> System.out.println("Da implementare");
+                    case 2 -> BuildVisualizer.buildVisualizer(user);
                     case 3 -> MainMenu.mainMenu();
                     case 4 -> {
                         System.out.println("Thanks for using our program!");
