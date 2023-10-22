@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class UserMenu {
     public static void userMenu(String user) throws MyException {
         Scanner scanner = new Scanner(System.in);
-        System.out.printf("Bentornato %s!\nCosa vuoi fare?\n", user);
+        System.out.printf("\nBentornato %s!\nCosa vuoi fare?\n", user);
         while (true) {
             String[] options2 = {
                     "Creare una Build",
