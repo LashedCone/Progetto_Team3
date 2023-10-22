@@ -22,8 +22,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ComponentSelection {
-    public static void componentSelection(String username) throws MyException {
+public class ComputerBuilder {
+    public static void computerBuilder (String username) throws MyException {
         Scanner scanner = new Scanner(System.in);
 
         //scelta Cpu
