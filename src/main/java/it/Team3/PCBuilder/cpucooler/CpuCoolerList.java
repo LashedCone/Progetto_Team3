@@ -1,6 +1,7 @@
 package it.Team3.PCBuilder.cpucooler;
 
 import it.Team3.PCBuilder.exception.MyException;
+import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -16,20 +17,20 @@ public class CpuCoolerList implements SelectComponent<CpuCooler> {
             "iCUE H150i", "COR-H150i", (short) 800,
             (short) 2400, (byte) 20, (byte) 40, "LGA 1200, AM4", true);
     CpuCooler beQuiet = new CpuCooler(4, 0, "Be Quiet!",
-            "Dark Rock Pro 4", "BK022", (short)600,
-            (short)1500, (byte)12, (byte)24, "LGA 1200, AM4", false);
+            "Dark Rock Pro 4", "BK022", (short) 600,
+            (short) 1500, (byte) 12, (byte) 24, "LGA 1200, AM4", false);
     CpuCooler corsairH115i = new CpuCooler(5, 0, "Corsair",
-            "H115i RGB Platinum", "CW-9060038-WW", (short)400,
-            (short)2400, (byte)18, (byte)35, "LGA 1200, AM4", true);
+            "H115i RGB Platinum", "CW-9060038-WW", (short) 400,
+            (short) 2400, (byte) 18, (byte) 35, "LGA 1200, AM4", true);
     CpuCooler coolerMasterHyper212RbgRR = new CpuCooler(6, 0, "CoolerMaster",
-            "Hyper 212 RGB", "RR-212S-20PC-R1", (short)650,
-            (short)2000, (byte)8, (byte)30, "LGA 1151, AM4", false);
+            "Hyper 212 RGB", "RR-212S-20PC-R1", (short) 650,
+            (short) 2000, (byte) 8, (byte) 30, "LGA 1151, AM4", false);
     CpuCooler nzxtKrakenX63 = new CpuCooler(7, 0, "NZXT",
-            "Kraken X63", "RL-KRX63-01", (short)500,
-            (short)1800, (byte)22, (byte)36, "LGA 1200, AM4", true);
+            "Kraken X63", "RL-KRX63-01", (short) 500,
+            (short) 1800, (byte) 22, (byte) 36, "LGA 1200, AM4", true);
     CpuCooler deepcool = new CpuCooler(8, 0, "Deepcool",
-            "Gammaxx GT BK", "DP-MCH4-GMX-GT-BK", (short)500,
-            (short)1500, (byte)30, (byte)35, "LGA 1151, AM4", false);
+            "Gammaxx GT BK", "DP-MCH4-GMX-GT-BK", (short) 500,
+            (short) 1500, (byte) 30, (byte) 35, "LGA 1151, AM4", false);
 
 
     ArrayList<CpuCooler> CpuCoolerList = new ArrayList<>();
@@ -51,6 +52,10 @@ public class CpuCoolerList implements SelectComponent<CpuCooler> {
 
     @Override
     public CpuCooler componentSelector(ArrayList<CpuCooler> parts, int partId) throws MyException {
+        if (partId <= 0 || partId > parts.size()) {
+            System.out.println("error: logout back to the MainMenu");
+            MainMenu.mainMenu();
+        }
         for (CpuCooler part : parts) {
             if (part.getId() == partId) {
                 return part;

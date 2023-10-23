@@ -1,5 +1,7 @@
 package it.Team3.PCBuilder.casefile;
+
 import it.Team3.PCBuilder.exception.MyException;
+import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -49,6 +51,10 @@ public class CaseList implements SelectComponent<Case> {
 
     @Override
     public Case componentSelector(ArrayList<Case> parts, int partId) throws MyException {
+        if (partId <= 0 || partId > parts.size()) {
+            System.out.println("error: logout back to the MainMenu");
+            MainMenu.mainMenu();
+        }
         for (Case part : parts) {
             if (part.getId() == partId) {
                 return part;

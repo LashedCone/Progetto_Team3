@@ -23,48 +23,47 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ComputerBuilder {
-    public static void computerBuilder (String username) throws MyException {
+    public static void computerBuilder(String username) throws MyException {
         Scanner scanner = new Scanner(System.in);
-
         //scelta Cpu
         System.out.println("Select a Cpu from the list:\n");
         cpus.forEach(i -> System.out.printf("ID: %d CPU: %s SOCKET: %s\n", i.getId(), i.getPart(), i.getSocket()));
-        Cpu selectedCpu = cpuSelectComponent.componentSelector(cpus, scanner.nextInt());
+        Cpu selectedCpu = cpuSelectComponent.componentSelector(cpus, Integer.parseInt(scanner.next()));
 
         //scelta cooler
         System.out.println("Select a CpuCooler from the list:\n");
         cpuCoolers.forEach(i -> System.out.printf("ID: %d CPU COOLER: %s SOCKET: %s\n", i.getId(), i.getModel(), i.getCpuSocket()));
-        CpuCooler selectedCpuCooler = cpuCoolerSelectComponent.componentSelector(cpuCoolers, scanner.nextInt());
+        CpuCooler selectedCpuCooler = cpuCoolerSelectComponent.componentSelector(cpuCoolers, Integer.parseInt(scanner.next()));
 
         //scelta Mobo
         System.out.println("Select a Motherboard from the list:\n");
         moderboards.forEach(i -> System.out.printf("ID: %d MOTHERBOARD: %s SOCKET: %s MEMORY TYPE: %s FORM FACTOR: %s\n", i.getId(), i.getPart(), i.getSocket(), i.getMemoryType(), i.getFormFactor()));
-        Motherboard selectedMobo = motherboardSelectComponent.componentSelector(moderboards, scanner.nextInt());
+        Motherboard selectedMobo = motherboardSelectComponent.componentSelector(moderboards, Integer.parseInt(scanner.next()));
 
         //scelta Ram
         System.out.println("Select a Ram from the list:\n");
         rams.forEach(i -> System.out.printf("ID: %d RAM: %s GB: %d DDR GEN: %s\n", i.getId(), i.getSerialPart(), i.getCapacityGb(), i.getDdrGen()));
-        RAM selectedRam = ramSelectComponent.componentSelector(rams, scanner.nextInt());
+        RAM selectedRam = ramSelectComponent.componentSelector(rams, Integer.parseInt(scanner.next()));
 
         //Scelta Storage
         System.out.println("Select a Storage from the list:\n");
         storages.forEach(i -> System.out.printf("ID: %d STORAGE: %s TYPE: %s\n", i.getId(), i.getModel(), i.getType()));
-        Storage selectedStorage = storageSelectComponent.componentSelector(storages, scanner.nextInt());
+        Storage selectedStorage = storageSelectComponent.componentSelector(storages, Integer.parseInt(scanner.next()));
 
         //Scelta Gpu
         System.out.println("Select a Gpu from the list:\n");
         gpus.forEach(i -> System.out.printf("ID: %d GPU: %s\n", i.getId(), i.getChipset()));
-        Gpu selectedGpu = gpuSelectComponent.componentSelector(gpus, scanner.nextInt());
+        Gpu selectedGpu = gpuSelectComponent.componentSelector(gpus, Integer.parseInt(scanner.next()));
 
         //Scelta Psu
         System.out.println("Select a Power supply from the list:\n");
         powerSupplies.forEach(i -> System.out.printf("ID: %d POWER SUPPLY: %s WATTAGE: %d\n", i.getId(), i.getModel(), i.getWattage()));
-        PowerSupply selectedPsu = powerSupplySelectComponent.componentSelector(powerSupplies, scanner.nextInt());
+        PowerSupply selectedPsu = powerSupplySelectComponent.componentSelector(powerSupplies, Integer.parseInt(scanner.next()));
 
         //Scelta case
         System.out.print("Select a Case from the list:\n");
         cases.forEach(i -> System.out.printf("ID: %d CASE: %s MOBO FORM FACTOR: %s\n", i.getId(), i.getModelName(), i.getMotherboardFormFactor()));
-        Case selectedCase = caseSelectorComponent.componentSelector(cases, scanner.nextInt());
+        Case selectedCase = caseSelectorComponent.componentSelector(cases, Integer.parseInt(scanner.next()));
 
         if (selectedCpu.isCompatibleWith(selectedMobo) && selectedCpuCooler.isCompatibleWith(selectedCpu) && selectedRam.isCompatibleWith(selectedMobo)) {
 //           DA NON MODIFICARE!!!!!!!!!!
