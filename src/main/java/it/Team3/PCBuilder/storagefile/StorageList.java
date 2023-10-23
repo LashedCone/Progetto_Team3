@@ -1,6 +1,7 @@
 package it.Team3.PCBuilder.storagefile;
 
 import it.Team3.PCBuilder.exception.MyException;
+import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -47,6 +48,10 @@ public class StorageList implements SelectComponent<Storage> {
 
     @Override
     public Storage componentSelector(ArrayList<Storage> parts, int partId) throws MyException {
+        if (partId <= 0 || partId > parts.size()) {
+            System.out.println("error: logout back to the MainMenu");
+            MainMenu.mainMenu();
+        }
         for (Storage part : parts) {
             if (part.getId() == partId) {
                 return part;

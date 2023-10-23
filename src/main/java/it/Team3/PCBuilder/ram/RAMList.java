@@ -1,6 +1,7 @@
 package it.Team3.PCBuilder.ram;
 
 import it.Team3.PCBuilder.exception.MyException;
+import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -15,9 +16,9 @@ public class RAMList implements SelectComponent<RAM> {
     RAM gSkillTridentZ = new RAM(7, 0, "G.Skill Trident Z", "3200", "DDR4", "DIMM", 2, 16, 16, 1.35, "16-18-18-36");
     RAM hyperXFury = new RAM(8, 0, "HyperX Fury", "3600", "DDR4", "DIMM", 2, 32, 18, 1.35, "18-22-22-42");
     RAM corsairVengeanceLPX = new RAM(9, 0, "Corsair Vengeance LPX", "4000", "DDR4", "DIMM", 2, 64, 19, 1.35, "19-23-23-45");
-    
+
     ArrayList<RAM> ramList = new ArrayList<>();
-    
+
     public RAMList() {
         ramList.add(corsairVenganceLpx);
         ramList.add(gSkillRipjawsV);
@@ -29,15 +30,19 @@ public class RAMList implements SelectComponent<RAM> {
         ramList.add(hyperXFury);
         ramList.add(corsairVengeanceLPX);
     }
-    
+
     public ArrayList<RAM> getRamList() {
         return ramList;
     }
-    
+
     @Override
     public RAM componentSelector(ArrayList<RAM> parts, int partId) throws MyException {
-        for(RAM part : parts) {
-            if(part.getId() == partId) {
+        if (partId <= 0 || partId > parts.size()) {
+            System.out.println("error: logout back to the MainMenu");
+            MainMenu.mainMenu();
+        }
+        for (RAM part : parts) {
+            if (part.getId() == partId) {
                 return part;
             }
         }

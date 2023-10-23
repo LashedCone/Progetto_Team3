@@ -2,6 +2,7 @@ package it.Team3.PCBuilder.powersupply;
 
 
 import it.Team3.PCBuilder.exception.MyException;
+import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
 
 import java.util.ArrayList;
@@ -33,6 +34,10 @@ public class PowerSupplyList implements SelectComponent<PowerSupply> {
 
     @Override
     public PowerSupply componentSelector(ArrayList<PowerSupply> parts, int partId) throws MyException {
+        if (partId <= 0 || partId > parts.size()) {
+            System.out.println("error: logout back to the MainMenu");
+            MainMenu.mainMenu();
+        }
         for (PowerSupply part : parts) {
             if (part.getId() == partId) {
                 return part;
