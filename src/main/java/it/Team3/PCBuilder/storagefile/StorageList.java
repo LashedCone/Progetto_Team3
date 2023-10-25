@@ -3,9 +3,10 @@ package it.Team3.PCBuilder.storagefile;
 import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
+import lombok.Data;
 
 import java.util.ArrayList;
-
+@Data
 public class StorageList implements SelectComponent<Storage> {
     Storage samsung870Evo1Tb = new Storage(1, 0, "Samsung", "870 Evo 1TB",
             "MZ-77E1T0BW", (short) 1000, "SSD", "2.5", "SATA", false);
@@ -41,11 +42,7 @@ public class StorageList implements SelectComponent<Storage> {
         storageList.add(sandiskExtremePro2Tb);
         storageList.add(wdRedPro10Tb);
     }
-
-    public ArrayList<Storage> getStorageList() {
-        return storageList;
-    }
-
+    
     @Override
     public Storage componentSelector(ArrayList<Storage> parts, int partId) throws MyException {
         if (partId <= 0 || partId > parts.size()) {

@@ -2,11 +2,11 @@ package it.Team3.PCBuilder.cpu;
 
 import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.menu.MainMenu;
-import it.Team3.PCBuilder.menu.UserMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
+import lombok.Data;
 
 import java.util.ArrayList;
-
+@Data
 public class CpuList implements SelectComponent<Cpu> {
     Cpu i911900K = new Cpu(1, 0, "Intel", "Core i9-11900K",
             8, "3.5 GHz", "5.3 GHz", 125,
@@ -35,7 +35,7 @@ public class CpuList implements SelectComponent<Cpu> {
     Cpu r97950x = new Cpu(7, 0, "AMD", "Ryzen 9 7950X",
             16, "4.5 GHz", "5.7 GHz", 170,
             "Ryzen 9", "AM5", "Yes", "128 GB");
-
+    
     ArrayList<Cpu> cpuList = new ArrayList<>();
 
     public CpuList() {
@@ -47,11 +47,7 @@ public class CpuList implements SelectComponent<Cpu> {
         cpuList.add(r55600x);
         cpuList.add(r97950x);
     }
-
-    public ArrayList<Cpu> getCpuList() {
-        return cpuList;
-    }
-
+    
     public Cpu componentSelector(ArrayList<Cpu> parts, int partId) throws MyException {
         if (partId <= 0 || partId > parts.size()) {
             System.out.println("error: logout back to the MainMenu");
@@ -62,7 +58,7 @@ public class CpuList implements SelectComponent<Cpu> {
                 return part;
             }
         }
-        throw new MyException("No CPU found ");
+        throw new MyException("INVALID INPUT, CHOOSE A VALID ID");
     }
 }
 

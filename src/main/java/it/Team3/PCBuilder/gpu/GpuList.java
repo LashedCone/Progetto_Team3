@@ -1,12 +1,12 @@
 package it.Team3.PCBuilder.gpu;
 
-import it.Team3.PCBuilder.casefile.Case;
 import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
+import lombok.Data;
 
 import java.util.ArrayList;
-
+@Data
 public class GpuList implements SelectComponent<Gpu> {
     Gpu superGraphicsGPU = new Gpu(1, 0, "SuperGraphics", "SGX4080TI16GB",
             "GeForce RTX 4080 Ti", 16, "GDDR6X",
@@ -57,11 +57,7 @@ public class GpuList implements SelectComponent<Gpu> {
         gpuList.add(evgaGeForceGTX4080FTW3);
         gpuList.add(sapphirePulseRX6700XT);
     }
-
-    public ArrayList<Gpu> getGpuList() {
-        return gpuList;
-    }
-
+    
     @Override
     public Gpu componentSelector(ArrayList<Gpu> parts, int partId) throws MyException {
         if (partId <= 0 || partId > parts.size()) {

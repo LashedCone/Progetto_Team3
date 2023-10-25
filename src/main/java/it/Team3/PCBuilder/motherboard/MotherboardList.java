@@ -3,9 +3,10 @@ package it.Team3.PCBuilder.motherboard;
 import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
+import lombok.Data;
 
 import java.util.ArrayList;
-
+@Data
 public class MotherboardList implements SelectComponent<Motherboard> {
     Motherboard asusROGStrixB550F = new Motherboard(1, 0, "ASUS", "ROG Strix B550-F", "AM4",
             "ATX", "B550", 128, "DDR4", 4,
@@ -62,11 +63,7 @@ public class MotherboardList implements SelectComponent<Motherboard> {
         motherboardList.add(asRockX570Taichi);
         motherboardList.add(gigabyteB460MDS3H);
     }
-
-    public ArrayList<Motherboard> getMotherboardList() {
-        return motherboardList;
-    }
-
+    
     @Override
     public Motherboard componentSelector(ArrayList<Motherboard> parts, int partId) throws MyException {
         if (partId <= 0 || partId > parts.size()) {

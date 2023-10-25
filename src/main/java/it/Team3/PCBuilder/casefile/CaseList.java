@@ -3,9 +3,10 @@ package it.Team3.PCBuilder.casefile;
 import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
+import lombok.Data;
 
 import java.util.ArrayList;
-
+@Data
 public class CaseList implements SelectComponent<Case> {
     Case lianLi = new Case(1, 0, "Lian Li", "PC-O11DEX", "ATX Mid Tower", "Black",
             "USB 3.2 Gen 2 Type-C, USB 3.2 Gen 1 Type-A", "ATX, EATX, Micro ATX, Mini ITX", "422 mm / 16.614",
@@ -44,10 +45,7 @@ public class CaseList implements SelectComponent<Case> {
         caseList.add(fractalDesignDefineR6);
         caseList.add(corsairC680x);
     }
-
-    public ArrayList<Case> getCaseList() {
-        return caseList;
-    }
+    
 
     @Override
     public Case componentSelector(ArrayList<Case> parts, int partId) throws MyException {

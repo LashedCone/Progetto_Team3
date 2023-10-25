@@ -3,9 +3,10 @@ package it.Team3.PCBuilder.cpucooler;
 import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
+import lombok.Data;
 
 import java.util.ArrayList;
-
+@Data
 public class CpuCoolerList implements SelectComponent<CpuCooler> {
     CpuCooler coolerMasterHyper212RbgCM = new CpuCooler(1, 0, "CoolerMaster",
             "Hyper 212 RGB", "CM-HYPER212RGB", (short) 600,
@@ -45,10 +46,7 @@ public class CpuCoolerList implements SelectComponent<CpuCooler> {
         CpuCoolerList.add(nzxtKrakenX63);
         CpuCoolerList.add(deepcool);
     }
-
-    public ArrayList<CpuCooler> getCpuCoolerList() {
-        return CpuCoolerList;
-    }
+    
 
     @Override
     public CpuCooler componentSelector(ArrayList<CpuCooler> parts, int partId) throws MyException {

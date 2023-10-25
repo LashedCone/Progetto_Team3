@@ -3,9 +3,10 @@ package it.Team3.PCBuilder.ram;
 import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
+import lombok.Data;
 
 import java.util.ArrayList;
-
+@Data
 public class RAMList implements SelectComponent<RAM> {
     RAM corsairVenganceLpx = new RAM(1, 0, "Corsair Vengeance LPX", "3200", "DDR4", "DIMM", 2, 16, 16, 1.35, "16-18-18-36");
     RAM gSkillRipjawsV = new RAM(2, 0, "G.Skill Ripjaws V", "3600", "DDR4", "DIMM", 2, 32, 18, 1.4, "18-22-22-42");
@@ -30,11 +31,7 @@ public class RAMList implements SelectComponent<RAM> {
         ramList.add(hyperXFury);
         ramList.add(corsairVengeanceLPX);
     }
-
-    public ArrayList<RAM> getRamList() {
-        return ramList;
-    }
-
+    
     @Override
     public RAM componentSelector(ArrayList<RAM> parts, int partId) throws MyException {
         if (partId <= 0 || partId > parts.size()) {

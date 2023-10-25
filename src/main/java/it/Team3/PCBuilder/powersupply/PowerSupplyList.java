@@ -4,9 +4,10 @@ package it.Team3.PCBuilder.powersupply;
 import it.Team3.PCBuilder.exception.MyException;
 import it.Team3.PCBuilder.menu.MainMenu;
 import it.Team3.PCBuilder.utilities.SelectComponent;
+import lombok.Data;
 
 import java.util.ArrayList;
-
+@Data
 public class PowerSupplyList implements SelectComponent<PowerSupply> {
     PowerSupply msiPowerSupply = new PowerSupply(1, 0, "MSI", "A1000G PCIE5", "MPG A1000G PCIE 5",
             "ATX", "80+ Gold", (short) 1000, true, "Black",
@@ -27,11 +28,7 @@ public class PowerSupplyList implements SelectComponent<PowerSupply> {
         powerSuppliesList.add(corsairPowerSupply);
         powerSuppliesList.add(evgaPowerSupply);
     }
-
-    public ArrayList<PowerSupply> getPowerSuppliesList() {
-        return powerSuppliesList;
-    }
-
+    
     @Override
     public PowerSupply componentSelector(ArrayList<PowerSupply> parts, int partId) throws MyException {
         if (partId <= 0 || partId > parts.size()) {
