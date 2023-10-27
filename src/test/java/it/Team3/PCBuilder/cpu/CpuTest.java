@@ -1,11 +1,9 @@
 package it.Team3.PCBuilder.cpu;
 
-import it.Team3.PCBuilder.motherboard.Motherboard;
-import it.Team3.PCBuilder.utilities.Component;
+import it.Team3.PCBuilder.models.Cpu;
+import it.Team3.PCBuilder.models.Motherboard;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CpuTest {
 

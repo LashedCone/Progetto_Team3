@@ -1,7 +1,6 @@
 package it.Team3.PCBuilder.utilities;
 
 import java.sql.*;
-
 public class BuildVisualizer {
     public static void buildVisualizer(String username) {
         System.out.println("Welcome to the Build Visualizer! Here you can see your builds!");

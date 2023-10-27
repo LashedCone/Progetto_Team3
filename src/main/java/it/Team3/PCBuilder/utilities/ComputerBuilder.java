@@ -1,22 +1,8 @@
 package it.Team3.PCBuilder.utilities;
 
-import it.Team3.PCBuilder.casefile.Case;
-import it.Team3.PCBuilder.casefile.CaseList;
-import it.Team3.PCBuilder.cpu.Cpu;
-import it.Team3.PCBuilder.cpu.CpuList;
-import it.Team3.PCBuilder.cpucooler.CpuCooler;
-import it.Team3.PCBuilder.cpucooler.CpuCoolerList;
+import it.Team3.PCBuilder.*;
 import it.Team3.PCBuilder.exception.MyException;
-import it.Team3.PCBuilder.gpu.Gpu;
-import it.Team3.PCBuilder.gpu.GpuList;
-import it.Team3.PCBuilder.motherboard.Motherboard;
-import it.Team3.PCBuilder.motherboard.MotherboardList;
-import it.Team3.PCBuilder.powersupply.PowerSupply;
-import it.Team3.PCBuilder.powersupply.PowerSupplyList;
-import it.Team3.PCBuilder.ram.RAM;
-import it.Team3.PCBuilder.ram.RAMList;
-import it.Team3.PCBuilder.storagefile.Storage;
-import it.Team3.PCBuilder.storagefile.StorageList;
+import it.Team3.PCBuilder.models.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -24,6 +10,39 @@ import java.util.Scanner;
 
 public class ComputerBuilder {
     public static void computerBuilder(String username) throws MyException {
+        
+        //CpuList import
+        ArrayList<Cpu> cpus = new CpuList().getCpuList();
+        SelectComponent<Cpu> cpuSelectComponent = new CpuList();
+        
+        //CpuCoolerList import
+        ArrayList<CpuCooler> cpuCoolers = new CpuCoolerList().getCpuCoolerList();
+        SelectComponent<CpuCooler> cpuCoolerSelectComponent = new CpuCoolerList();
+        
+        //MotherboardList import
+        ArrayList<Motherboard> moderboards = new MotherboardList().getMotherboardList();
+        SelectComponent<Motherboard> motherboardSelectComponent = new MotherboardList();
+        
+        //RamList import
+        ArrayList<RAM> rams = new RAMList().getRamList();
+        SelectComponent<RAM> ramSelectComponent = new RAMList();
+        
+        //StorageList import
+        ArrayList<Storage> storages = new StorageList().getStorageList();
+        SelectComponent<Storage> storageSelectComponent = new StorageList();
+        
+        //GpuList import
+        ArrayList<Gpu> gpus = new GpuList().getGpuList();
+        SelectComponent<Gpu> gpuSelectComponent = new GpuList();
+        
+        //PowerSupplyList import
+        ArrayList<PowerSupply> powerSupplies = new PowerSupplyList().getPowerSuppliesList();
+        SelectComponent<PowerSupply> powerSupplySelectComponent = new PowerSupplyList();
+        
+        //CaseList import
+        ArrayList<Case> cases = new CaseList().getCaseList();
+        SelectComponent<Case> caseSelectorComponent = new CaseList();
+        
         Scanner scanner = new Scanner(System.in);
         //scelta Cpu
         System.out.println("Select a Cpu from the list:\n");
@@ -97,36 +116,4 @@ public class ComputerBuilder {
             System.out.println("UNCOMPATIBLE COMPONENT SELECTED!");
         }
     }
-
-    //CpuList import
-    private static ArrayList<Cpu> cpus = new CpuList().getCpuList();
-    private static SelectComponent<Cpu> cpuSelectComponent = new CpuList();
-
-    //CpuCoolerList import
-    private static ArrayList<CpuCooler> cpuCoolers = new CpuCoolerList().getCpuCoolerList();
-    private static SelectComponent<CpuCooler> cpuCoolerSelectComponent = new CpuCoolerList();
-
-    //MotherboardList import
-    private static ArrayList<Motherboard> moderboards = new MotherboardList().getMotherboardList();
-    private static SelectComponent<Motherboard> motherboardSelectComponent = new MotherboardList();
-
-    //RamList import
-    private static ArrayList<RAM> rams = new RAMList().getRamList();
-    private static SelectComponent<RAM> ramSelectComponent = new RAMList();
-
-    //StorageList import
-    private static ArrayList<Storage> storages = new StorageList().getStorageList();
-    private static SelectComponent<Storage> storageSelectComponent = new StorageList();
-
-    //GpuList import
-    private static ArrayList<Gpu> gpus = new GpuList().getGpuList();
-    private static SelectComponent<Gpu> gpuSelectComponent = new GpuList();
-
-    //PowerSupplyList import
-    private static ArrayList<PowerSupply> powerSupplies = new PowerSupplyList().getPowerSuppliesList();
-    private static SelectComponent<PowerSupply> powerSupplySelectComponent = new PowerSupplyList();
-
-    //CaseList import
-    private static ArrayList<Case> cases = new CaseList().getCaseList();
-    private static SelectComponent<Case> caseSelectorComponent = new CaseList();
 }

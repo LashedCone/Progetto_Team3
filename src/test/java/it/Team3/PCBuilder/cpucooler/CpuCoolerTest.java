@@ -1,10 +1,9 @@
 package it.Team3.PCBuilder.cpucooler;
 
-import it.Team3.PCBuilder.cpu.Cpu;
+import it.Team3.PCBuilder.models.Cpu;
+import it.Team3.PCBuilder.models.CpuCooler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CpuCoolerTest {
     @Test
