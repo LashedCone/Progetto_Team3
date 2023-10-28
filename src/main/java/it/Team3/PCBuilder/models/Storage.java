@@ -11,9 +11,9 @@ import lombok.Data;
 @Entity
 @Table(name = "Storage")
 public class Storage extends Component implements IsCompatibleWith {
-//    @Id
-//    @GeneratedValue
-//    private int id;
+    @Id
+    @GeneratedValue
+    private int id;
     private String manufacture;
     private String model;
     private String serial;
@@ -22,6 +22,9 @@ public class Storage extends Component implements IsCompatibleWith {
     private String formFactor;
     private String interfaceConnector;
     private boolean isNvme;
+
+    public Storage() {
+    }
 
     public Storage(int id, double price, String manufacture, String model,
                    String serial, short capacity, String type, String formFactor,

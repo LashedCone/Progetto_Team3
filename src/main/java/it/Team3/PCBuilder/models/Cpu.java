@@ -1,19 +1,16 @@
 package it.Team3.PCBuilder.models;
 
 import it.Team3.PCBuilder.IsCompatibleWith;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
-@Data
 @Entity
-@Table(name = "Cpu")
+@Table(name = "cpu")
+@Data
 public class Cpu extends Component implements IsCompatibleWith {
-//    @Id
-//    @GeneratedValue
-//    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String manufacturer;
     private String part;
     private int coreCount;
@@ -25,10 +22,9 @@ public class Cpu extends Component implements IsCompatibleWith {
     private String integratedGraphics;
     private String maxMemory;
 
-    public Cpu(int id, double price, String manufacturer,
-               String part, int coreCount, String coreClock, String boostClock,
-               int tdpW, String series, String socket, String integratedGraphics, String maxMemory) {
+    public Cpu(int id, double price, int id1, String manufacturer, String part, int coreCount, String coreClock, String boostClock, int tdpW, String series, String socket, String integratedGraphics, String maxMemory) {
         super(id, price);
+        this.id = id1;
         this.manufacturer = manufacturer;
         this.part = part;
         this.coreCount = coreCount;
@@ -40,6 +36,26 @@ public class Cpu extends Component implements IsCompatibleWith {
         this.integratedGraphics = integratedGraphics;
         this.maxMemory = maxMemory;
     }
+
+    public Cpu() {
+    }
+
+    public Cpu(double price, String manufacturer,
+               String part, int coreCount, String coreClock, String boostClock,
+               int tdpW, String series, String socket, String integratedGraphics, String maxMemory) {
+        super(price);
+        this.manufacturer = manufacturer;
+        this.part = part;
+        this.coreCount = coreCount;
+        this.coreClock = coreClock;
+        this.boostClock = boostClock;
+        this.tdpW = tdpW;
+        this.series = series;
+        this.socket = socket;
+        this.integratedGraphics = integratedGraphics;
+        this.maxMemory = maxMemory;
+    }
+
     @Override
     public String toString() {
         return "Cpu details:" +

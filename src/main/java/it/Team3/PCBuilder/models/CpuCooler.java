@@ -11,10 +11,10 @@ import lombok.Data;
 @Entity
 @Table(name = "CpuCooler")
 public class CpuCooler extends Component implements IsCompatibleWith {
-//    @Id
-//    @GeneratedValue
-//    private int id;
-    String manufacture;
+  @Id
+   @GeneratedValue
+   private int id;
+    String manufacturer;
     String model;
     String partId;
     short minRPM;
@@ -24,9 +24,12 @@ public class CpuCooler extends Component implements IsCompatibleWith {
     String cpuSocket;
     boolean isWaterCooled;
 
-    public CpuCooler(int id, double price, String manufacture, String model, String partId, short minRPM, short maxRPM, byte noiseMin, byte noiseMax, String cpuSocket, boolean isWaterCooled) {
+    public CpuCooler() {
+    }
+
+    public CpuCooler(int id, double price, String manufacturer, String model, String partId, short minRPM, short maxRPM, byte noiseMin, byte noiseMax, String cpuSocket, boolean isWaterCooled) {
         super(id, price);
-        this.manufacture = manufacture;
+        this.manufacturer = manufacturer;
         this.model = model;
         this.partId = partId;
         this.minRPM = minRPM;
@@ -39,7 +42,7 @@ public class CpuCooler extends Component implements IsCompatibleWith {
     @Override
     public String toString() {
         return "Cpu cooler details: " +
-                "\nManufacture: " + manufacture +
+                "\nManufacture: " + manufacturer +
                 "\nModel: " + model +
                 "\nPart ID: " + partId +
                 "\nMin RPM: " + minRPM +

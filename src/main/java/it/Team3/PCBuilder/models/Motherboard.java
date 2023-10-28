@@ -11,9 +11,9 @@ import lombok.Data;
 @Entity
 @Table(name = "Motherboard")
 public class Motherboard extends Component implements IsCompatibleWith {
-//    @Id
-//    @GeneratedValue
-//    private int id;
+  @Id
+    @GeneratedValue
+    private int id;
     private String manufacturer;
     private String part;
     private String socket;
@@ -32,6 +32,9 @@ public class Motherboard extends Component implements IsCompatibleWith {
     private int sataPorts;
     private String onboardEthernet;
     private String wirelessNetworking;
+
+    public Motherboard() {
+    }
 
     public Motherboard(int id, double price, String manufacturer,
                        String part, String socket, String formFactor, String chipset,

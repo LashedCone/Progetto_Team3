@@ -11,9 +11,9 @@ import lombok.Data;
 @Entity
 @Table(name = "Power_supply")
 public class PowerSupply extends Component implements IsCompatibleWith {
-//    @Id
-//    @GeneratedValue
-//    private int id;
+  @Id
+   @GeneratedValue
+  private int id;
     String manufacturer;
     String model;
     String part;
@@ -31,6 +31,9 @@ public class PowerSupply extends Component implements IsCompatibleWith {
     byte pcie6;
     byte sata;
     byte molex4;
+
+    public PowerSupply() {
+    }
 
     public PowerSupply(int id, double price, String manufacturer,
                        String model, String part, String type, String efficiencyRating,

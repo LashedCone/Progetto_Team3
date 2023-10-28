@@ -11,9 +11,9 @@ import lombok.Data;
 @Entity
 @Table(name = "Ram")
 public class RAM extends Component implements IsCompatibleWith {
-//    @Id
-//    @GeneratedValue
-//    private int id;
+   @Id
+   @GeneratedValue
+   private int id;
     private String serialPart;
     private String ddrSpeed;
     private String ddrGen;
@@ -23,6 +23,9 @@ public class RAM extends Component implements IsCompatibleWith {
     private int casLatency;
     private double voltage;
     private String timing;
+
+    public RAM() {
+    }
 
     public RAM(int id, double price, String serialPart, String ddrSpeed, String ddrGen,
                String formFactor, int moduleCount, int capacityGb, int casLatency,

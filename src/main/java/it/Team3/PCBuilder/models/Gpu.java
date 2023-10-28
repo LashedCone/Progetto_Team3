@@ -11,9 +11,9 @@ import lombok.Data;
 @Entity
 @Table(name = "Gpu")
 public class Gpu extends Component implements IsCompatibleWith {
-//    @Id
-//    @GeneratedValue
-//    private int id;
+    @Id
+    @GeneratedValue
+    private int id;
     private String manufacturer;
     private String partNumber;
     private String chipset;
@@ -25,6 +25,9 @@ public class Gpu extends Component implements IsCompatibleWith {
     private String interfaceType;
     private int lengthMM;
     private int tdpWatt;
+
+    public Gpu() {
+    }
 
     public Gpu(int id, double price, String manufacturer,
                String partNumber, String chipset, int memorySizeGB,
@@ -43,6 +46,7 @@ public class Gpu extends Component implements IsCompatibleWith {
         this.lengthMM = lengthMM;
         this.tdpWatt = tdpWatt;
     }
+
     @Override
     public String toString() {
         return "Gpu details:" +

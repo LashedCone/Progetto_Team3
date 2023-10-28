@@ -9,11 +9,11 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Case_pc")
-public class Case extends Component implements IsCompatibleWith {
-//    @Id
-//    @GeneratedValue
-//    private int id;
+@Table(name = "computer_case")
+public class ComputerCase extends Component implements IsCompatibleWith {
+    @Id
+    @GeneratedValue
+    private int id;
     private String manufacturer;
     private String modelName;
     private String type;
@@ -25,12 +25,15 @@ public class Case extends Component implements IsCompatibleWith {
     private int internal25DriveBays;
     private int expansionSlots;
     private String radiatorSupport;
-    
-    public Case(int id, double price, String manufacturer,
-                String modelName, String type, String color, String frontPanelUSB,
-                String motherboardFormFactor, String maximumVideoCardLength,
-                int internal35DriveBays, int internal25DriveBays, int expansionSlots,
-                String radiatorSupport) {
+
+    public ComputerCase() {
+    }
+
+    public ComputerCase(int id, double price, String manufacturer,
+                        String modelName, String type, String color, String frontPanelUSB,
+                        String motherboardFormFactor, String maximumVideoCardLength,
+                        int internal35DriveBays, int internal25DriveBays, int expansionSlots,
+                        String radiatorSupport) {
         super(id, price);
         this.manufacturer = manufacturer;
         this.modelName = modelName;
@@ -47,7 +50,7 @@ public class Case extends Component implements IsCompatibleWith {
     
     @Override
     public String toString() {
-        return "Case details:" +
+        return "ComputerCase details:" +
                 "\nManufacturer: " + manufacturer +
                 "\nModel Name: " + modelName +
                 "\nType: " + type +
