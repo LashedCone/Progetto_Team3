@@ -1,10 +1,7 @@
 package it.Team3.PCBuilder.models;
 
 import it.Team3.PCBuilder.IsCompatibleWith;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -12,7 +9,7 @@ import lombok.Data;
 @Table(name = "computer_case")
 public class ComputerCase extends Component implements IsCompatibleWith {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String manufacturer;
     private String modelName;
@@ -47,7 +44,7 @@ public class ComputerCase extends Component implements IsCompatibleWith {
         this.expansionSlots = expansionSlots;
         this.radiatorSupport = radiatorSupport;
     }
-    
+
     @Override
     public String toString() {
         return "ComputerCase details:" +

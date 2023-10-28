@@ -7,9 +7,9 @@ import lombok.Data;
 @Entity
 @Table(name = "build_computer_table")
 
-public class Build_Computer_Table {
+public class BuildComputer {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne
     @JoinColumn(name = "users_username")
@@ -39,7 +39,7 @@ public class Build_Computer_Table {
     @JoinColumn(name = "powerSupply_id")
     private PowerSupply powerSupply;
 
-    public Build_Computer_Table(int id, Users username, Cpu cpu, CpuCooler cpuCooler, Motherboard motherboard, RAM ram, Storage storage, Gpu gpu, ComputerCase computerCase, PowerSupply powerSupply) {
+    public BuildComputer(int id, Users username, Cpu cpu, CpuCooler cpuCooler, Motherboard motherboard, RAM ram, Storage storage, Gpu gpu, ComputerCase computerCase, PowerSupply powerSupply) {
         this.id = id;
         this.username = username;
         this.cpu = cpu;
@@ -52,11 +52,11 @@ public class Build_Computer_Table {
         this.powerSupply = powerSupply;
     }
 
-    public Build_Computer_Table(int id, Users username) {
+    public BuildComputer(int id, Users username) {
         this.id = id;
         this.username = username;
     }
 
-    public Build_Computer_Table() {
+    public BuildComputer() {
     }
 }

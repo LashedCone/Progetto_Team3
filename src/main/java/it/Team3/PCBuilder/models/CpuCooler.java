@@ -1,19 +1,16 @@
 package it.Team3.PCBuilder.models;
 
 import it.Team3.PCBuilder.IsCompatibleWith;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "CpuCooler")
 public class CpuCooler extends Component implements IsCompatibleWith {
-  @Id
-   @GeneratedValue
-   private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     String manufacturer;
     String model;
     String partId;
@@ -39,6 +36,7 @@ public class CpuCooler extends Component implements IsCompatibleWith {
         this.cpuSocket = cpuSocket;
         this.isWaterCooled = isWaterCooled;
     }
+
     @Override
     public String toString() {
         return "Cpu cooler details: " +

@@ -1,19 +1,16 @@
 package it.Team3.PCBuilder.models;
 
 import it.Team3.PCBuilder.IsCompatibleWith;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "Power_supply")
 public class PowerSupply extends Component implements IsCompatibleWith {
-  @Id
-   @GeneratedValue
-  private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     String manufacturer;
     String model;
     String part;
@@ -59,6 +56,7 @@ public class PowerSupply extends Component implements IsCompatibleWith {
         this.sata = sata;
         this.molex4 = molex4;
     }
+
     @Override
     public String toString() {
         return "PowerSupply details:\n\n" +

@@ -1,19 +1,16 @@
 package it.Team3.PCBuilder.models;
 
 import it.Team3.PCBuilder.IsCompatibleWith;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "Ram")
 public class RAM extends Component implements IsCompatibleWith {
-   @Id
-   @GeneratedValue
-   private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String serialPart;
     private String ddrSpeed;
     private String ddrGen;
@@ -41,6 +38,7 @@ public class RAM extends Component implements IsCompatibleWith {
         this.voltage = voltage;
         this.timing = timing;
     }
+
     @Override
     public String toString() {
         return "RAM details:\n\nPart: " + serialPart +

@@ -1,18 +1,15 @@
 package it.Team3.PCBuilder.models;
 
 import it.Team3.PCBuilder.IsCompatibleWith;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "Motherboard")
 public class Motherboard extends Component implements IsCompatibleWith {
-  @Id
-    @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String manufacturer;
     private String part;
@@ -62,6 +59,7 @@ public class Motherboard extends Component implements IsCompatibleWith {
         this.onboardEthernet = onboardEthernet;
         this.wirelessNetworking = wirelessNetworking;
     }
+
     @Override
     public String toString() {
         return "\nMotherboard details:" +
