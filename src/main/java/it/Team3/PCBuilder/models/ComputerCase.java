@@ -45,6 +45,10 @@ public class ComputerCase extends Component implements IsCompatibleWith {
         this.radiatorSupport = radiatorSupport;
     }
 
+    public ComputerCase(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "ComputerCase details:" +

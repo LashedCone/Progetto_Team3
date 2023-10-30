@@ -57,6 +57,10 @@ public class PowerSupply extends Component implements IsCompatibleWith {
         this.molex4 = molex4;
     }
 
+    public PowerSupply(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "PowerSupply details:\n\n" +

@@ -56,6 +56,10 @@ public class Cpu extends Component implements IsCompatibleWith {
         this.maxMemory = maxMemory;
     }
 
+    public Cpu(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Cpu details:" +

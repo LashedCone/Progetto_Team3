@@ -39,6 +39,10 @@ public class RAM extends Component implements IsCompatibleWith {
         this.timing = timing;
     }
 
+    public RAM(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "RAM details:\n\nPart: " + serialPart +

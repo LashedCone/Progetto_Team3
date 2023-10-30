@@ -60,6 +60,10 @@ public class Motherboard extends Component implements IsCompatibleWith {
         this.wirelessNetworking = wirelessNetworking;
     }
 
+    public Motherboard(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "\nMotherboard details:" +

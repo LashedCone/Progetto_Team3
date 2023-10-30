@@ -1,4 +1,4 @@
 package it.Team3.PCBuilder.services;
 
-public class CaseService {
+public class ComputerCaseService {
 }

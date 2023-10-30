@@ -44,6 +44,10 @@ public class Gpu extends Component implements IsCompatibleWith {
         this.tdpWatt = tdpWatt;
     }
 
+    public Gpu(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Gpu details:" +

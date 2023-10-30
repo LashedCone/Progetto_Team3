@@ -37,6 +37,10 @@ public class CpuCooler extends Component implements IsCompatibleWith {
         this.isWaterCooled = isWaterCooled;
     }
 
+    public CpuCooler(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Cpu cooler details: " +

@@ -37,6 +37,10 @@ public class Storage extends Component implements IsCompatibleWith {
         this.isNvme = isNvme;
     }
 
+    public Storage(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Storage details:" +
