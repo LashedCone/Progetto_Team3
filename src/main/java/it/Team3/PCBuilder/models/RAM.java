@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Ram")
+@Table(name = "ram")
 public class RAM extends Component implements IsCompatibleWith {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

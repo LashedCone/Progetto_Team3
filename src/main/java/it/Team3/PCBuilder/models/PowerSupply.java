@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Power_supply")
+@Table(name = "power_supply")
 public class PowerSupply extends Component implements IsCompatibleWith {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

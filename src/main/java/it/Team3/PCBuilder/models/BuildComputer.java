@@ -33,10 +33,10 @@ public class BuildComputer {
     @JoinColumn(name = "gpu_id")
     private Gpu gpu;
     @ManyToOne
-    @JoinColumn(name = "computerCase_id")
+    @JoinColumn(name = "computer_case_id")
     private ComputerCase computerCase;
     @ManyToOne
-    @JoinColumn(name = "powerSupply_id")
+    @JoinColumn(name = "power_supply_id")
     private PowerSupply powerSupply;
 
     public BuildComputer(int id, Users username, Cpu cpu, CpuCooler cpuCooler, Motherboard motherboard, RAM ram, Storage storage, Gpu gpu, ComputerCase computerCase, PowerSupply powerSupply) {

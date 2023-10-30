@@ -37,9 +37,6 @@ public class Cpu extends Component implements IsCompatibleWith {
         this.maxMemory = maxMemory;
     }
 
-    public Cpu() {
-    }
-
     public Cpu(double price, String manufacturer,
                String part, int coreCount, String coreClock, String boostClock,
                int tdpW, String series, String socket, String integratedGraphics, String maxMemory) {
