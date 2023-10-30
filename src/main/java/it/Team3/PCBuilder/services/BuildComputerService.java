@@ -1,6 +1,7 @@
 package it.Team3.PCBuilder.services;
 
 import it.Team3.PCBuilder.models.BuildComputer;
+import it.Team3.PCBuilder.models.BuildComputerDTO;
 import it.Team3.PCBuilder.models.User;
 import it.Team3.PCBuilder.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,13 +94,22 @@ public class BuildComputerService {
         return buildComputerRepository.save(build);
     }
 
-    public BuildComputer createBuildWithComponents(BuildComputer build, String username) throws Exception {
-        Optional<User> userOptional=userRepository.findByUsername(username);
-        if(userOptional.isEmpty()){
+    public BuildComputer createBuildWithComponents(BuildComputerDTO partsId, String username) throws Exception {
+        Optional<User> userOptional = userRepository.findByUsername(username);
+        if (userOptional.isEmpty()) {
             throw new Exception("User not found:" + username);
         }
-        User user=userOptional.get();
+        User user = userOptional.get();
+        BuildComputer build = new BuildComputer();
         build.setUser(user);
+        build.setCpu(cpuRepository.findById(partsId.getCpuId()).orElse(null));
+        build.setCpuCooler(cpuCoolerRepository.findById(partsId.getCpuCoolerId()).orElse(null));
+        build.setMotherboard(motherboardRepository.findById(partsId.getMotherboardId()).orElse(null));
+        build.setRam(ramRepository.findById(partsId.getRamId()).orElse(null));
+        build.setStorage(storageRepository.findById(partsId.getStorageId()).orElse(null));
+        build.setGpu(gpuRepository.findById(partsId.getGpuId()).orElse(null));
+        build.setPowerSupply(powerSupplyRepository.findById(partsId.getPowerSupplyId()).orElse(null));
+        build.setComputerCase(computerCaseRepository.findById(partsId.getComputerCaseId()).orElse(null));
         buildComputerRepository.save(build);
         user.getBuilds().add(build);
         userRepository.save(user);

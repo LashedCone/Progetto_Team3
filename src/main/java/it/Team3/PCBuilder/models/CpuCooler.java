@@ -2,9 +2,7 @@ package it.Team3.PCBuilder.models;
 
 import it.Team3.PCBuilder.IsCompatibleWith;
 import jakarta.persistence.*;
-import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "CpuCooler")
 public class CpuCooler extends Component implements IsCompatibleWith {
@@ -37,8 +35,84 @@ public class CpuCooler extends Component implements IsCompatibleWith {
         this.isWaterCooled = isWaterCooled;
     }
 
-    public CpuCooler(int id) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getPartId() {
+        return partId;
+    }
+
+    public void setPartId(String partId) {
+        this.partId = partId;
+    }
+
+    public short getMinRPM() {
+        return minRPM;
+    }
+
+    public void setMinRPM(short minRPM) {
+        this.minRPM = minRPM;
+    }
+
+    public short getMaxRPM() {
+        return maxRPM;
+    }
+
+    public void setMaxRPM(short maxRPM) {
+        this.maxRPM = maxRPM;
+    }
+
+    public byte getNoiseMin() {
+        return noiseMin;
+    }
+
+    public void setNoiseMin(byte noiseMin) {
+        this.noiseMin = noiseMin;
+    }
+
+    public byte getNoiseMax() {
+        return noiseMax;
+    }
+
+    public void setNoiseMax(byte noiseMax) {
+        this.noiseMax = noiseMax;
+    }
+
+    public String getCpuSocket() {
+        return cpuSocket;
+    }
+
+    public void setCpuSocket(String cpuSocket) {
+        this.cpuSocket = cpuSocket;
+    }
+
+    public boolean isWaterCooled() {
+        return isWaterCooled;
+    }
+
+    public void setWaterCooled(boolean waterCooled) {
+        isWaterCooled = waterCooled;
     }
 
     @Override

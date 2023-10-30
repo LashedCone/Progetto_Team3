@@ -1,9 +1,7 @@
 package it.Team3.PCBuilder.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "build_computer_table")
 
@@ -61,6 +59,86 @@ public class BuildComputer {
     public BuildComputer() {
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Cpu getCpu() {
+        return cpu;
+    }
+
+    public void setCpu(Cpu cpu) {
+        this.cpu = cpu;
+    }
+
+    public CpuCooler getCpuCooler() {
+        return cpuCooler;
+    }
+
+    public void setCpuCooler(CpuCooler cpuCooler) {
+        this.cpuCooler = cpuCooler;
+    }
+
+    public Motherboard getMotherboard() {
+        return motherboard;
+    }
+
+    public void setMotherboard(Motherboard motherboard) {
+        this.motherboard = motherboard;
+    }
+
+    public RAM getRam() {
+        return ram;
+    }
+
+    public void setRam(RAM ram) {
+        this.ram = ram;
+    }
+
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public void setStorage(Storage storage) {
+        this.storage = storage;
+    }
+
+    public Gpu getGpu() {
+        return gpu;
+    }
+
+    public void setGpu(Gpu gpu) {
+        this.gpu = gpu;
+    }
+
+    public ComputerCase getComputerCase() {
+        return computerCase;
+    }
+
+    public void setComputerCase(ComputerCase computerCase) {
+        this.computerCase = computerCase;
+    }
+
+    public PowerSupply getPowerSupply() {
+        return powerSupply;
+    }
+
+    public void setPowerSupply(PowerSupply powerSupply) {
+        this.powerSupply = powerSupply;
+    }
+
     @Override
     public String toString() {
         return "BuildComputer{" +
@@ -75,77 +153,5 @@ public class BuildComputer {
                 ", computerCase=" + computerCase +
                 ", powerSupply=" + powerSupply +
                 '}';
-    }
-
-    public void setUsername(String username) {
-        this.user = new User(username);
-    }
-
-    public void setCpu(int id) {
-        this.cpu = new Cpu(id);
-    }
-
-    public void setCpu(Cpu cpu) {
-        this.cpu = cpu;
-    }
-
-    public void setUsername(User username) {
-        this.user = username;
-    }
-
-    public void setPowerSupply(int id) {
-        this.powerSupply = new PowerSupply(id);
-    }
-
-    public void setCpuCooler(int id) {
-        this.cpuCooler = new CpuCooler(id);
-    }
-
-    public void setMotherboard(int id) {
-        this.motherboard = new Motherboard(id);
-    }
-
-    public void setRam(int id) {
-        this.ram = new RAM(id);
-    }
-
-    public void setStorage(int id) {
-        this.storage = new Storage(id);
-    }
-
-    public void setGpu(int id) {
-        this.gpu = new Gpu(id);
-    }
-
-    public void setComputerCase(int id) {
-        this.computerCase = new ComputerCase(id);
-    }
-
-    public void setCpuCooler(CpuCooler cpuCooler) {
-        this.cpuCooler = cpuCooler;
-    }
-
-    public void setStorage(Storage storage) {
-        this.storage = storage;
-    }
-
-    public void setRam(RAM ram) {
-        this.ram = ram;
-    }
-
-    public void setPowerSupply(PowerSupply powerSupply) {
-        this.powerSupply = powerSupply;
-    }
-
-    public void setMotherboard(Motherboard motherboard) {
-        this.motherboard = motherboard;
-    }
-
-    public void setGpu(Gpu gpu) {
-        this.gpu = gpu;
-    }
-
-    public void setComputerCase(ComputerCase computerCase) {
-        this.computerCase = computerCase;
     }
 }

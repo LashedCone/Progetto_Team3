@@ -2,9 +2,8 @@ package it.Team3.PCBuilder.models;
 
 import it.Team3.PCBuilder.IsCompatibleWith;
 import jakarta.persistence.*;
-import lombok.Data;
 
-@Data
+
 @Entity
 @Table(name = "Storage")
 public class Storage extends Component implements IsCompatibleWith {
@@ -37,8 +36,76 @@ public class Storage extends Component implements IsCompatibleWith {
         this.isNvme = isNvme;
     }
 
-    public Storage(int id) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getManufacture() {
+        return manufacture;
+    }
+
+    public void setManufacture(String manufacture) {
+        this.manufacture = manufacture;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getSerial() {
+        return serial;
+    }
+
+    public void setSerial(String serial) {
+        this.serial = serial;
+    }
+
+    public short getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(short capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getFormFactor() {
+        return formFactor;
+    }
+
+    public void setFormFactor(String formFactor) {
+        this.formFactor = formFactor;
+    }
+
+    public String getInterfaceConnector() {
+        return interfaceConnector;
+    }
+
+    public void setInterfaceConnector(String interfaceConnector) {
+        this.interfaceConnector = interfaceConnector;
+    }
+
+    public boolean isNvme() {
+        return isNvme;
+    }
+
+    public void setNvme(boolean nvme) {
+        isNvme = nvme;
     }
 
     @Override

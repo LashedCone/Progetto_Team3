@@ -29,7 +29,7 @@ public class GpuService {
     public Gpu updateCpu(int gpuId, Gpu updatedGpu) {
         Gpu existingGpu = gpuRepository.findById(gpuId).orElse(null);
         if (existingGpu != null) {
-            // Esegui l'aggiornamento dei campi solo se i valori nell'oggetto 'updatedGpu' non sono nulli
+
             if (updatedGpu.getManufacturer() != null) {
                 existingGpu.setManufacturer(updatedGpu.getManufacturer());
             }
@@ -69,11 +69,11 @@ public class GpuService {
         }
     }
 
-    public Iterable<Gpu> findByManufacturer(String manufacturer) {
+    public Optional<Gpu> findByManufacturer(String manufacturer) {
         return gpuRepository.findByManufacturer(manufacturer);
     }
 
-    public Iterable<Gpu> findByChipset(String chipset) {
+    public Optional<Gpu> findByChipset(String chipset) {
         return gpuRepository.findByChipset(chipset);
     }
 }

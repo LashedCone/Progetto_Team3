@@ -30,7 +30,7 @@ public class BuildComputerController {
     }
 
     @PostMapping("/create/{username}")
-    public ResponseEntity<?> createBuildWithComponent(@PathVariable String username, @RequestBody BuildComputer build) {
+    public ResponseEntity<?> createBuildWithComponent(@PathVariable String username, @RequestBody BuildComputerDTO build) {
         try {
             buildComputerService.createBuildWithComponents(build, username);
             return ResponseEntity.ok(build);
