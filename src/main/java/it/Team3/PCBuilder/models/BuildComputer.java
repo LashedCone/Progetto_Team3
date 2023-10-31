@@ -1,19 +1,18 @@
 package it.Team3.PCBuilder.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "build_computer_table")
+
 
 public class BuildComputer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne
-    @JoinColumn(name = "users_username")
-    private Users username;
+    @JoinColumn(name = "user_id")
+    private User user;
     @ManyToOne
     @JoinColumn(name = "cpu_id")
     private Cpu cpu;
@@ -39,9 +38,9 @@ public class BuildComputer {
     @JoinColumn(name = "power_supply_id")
     private PowerSupply powerSupply;
 
-    public BuildComputer(int id, Users username, Cpu cpu, CpuCooler cpuCooler, Motherboard motherboard, RAM ram, Storage storage, Gpu gpu, ComputerCase computerCase, PowerSupply powerSupply) {
+    public BuildComputer(int id, User username, Cpu cpu, CpuCooler cpuCooler, Motherboard motherboard, RAM ram, Storage storage, Gpu gpu, ComputerCase computerCase, PowerSupply powerSupply) {
         this.id = id;
-        this.username = username;
+        this.user = username;
         this.cpu = cpu;
         this.cpuCooler = cpuCooler;
         this.motherboard = motherboard;
@@ -52,11 +51,105 @@ public class BuildComputer {
         this.powerSupply = powerSupply;
     }
 
-    public BuildComputer(int id, Users username) {
+    public BuildComputer(int id, User username) {
         this.id = id;
-        this.username = username;
+        this.user = username;
     }
 
     public BuildComputer() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Cpu getCpu() {
+        return cpu;
+    }
+
+    public void setCpu(Cpu cpu) {
+        this.cpu = cpu;
+    }
+
+    public CpuCooler getCpuCooler() {
+        return cpuCooler;
+    }
+
+    public void setCpuCooler(CpuCooler cpuCooler) {
+        this.cpuCooler = cpuCooler;
+    }
+
+    public Motherboard getMotherboard() {
+        return motherboard;
+    }
+
+    public void setMotherboard(Motherboard motherboard) {
+        this.motherboard = motherboard;
+    }
+
+    public RAM getRam() {
+        return ram;
+    }
+
+    public void setRam(RAM ram) {
+        this.ram = ram;
+    }
+
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public void setStorage(Storage storage) {
+        this.storage = storage;
+    }
+
+    public Gpu getGpu() {
+        return gpu;
+    }
+
+    public void setGpu(Gpu gpu) {
+        this.gpu = gpu;
+    }
+
+    public ComputerCase getComputerCase() {
+        return computerCase;
+    }
+
+    public void setComputerCase(ComputerCase computerCase) {
+        this.computerCase = computerCase;
+    }
+
+    public PowerSupply getPowerSupply() {
+        return powerSupply;
+    }
+
+    public void setPowerSupply(PowerSupply powerSupply) {
+        this.powerSupply = powerSupply;
+    }
+    
+    @Override
+    public String toString() {
+        return "Build details:\nID:" + id +
+                "\nUser:" + user +
+                "\nCPU:" + cpu +
+                "\nCPU cooler:" + cpuCooler +
+                "\nMotherboard:" + motherboard +
+                "\nRAM:" + ram +
+                "\nStorage:" + storage +
+                "\nGPU:" + gpu +
+                "\nComputer case:" + computerCase +
+                "\nPower supply:" + powerSupply;
     }
 }

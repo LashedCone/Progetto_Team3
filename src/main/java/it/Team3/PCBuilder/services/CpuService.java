@@ -40,9 +40,6 @@ public class CpuService {
             if (updatedCpu.getId() != 0) {
                 existingCpu.setId(updatedCpu.getId());
             }
-            if (updatedCpu.getPrice() != 0) {
-                existingCpu.setPrice(updatedCpu.getPrice());
-            }
             if (updatedCpu.getCoreCount() != 0) {
                 existingCpu.setCoreCount(updatedCpu.getCoreCount());
             }
@@ -74,11 +71,11 @@ public class CpuService {
     }
 
 
-    public Iterable<Cpu> findByManufacturer(String manufacturer) {
+    public Optional<Cpu> findByManufacturer(String manufacturer) {
         return cpuRepository.findByManufacturer(manufacturer);
     }
 
-    public Iterable<Cpu> findByPart(String part) {
+    public Optional<Cpu> findByPart(String part) {
         return cpuRepository.findByPart(part);
     }
 }

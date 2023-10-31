@@ -2,12 +2,10 @@ package it.Team3.PCBuilder.models;
 
 import it.Team3.PCBuilder.IsCompatibleWith;
 import jakarta.persistence.*;
-import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "motherboard")
-public class Motherboard extends Component implements IsCompatibleWith {
+public class Motherboard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -30,16 +28,15 @@ public class Motherboard extends Component implements IsCompatibleWith {
     private String onboardEthernet;
     private String wirelessNetworking;
 
-    public Motherboard() {
-    }
+    public Motherboard() {}
 
-    public Motherboard(int id, double price, String manufacturer,
+    public Motherboard(int id, String manufacturer,
                        String part, String socket, String formFactor, String chipset,
                        int memoryCapacity, String memoryType, int memorySlots,
                        String memorySpeed, int pcieX16Slots, int pcieX8Slots,
                        int pcieX4Slots, int pcieX1Slots, int pciSlots, String m2Slots,
                        int sataPorts, String onboardEthernet, String wirelessNetworking) {
-        super(id, price);
+        this.id = id;
         this.manufacturer = manufacturer;
         this.part = part;
         this.socket = socket;
@@ -57,6 +54,158 @@ public class Motherboard extends Component implements IsCompatibleWith {
         this.m2Slots = m2Slots;
         this.sataPorts = sataPorts;
         this.onboardEthernet = onboardEthernet;
+        this.wirelessNetworking = wirelessNetworking;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public String getPart() {
+        return part;
+    }
+
+    public void setPart(String part) {
+        this.part = part;
+    }
+
+    public String getSocket() {
+        return socket;
+    }
+
+    public void setSocket(String socket) {
+        this.socket = socket;
+    }
+
+    public String getFormFactor() {
+        return formFactor;
+    }
+
+    public void setFormFactor(String formFactor) {
+        this.formFactor = formFactor;
+    }
+
+    public String getChipset() {
+        return chipset;
+    }
+
+    public void setChipset(String chipset) {
+        this.chipset = chipset;
+    }
+
+    public int getMemoryCapacity() {
+        return memoryCapacity;
+    }
+
+    public void setMemoryCapacity(int memoryCapacity) {
+        this.memoryCapacity = memoryCapacity;
+    }
+
+    public String getMemoryType() {
+        return memoryType;
+    }
+
+    public void setMemoryType(String memoryType) {
+        this.memoryType = memoryType;
+    }
+
+    public int getMemorySlots() {
+        return memorySlots;
+    }
+
+    public void setMemorySlots(int memorySlots) {
+        this.memorySlots = memorySlots;
+    }
+
+    public String getMemorySpeed() {
+        return memorySpeed;
+    }
+
+    public void setMemorySpeed(String memorySpeed) {
+        this.memorySpeed = memorySpeed;
+    }
+
+    public int getPcieX16Slots() {
+        return pcieX16Slots;
+    }
+
+    public void setPcieX16Slots(int pcieX16Slots) {
+        this.pcieX16Slots = pcieX16Slots;
+    }
+
+    public int getPcieX8Slots() {
+        return pcieX8Slots;
+    }
+
+    public void setPcieX8Slots(int pcieX8Slots) {
+        this.pcieX8Slots = pcieX8Slots;
+    }
+
+    public int getPcieX4Slots() {
+        return pcieX4Slots;
+    }
+
+    public void setPcieX4Slots(int pcieX4Slots) {
+        this.pcieX4Slots = pcieX4Slots;
+    }
+
+    public int getPcieX1Slots() {
+        return pcieX1Slots;
+    }
+
+    public void setPcieX1Slots(int pcieX1Slots) {
+        this.pcieX1Slots = pcieX1Slots;
+    }
+
+    public int getPciSlots() {
+        return pciSlots;
+    }
+
+    public void setPciSlots(int pciSlots) {
+        this.pciSlots = pciSlots;
+    }
+
+    public String getM2Slots() {
+        return m2Slots;
+    }
+
+    public void setM2Slots(String m2Slots) {
+        this.m2Slots = m2Slots;
+    }
+
+    public int getSataPorts() {
+        return sataPorts;
+    }
+
+    public void setSataPorts(int sataPorts) {
+        this.sataPorts = sataPorts;
+    }
+
+    public String getOnboardEthernet() {
+        return onboardEthernet;
+    }
+
+    public void setOnboardEthernet(String onboardEthernet) {
+        this.onboardEthernet = onboardEthernet;
+    }
+
+    public String getWirelessNetworking() {
+        return wirelessNetworking;
+    }
+
+    public void setWirelessNetworking(String wirelessNetworking) {
         this.wirelessNetworking = wirelessNetworking;
     }
 
@@ -83,12 +232,12 @@ public class Motherboard extends Component implements IsCompatibleWith {
                 "\nWireless networking: " + wirelessNetworking;
     }
 
-    @Override
-    public boolean isCompatibleWith(Component component) {
-        if (component instanceof Cpu) {
-            Cpu cpu = (Cpu) component;
-            return this.socket.equals(cpu.getSocket());
-        }
-        return false;
-    }
+//    @Override
+//    public boolean isCompatibleWith(Component component) {
+//        if (component instanceof Cpu) {
+//            Cpu cpu = (Cpu) component;
+//            return this.socket.equals(cpu.getSocket());
+//        }
+//        return false;
+//    }
 }
