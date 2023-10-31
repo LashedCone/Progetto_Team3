@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/buildcomputer")
 public class BuildComputerController {
@@ -43,9 +41,12 @@ public class BuildComputerController {
         }
     }
 
-    @PutMapping("/update/{buildId}")
-    public ResponseEntity<BuildComputer> updateBuild(@PathVariable int buildId, @RequestBody BuildComputerDTO updatedBuild) {
-        BuildComputer modifiedBuild = buildComputerService.updateBuild(buildId, updatedBuild);
+    @PutMapping("/update/{username}/{buildId}")
+    public ResponseEntity<?> updateBuild(@PathVariable String username, @PathVariable int buildId, @RequestBody BuildComputerDTO updatedBuild) {
+        BuildComputer modifiedBuild = buildComputerService.updateBuild(username, buildId, updatedBuild);
+        if (modifiedBuild == null) {
+            return ResponseEntity.status(404).body("not found");
+        }
         return ResponseEntity.ok(modifiedBuild);
     }
 

@@ -5,6 +5,7 @@ import it.Team3.PCBuilder.models.BuildComputerDTO;
 import it.Team3.PCBuilder.models.User;
 import it.Team3.PCBuilder.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -46,8 +47,12 @@ public class BuildComputerService {
         buildComputerRepository.deleteById(id);
     }
 
-    public BuildComputer updateBuild(int buildId, BuildComputerDTO updatedBuild) {
+    public BuildComputer updateBuild(String username, int buildId, BuildComputerDTO updatedBuild) {
+        Optional<User> userOptional = userRepository.findByUsername(username);
         BuildComputer existingBuild = buildComputerRepository.findById(buildId).orElse(null);
+        if (!existingBuild.getUser().equals(userOptional.get())) {
+            return null;
+        }
         if (existingBuild != null) {
 
             if (updatedBuild.getComputerCaseId() != 0) {
