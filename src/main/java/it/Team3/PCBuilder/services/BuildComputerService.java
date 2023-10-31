@@ -7,8 +7,6 @@ import it.Team3.PCBuilder.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -93,7 +91,7 @@ public class BuildComputerService {
     public BuildComputer createBuildWithComponentsId(String username, BuildComputerDTO partsId) throws Exception {
         Optional<User> userOptional = userRepository.findByUsername(username);
         if (userOptional.isEmpty()) {
-            throw new Exception("User not found:" + username);
+            throw new Exception(String.format("User not found: %s", username));
         }
         User user = userOptional.get();
         BuildComputer build = new BuildComputer();

@@ -4,8 +4,8 @@ import it.Team3.PCBuilder.IsCompatibleWith;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Motherboard")
-public class Motherboard extends Component implements IsCompatibleWith {
+@Table(name = "motherboard")
+public class Motherboard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -28,16 +28,15 @@ public class Motherboard extends Component implements IsCompatibleWith {
     private String onboardEthernet;
     private String wirelessNetworking;
 
-    public Motherboard() {
-    }
+    public Motherboard() {}
 
-    public Motherboard(int id, double price, String manufacturer,
+    public Motherboard(int id, String manufacturer,
                        String part, String socket, String formFactor, String chipset,
                        int memoryCapacity, String memoryType, int memorySlots,
                        String memorySpeed, int pcieX16Slots, int pcieX8Slots,
                        int pcieX4Slots, int pcieX1Slots, int pciSlots, String m2Slots,
                        int sataPorts, String onboardEthernet, String wirelessNetworking) {
-        super(id, price);
+        this.id = id;
         this.manufacturer = manufacturer;
         this.part = part;
         this.socket = socket;
@@ -233,12 +232,12 @@ public class Motherboard extends Component implements IsCompatibleWith {
                 "\nWireless networking: " + wirelessNetworking;
     }
 
-    @Override
-    public boolean isCompatibleWith(Component component) {
-        if (component instanceof Cpu) {
-            Cpu cpu = (Cpu) component;
-            return this.socket.equals(cpu.getSocket());
-        }
-        return false;
-    }
+//    @Override
+//    public boolean isCompatibleWith(Component component) {
+//        if (component instanceof Cpu) {
+//            Cpu cpu = (Cpu) component;
+//            return this.socket.equals(cpu.getSocket());
+//        }
+//        return false;
+//    }
 }

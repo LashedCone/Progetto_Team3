@@ -4,8 +4,8 @@ import it.Team3.PCBuilder.IsCompatibleWith;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "CpuCooler")
-public class CpuCooler extends Component implements IsCompatibleWith {
+@Table(name = "cpu_cooler")
+public class CpuCooler {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,11 +19,10 @@ public class CpuCooler extends Component implements IsCompatibleWith {
     String cpuSocket;
     boolean isWaterCooled;
 
-    public CpuCooler() {
-    }
+    public CpuCooler() {}
 
-    public CpuCooler(int id, double price, String manufacturer, String model, String partId, short minRPM, short maxRPM, byte noiseMin, byte noiseMax, String cpuSocket, boolean isWaterCooled) {
-        super(id, price);
+    public CpuCooler(int id, String manufacturer, String model, String partId, short minRPM, short maxRPM, byte noiseMin, byte noiseMax, String cpuSocket, boolean isWaterCooled) {
+        this.id = id;
         this.manufacturer = manufacturer;
         this.model = model;
         this.partId = partId;
@@ -129,12 +128,12 @@ public class CpuCooler extends Component implements IsCompatibleWith {
                 "\nWater cooled: " + isWaterCooled;
     }
 
-    @Override
-    public boolean isCompatibleWith(Component component) {
-        if (component instanceof Cpu) {
-            Cpu cpu = (Cpu) component;
-            return this.cpuSocket.contains(cpu.getSocket());
-        }
-        return false;
-    }
+//    @Override
+//    public boolean isCompatibleWith(Component component) {
+//        if (component instanceof Cpu) {
+//            Cpu cpu = (Cpu) component;
+//            return this.cpuSocket.contains(cpu.getSocket());
+//        }
+//        return false;
+//    }
 }

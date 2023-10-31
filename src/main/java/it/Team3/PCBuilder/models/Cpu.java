@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "cpu")
-public class Cpu extends Component implements IsCompatibleWith {
+public class Cpu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,29 +19,13 @@ public class Cpu extends Component implements IsCompatibleWith {
     private String socket;
     private String integratedGraphics;
     private String maxMemory;
+    
+    public Cpu() {}
 
-    public Cpu(int id, double price, int id1, String manufacturer, String part, int coreCount, String coreClock, String boostClock, int tdpW, String series, String socket, String integratedGraphics, String maxMemory) {
-        super(id, price);
-        this.id = id1;
-        this.manufacturer = manufacturer;
-        this.part = part;
-        this.coreCount = coreCount;
-        this.coreClock = coreClock;
-        this.boostClock = boostClock;
-        this.tdpW = tdpW;
-        this.series = series;
-        this.socket = socket;
-        this.integratedGraphics = integratedGraphics;
-        this.maxMemory = maxMemory;
-    }
-
-    public Cpu() {
-    }
-
-    public Cpu(double price, String manufacturer,
+    public Cpu(int id, String manufacturer,
                String part, int coreCount, String coreClock, String boostClock,
                int tdpW, String series, String socket, String integratedGraphics, String maxMemory) {
-        super(price);
+        this.id = id;
         this.manufacturer = manufacturer;
         this.part = part;
         this.coreCount = coreCount;
@@ -54,12 +38,12 @@ public class Cpu extends Component implements IsCompatibleWith {
         this.maxMemory = maxMemory;
     }
 
-    @Override
+
     public int getId() {
         return id;
     }
 
-    @Override
+
     public void setId(int id) {
         this.id = id;
     }
@@ -159,12 +143,12 @@ public class Cpu extends Component implements IsCompatibleWith {
                 "\nMax Memory: " + maxMemory;
     }
 
-    @Override
-    public boolean isCompatibleWith(Component component) {
-        if (component instanceof Motherboard) {
-            Motherboard motherboard = (Motherboard) component;
-            return this.socket.equals(motherboard.getSocket());
-        }
-        return false;
-    }
+//    @Override
+//    public boolean isCompatibleWith(Component component) {
+//        if (component instanceof Motherboard) {
+//            Motherboard motherboard = (Motherboard) component;
+//            return this.socket.equals(motherboard.getSocket());
+//        }
+//        return false;
+//    }
 }

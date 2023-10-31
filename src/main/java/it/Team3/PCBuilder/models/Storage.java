@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "Storage")
-public class Storage extends Component implements IsCompatibleWith {
+@Table(name = "storage")
+public class Storage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -22,10 +22,10 @@ public class Storage extends Component implements IsCompatibleWith {
     public Storage() {
     }
 
-    public Storage(int id, double price, String manufacture, String model,
+    public Storage(int id, String manufacture, String model,
                    String serial, short capacity, String type, String formFactor,
                    String interfaceConnector, boolean isNvme) {
-        super(id, price);
+        this.id = id;
         this.manufacture = manufacture;
         this.model = model;
         this.serial = serial;
@@ -121,8 +121,8 @@ public class Storage extends Component implements IsCompatibleWith {
                 "\nIs nvme=" + isNvme;
     }
 
-    @Override
-    public boolean isCompatibleWith(Component component) {
-        return false;
-    }
+//    @Override
+//    public boolean isCompatibleWith(Component component) {
+//        return false;
+//    }
 }

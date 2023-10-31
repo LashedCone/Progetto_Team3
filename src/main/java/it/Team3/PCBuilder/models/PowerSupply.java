@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "Power_supply")
-public class PowerSupply extends Component implements IsCompatibleWith {
+@Table(name = "power_supply")
+public class PowerSupply {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -31,12 +31,12 @@ public class PowerSupply extends Component implements IsCompatibleWith {
     public PowerSupply() {
     }
 
-    public PowerSupply(int id, double price, String manufacturer,
+    public PowerSupply(int id, String manufacturer,
                        String model, String part, String type, String efficiencyRating,
                        short wattage, boolean modular, String color, byte atx4PinConnectors,
                        byte eps8PinConnectors, byte pcie12_4, byte pcie12, byte pcie8,
                        byte pcie6_2, byte pcie6, byte sata, byte molex4) {
-        super(id, price);
+        this.id = id;
         this.manufacturer = manufacturer;
         this.model = model;
         this.part = part;
@@ -222,8 +222,8 @@ public class PowerSupply extends Component implements IsCompatibleWith {
                 "\nMolex 4-Pin Connectors: " + molex4;
     }
 
-    @Override
-    public boolean isCompatibleWith(Component component) {
-        return false;
-    }
+//    @Override
+//    public boolean isCompatibleWith(Component component) {
+//        return false;
+//    }
 }

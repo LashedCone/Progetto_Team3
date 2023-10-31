@@ -4,8 +4,8 @@ import it.Team3.PCBuilder.IsCompatibleWith;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Gpu")
-public class Gpu extends Component implements IsCompatibleWith {
+@Table(name = "gpu")
+public class Gpu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -21,14 +21,13 @@ public class Gpu extends Component implements IsCompatibleWith {
     private int lengthMM;
     private int tdpWatt;
 
-    public Gpu() {
-    }
+    public Gpu() {}
 
-    public Gpu(int id, double price, String manufacturer,
+    public Gpu(int id, String manufacturer,
                String partNumber, String chipset, int memorySizeGB,
                String memoryType, int coreClockMHz, int boostClockMHz,
                int effectiveMemoryClockMHz, String interfaceType, int lengthMM, int tdpWatt) {
-        super(id, price);
+        this.id = id;
         this.manufacturer = manufacturer;
         this.partNumber = partNumber;
         this.chipset = chipset;
@@ -154,8 +153,8 @@ public class Gpu extends Component implements IsCompatibleWith {
                 "\nTDP (Watt): " + tdpWatt + "\n";
     }
 
-    @Override
-    public boolean isCompatibleWith(Component component) {
-        return false;
-    }
+//    @Override
+//    public boolean isCompatibleWith(Component component) {
+//        return false;
+//    }
 }

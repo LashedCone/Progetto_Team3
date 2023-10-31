@@ -40,8 +40,7 @@ public class User {
         this.password = password;
     }
 
-    public User() {
-    }
+    public User() {}
 
     public User(String username) {
         this.username = username;
@@ -86,11 +85,13 @@ public class User {
     public void setBuilds(Set<BuildComputer> builds) {
         this.builds = builds;
     }
-
+    
     @Override
     public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                '}';
+        return "User details:" +
+                "\nId: " + id +
+                "\nUsername: " + username +
+                "\nEmail: " + email +
+                "\nPassword: " + password;
     }
 }

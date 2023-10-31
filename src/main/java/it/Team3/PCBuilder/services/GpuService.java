@@ -29,7 +29,6 @@ public class GpuService {
     public Gpu updateCpu(int gpuId, Gpu updatedGpu) {
         Gpu existingGpu = gpuRepository.findById(gpuId).orElse(null);
         if (existingGpu != null) {
-
             if (updatedGpu.getManufacturer() != null) {
                 existingGpu.setManufacturer(updatedGpu.getManufacturer());
             }

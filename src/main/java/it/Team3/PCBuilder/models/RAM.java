@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "Ram")
-public class RAM extends Component implements IsCompatibleWith {
+@Table(name = "ram")
+public class RAM {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -23,10 +23,10 @@ public class RAM extends Component implements IsCompatibleWith {
     public RAM() {
     }
 
-    public RAM(int id, double price, String serialPart, String ddrSpeed, String ddrGen,
+    public RAM(int id, String serialPart, String ddrSpeed, String ddrGen,
                String formFactor, int moduleCount, int capacityGb, int casLatency,
                double voltage, String timing) {
-        super(id, price);
+        this.id = id;
         this.serialPart = serialPart;
         this.ddrSpeed = ddrSpeed;
         this.ddrGen = ddrGen;
@@ -131,12 +131,12 @@ public class RAM extends Component implements IsCompatibleWith {
                 "\nTiming: " + timing;
     }
 
-    @Override
-    public boolean isCompatibleWith(Component component) {
-        if (component instanceof Motherboard) {
-            Motherboard motherboard = (Motherboard) component;
-            return this.ddrGen.equals(motherboard.getMemoryType());
-        }
-        return false;
-    }
+//    @Override
+//    public boolean isCompatibleWith(Component component) {
+//        if (component instanceof Motherboard) {
+//            Motherboard motherboard = (Motherboard) component;
+//            return this.ddrGen.equals(motherboard.getMemoryType());
+//        }
+//        return false;
+//    }
 }

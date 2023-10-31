@@ -32,10 +32,10 @@ public class BuildComputer {
     @JoinColumn(name = "gpu_id")
     private Gpu gpu;
     @ManyToOne
-    @JoinColumn(name = "computerCase_id")
+    @JoinColumn(name = "computer_case_id")
     private ComputerCase computerCase;
     @ManyToOne
-    @JoinColumn(name = "powerSupply_id")
+    @JoinColumn(name = "power_supply_id")
     private PowerSupply powerSupply;
 
     public BuildComputer(int id, User username, Cpu cpu, CpuCooler cpuCooler, Motherboard motherboard, RAM ram, Storage storage, Gpu gpu, ComputerCase computerCase, PowerSupply powerSupply) {
@@ -138,20 +138,18 @@ public class BuildComputer {
     public void setPowerSupply(PowerSupply powerSupply) {
         this.powerSupply = powerSupply;
     }
-
+    
     @Override
     public String toString() {
-        return "BuildComputer{" +
-                "id=" + id +
-                ", username=" + user.getUsername().toString() +
-                ", cpu=" + cpu +
-                ", cpuCooler=" + cpuCooler +
-                ", motherboard=" + motherboard +
-                ", ram=" + ram +
-                ", storage=" + storage +
-                ", gpu=" + gpu +
-                ", computerCase=" + computerCase +
-                ", powerSupply=" + powerSupply +
-                '}';
+        return "Build details:\nID:" + id +
+                "\nUser:" + user +
+                "\nCPU:" + cpu +
+                "\nCPU cooler:" + cpuCooler +
+                "\nMotherboard:" + motherboard +
+                "\nRAM:" + ram +
+                "\nStorage:" + storage +
+                "\nGPU:" + gpu +
+                "\nComputer case:" + computerCase +
+                "\nPower supply:" + powerSupply;
     }
 }

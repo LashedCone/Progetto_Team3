@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "computer_case")
-public class ComputerCase extends Component implements IsCompatibleWith {
+public class ComputerCase{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -24,12 +24,11 @@ public class ComputerCase extends Component implements IsCompatibleWith {
     public ComputerCase() {
     }
 
-    public ComputerCase(int id, double price, String manufacturer,
+    public ComputerCase(String manufacturer,
                         String modelName, String type, String color, String frontPanelUSB,
                         String motherboardFormFactor, String maximumVideoCardLength,
                         int internal35DriveBays, int internal25DriveBays, int expansionSlots,
                         String radiatorSupport) {
-        super(id, price);
         this.manufacturer = manufacturer;
         this.modelName = modelName;
         this.type = type;
@@ -43,12 +42,12 @@ public class ComputerCase extends Component implements IsCompatibleWith {
         this.radiatorSupport = radiatorSupport;
     }
 
-    @Override
+    
     public int getId() {
         return id;
     }
 
-    @Override
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -157,12 +156,12 @@ public class ComputerCase extends Component implements IsCompatibleWith {
                 "\nRadiator Support: " + radiatorSupport + "\n";
     }
 
-    @Override
-    public boolean isCompatibleWith(Component component) {
-        if (component instanceof Motherboard) {
-            Motherboard motherboard = (Motherboard) component;
-            return this.motherboardFormFactor.equals(motherboard.getFormFactor());
-        }
-        return false;
-    }
+//    @Override
+//    public boolean isCompatibleWith(Component component) {
+//        if (component instanceof Motherboard) {
+//            Motherboard motherboard = (Motherboard) component;
+//            return this.motherboardFormFactor.equals(motherboard.getFormFactor());
+//        }
+//        return false;
+//    }
 }
