@@ -71,7 +71,7 @@ public class CpuService {
     }
 
 
-    public Optional<Cpu> findByManufacturer(String manufacturer) {
+    public Iterable<Cpu> findByManufacturer(String manufacturer) {
         return cpuRepository.findByManufacturer(manufacturer);
     }
 

@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface BuildComputerRepository extends JpaRepository<BuildComputer, Integer> {
-    Optional<BuildComputer> findByUserUsername(String username);
+    Iterable<BuildComputer> findByUserUsername(String username);
 
 }

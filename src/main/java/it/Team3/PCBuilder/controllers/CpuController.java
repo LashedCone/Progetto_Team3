@@ -42,7 +42,7 @@ public class CpuController {
     }
 
     @GetMapping("/manufacturer/{manufacturer}")
-    public Optional<Cpu> findByManufacturer(@PathVariable String manufacturer) {
+    public Iterable<Cpu> findByManufacturer(@PathVariable String manufacturer) {
         return cpuService.findByManufacturer(manufacturer);
     }
 

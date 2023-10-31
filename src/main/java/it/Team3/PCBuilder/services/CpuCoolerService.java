@@ -63,11 +63,11 @@ public class CpuCoolerService {
     }
 
 
-    public Optional<CpuCooler> findByManufacturer(String cpuSocket) {
+    public Iterable<CpuCooler> findByManufacturer(String cpuSocket) {
         return cpuCoolerRepository.findBycpuSocket(cpuSocket);
     }
 
-    public Optional<CpuCooler> model(String model) {
+    public Iterable<CpuCooler> model(String model) {
         return cpuCoolerRepository.findBymodel(model);
     }
 }

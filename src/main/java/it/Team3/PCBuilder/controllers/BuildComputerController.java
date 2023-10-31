@@ -1,6 +1,7 @@
 package it.Team3.PCBuilder.controllers;
 
-import it.Team3.PCBuilder.models.*;
+import it.Team3.PCBuilder.models.BuildComputer;
+import it.Team3.PCBuilder.models.BuildComputerDTO;
 import it.Team3.PCBuilder.services.BuildComputerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,34 +16,37 @@ public class BuildComputerController {
     BuildComputerService buildComputerService;
 
     @GetMapping("/view")
-    public Iterable<BuildComputer> viewAllBuilds() {
+    public Iterable<BuildComputer> viewAll() {
         return buildComputerService.viewAllBuilds();
     }
 
     @GetMapping("/search/{id}")
-    public Optional<BuildComputer> searchBuild(@PathVariable int id) {
-        return buildComputerService.searchBuild(id);
+    public ResponseEntity<?> searchBuild(@PathVariable int id) {
+        if (buildComputerService.searchBuildById(id).isEmpty()) {
+            return ResponseEntity.status(404).body("Build not found at id: " + id);
+        }
+        return ResponseEntity.ok(buildComputerService.searchBuildById(id));
     }
 
     @GetMapping("search/user/{username}")
-    public Optional<BuildComputer> searchBuildByUsername(@PathVariable String username) {
+    public Iterable<BuildComputer> searchBuildByUsername(@PathVariable String username) {
         return buildComputerService.searchBuildByUsername(username);
     }
 
     @PostMapping("/create/{username}")
     public ResponseEntity<?> createBuildWithComponent(@PathVariable String username, @RequestBody BuildComputerDTO build) {
         try {
-            buildComputerService.createBuildWithComponents(build, username);
+            buildComputerService.createBuildWithComponentsId(username, build);
             return ResponseEntity.ok(build);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
-//    @PutMapping("/update/{buildId}")
-//    public ResponseEntity<BuildComputer> updateBuild(@PathVariable int buildId, @RequestBody BuildComputer updatedBuild) {
-//        BuildComputer modifiedBuild = buildComputerService.updateBuild(buildId, updatedBuild);
-//        return ResponseEntity.ok(modifiedBuild);
-//    }
+    @PutMapping("/update/{buildId}")
+    public ResponseEntity<BuildComputer> updateBuild(@PathVariable int buildId, @RequestBody BuildComputerDTO updatedBuild) {
+        BuildComputer modifiedBuild = buildComputerService.updateBuild(buildId, updatedBuild);
+        return ResponseEntity.ok(modifiedBuild);
+    }
 
 }

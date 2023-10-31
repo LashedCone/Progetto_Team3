@@ -7,7 +7,8 @@ import it.Team3.PCBuilder.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -39,54 +40,49 @@ public class BuildComputerService {
         return buildComputerRepository.findAll();
     }
 
-    public Optional<BuildComputer> searchBuild(int id) {
+    public Optional<BuildComputer> searchBuildById(int id) {
         return buildComputerRepository.findById(id);
     }
 
-    public void deleteBuild(int id) {
+    public void deleteBuildById(int id) {
         buildComputerRepository.deleteById(id);
     }
 
-//    public BuildComputer updateBuild(int buildId, BuildComputer updatedBuild) {
-//        BuildComputer existingBuild = buildComputerRepository.findById(buildId).orElse(null);
-//        if (existingBuild != null) {
-//            if (updatedBuild.getId() != 0) {
-//                existingBuild.setId(updatedBuild.getId());
-//            }
-//            if (updatedBuild.getComputerCase() != null) {
-//                existingBuild.setComputerCase(updatedBuild.getComputerCase());
-//            }
-//            if (updatedBuild.getGpu() != null) {
-//                existingBuild.setGpu(updatedBuild.getGpu());
-//            }
-//            if (updatedBuild.getMotherboard() != null) {
-//                existingBuild.setMotherboard(updatedBuild.getMotherboard());
-//            }
-//            if (updatedBuild.getPowerSupply() != null) {
-//                existingBuild.setPowerSupply(updatedBuild.getPowerSupply());
-//            }
-//            if (updatedBuild.getRam() != null) {
-//                existingBuild.setRam(updatedBuild.getRam());
-//            }
-//            if (updatedBuild.getStorage() != null) {
-//                existingBuild.setStorage(updatedBuild.getStorage());
-//            }
-//            if (updatedBuild.getCpu() != null) {
-//                existingBuild.setCpu(updatedBuild.getCpu());
-//            }
-//            if (updatedBuild.getCpuCooler() != null) {
-//                existingBuild.setCpuCooler(updatedBuild.getCpuCooler());
-//            }
-//            if (updatedBuild.getUsername() != null) {
-//                existingBuild.setUsername(updatedBuild.getUsername());
-//            }
-//            return buildComputerRepository.save(existingBuild);
-//        } else {
-//            return null;
-//        }
-//    }
+    public BuildComputer updateBuild(int buildId, BuildComputerDTO updatedBuild) {
+        BuildComputer existingBuild = buildComputerRepository.findById(buildId).orElse(null);
+        if (existingBuild != null) {
 
-    public Optional<BuildComputer> searchBuildByUsername(String username) {
+            if (updatedBuild.getComputerCaseId() != 0) {
+                existingBuild.setComputerCase(computerCaseRepository.findById(updatedBuild.getComputerCaseId()).orElse(null));
+            }
+            if (updatedBuild.getGpuId() != 0) {
+                existingBuild.setGpu(gpuRepository.findById(updatedBuild.getGpuId()).orElse(null));
+            }
+            if (updatedBuild.getMotherboardId() != 0) {
+                existingBuild.setMotherboard(motherboardRepository.findById(updatedBuild.getMotherboardId()).orElse(null));
+            }
+            if (updatedBuild.getPowerSupplyId() != 0) {
+                existingBuild.setPowerSupply(powerSupplyRepository.findById(updatedBuild.getPowerSupplyId()).orElse(null));
+            }
+            if (updatedBuild.getRamId() != 0) {
+                existingBuild.setRam(ramRepository.findById(updatedBuild.getRamId()).orElse(null));
+            }
+            if (updatedBuild.getStorageId() != 0) {
+                existingBuild.setStorage(storageRepository.findById(updatedBuild.getStorageId()).orElse(null));
+            }
+            if (updatedBuild.getCpuId() != 0) {
+                existingBuild.setCpu(cpuRepository.findById(updatedBuild.getCpuId()).orElse(null));
+            }
+            if (updatedBuild.getCpuCoolerId() != 0) {
+                existingBuild.setCpuCooler(cpuCoolerRepository.findById(updatedBuild.getCpuCoolerId()).orElse(null));
+            }
+            return buildComputerRepository.save(existingBuild);
+        } else {
+            return null;
+        }
+    }
+
+    public Iterable<BuildComputer> searchBuildByUsername(String username) {
         return buildComputerRepository.findByUserUsername(username);
     }
 
@@ -94,7 +90,7 @@ public class BuildComputerService {
         return buildComputerRepository.save(build);
     }
 
-    public BuildComputer createBuildWithComponents(BuildComputerDTO partsId, String username) throws Exception {
+    public BuildComputer createBuildWithComponentsId(String username, BuildComputerDTO partsId) throws Exception {
         Optional<User> userOptional = userRepository.findByUsername(username);
         if (userOptional.isEmpty()) {
             throw new Exception("User not found:" + username);

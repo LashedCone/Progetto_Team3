@@ -1,6 +1,8 @@
 package it.Team3.PCBuilder.models;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -22,6 +24,7 @@ public class User {
     private String password;
     //cascade aggiorna tutte le modifiche effettuate orphanRemoval rimuove le build se non c'è utente
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<BuildComputer> builds;
 
     public User(int id, String username, String email, String password) {

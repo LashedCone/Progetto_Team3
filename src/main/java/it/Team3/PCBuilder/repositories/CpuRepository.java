@@ -8,8 +8,9 @@ import java.util.Optional;
 
 @Repository
 public interface CpuRepository extends JpaRepository<Cpu, Integer> {
-    Optional<Cpu> findByManufacturer(String manufacturer);
+    Iterable<Cpu> findByManufacturer(String manufacturer);
 
     Optional<Cpu> findByPart(String part);
-    Optional<Cpu> findBySocket(String socket);
+
+    Iterable<Cpu> findBySocket(String socket);
 }

@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface ComputerCaseRepository extends JpaRepository<ComputerCase, Integer> {
-    Optional<ComputerCase>findByManufacturer(String manufacturer);
-    Optional<ComputerCase> findByMotherboardFormFactor(String motherboardFormFactor);
+    Iterable<ComputerCase>findByManufacturer(String manufacturer);
+    Iterable<ComputerCase> findByMotherboardFormFactor(String motherboardFormFactor);
 }
