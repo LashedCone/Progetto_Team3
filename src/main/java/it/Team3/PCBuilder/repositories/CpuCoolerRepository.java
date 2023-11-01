@@ -1,9 +1,7 @@
 package it.Team3.PCBuilder.repositories;
 
-import it.Team3.PCBuilder.models.CpuCooler;
+import it.Team3.PCBuilder.entity.CpuCooler;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
 
 public interface CpuCoolerRepository extends JpaRepository<CpuCooler, Integer> {
     Iterable<CpuCooler> findBycpuSocket(String cpuSocket);

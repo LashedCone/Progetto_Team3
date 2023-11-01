@@ -1,4 +1,4 @@
-package it.Team3.PCBuilder.models;
+package it.Team3.PCBuilder.entity;
 
 public class Component {
     private int id;

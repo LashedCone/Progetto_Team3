@@ -1,7 +1,6 @@
-package it.Team3.PCBuilder.models;
+package it.Team3.PCBuilder.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 

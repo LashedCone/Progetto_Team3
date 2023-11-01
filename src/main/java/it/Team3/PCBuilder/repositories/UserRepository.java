@@ -1,6 +1,6 @@
 package it.Team3.PCBuilder.repositories;
 
-import it.Team3.PCBuilder.models.User;
+import it.Team3.PCBuilder.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

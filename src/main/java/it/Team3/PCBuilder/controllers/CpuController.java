@@ -1,6 +1,6 @@
 package it.Team3.PCBuilder.controllers;
 
-import it.Team3.PCBuilder.models.Cpu;
+import it.Team3.PCBuilder.entity.Cpu;
 import it.Team3.PCBuilder.services.CpuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

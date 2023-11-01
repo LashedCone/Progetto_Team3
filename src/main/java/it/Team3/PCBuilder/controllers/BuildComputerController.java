@@ -1,7 +1,7 @@
 package it.Team3.PCBuilder.controllers;
 
-import it.Team3.PCBuilder.models.BuildComputer;
-import it.Team3.PCBuilder.models.BuildComputerDTO;
+import it.Team3.PCBuilder.entity.BuildComputer;
+import it.Team3.PCBuilder.dto.BuildComputerDTO;
 import it.Team3.PCBuilder.services.BuildComputerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

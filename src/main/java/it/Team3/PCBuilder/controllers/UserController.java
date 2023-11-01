@@ -1,12 +1,10 @@
 package it.Team3.PCBuilder.controllers;
 
-import it.Team3.PCBuilder.models.User;
+import it.Team3.PCBuilder.entity.User;
 import it.Team3.PCBuilder.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -19,7 +17,6 @@ public class UserController {
         userService.saveUser(user);
         return ResponseEntity.ok(user);
     }
-
 
 
     @GetMapping("/view-all-users")
@@ -37,7 +34,7 @@ public class UserController {
     }
 
     @PutMapping("/update-user/{username}")
-    public ResponseEntity<?> updateUser(@PathVariable String username, @RequestBody User updatedUser)  {
+    public ResponseEntity<?> updateUser(@PathVariable String username, @RequestBody User updatedUser) {
         User modifiedUser = userService.updateUser(username, updatedUser);
         if (modifiedUser == null) {
             return ResponseEntity.status(404).body("User not found at username: " + username);

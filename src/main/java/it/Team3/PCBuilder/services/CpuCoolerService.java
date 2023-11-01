@@ -1,6 +1,6 @@
 package it.Team3.PCBuilder.services;
 
-import it.Team3.PCBuilder.models.CpuCooler;
+import it.Team3.PCBuilder.entity.CpuCooler;
 import it.Team3.PCBuilder.repositories.CpuCoolerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 

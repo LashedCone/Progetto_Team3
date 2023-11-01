@@ -1,11 +1,10 @@
 package it.Team3.PCBuilder.services;
 
-import it.Team3.PCBuilder.models.BuildComputer;
-import it.Team3.PCBuilder.models.BuildComputerDTO;
-import it.Team3.PCBuilder.models.User;
+import it.Team3.PCBuilder.entity.BuildComputer;
+import it.Team3.PCBuilder.dto.BuildComputerDTO;
+import it.Team3.PCBuilder.entity.User;
 import it.Team3.PCBuilder.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

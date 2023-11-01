@@ -1,6 +1,6 @@
 package it.Team3.PCBuilder.services;
 
-import it.Team3.PCBuilder.models.Gpu;
+import it.Team3.PCBuilder.entity.Gpu;
 import it.Team3.PCBuilder.repositories.GpuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,7 +1,7 @@
 package it.Team3.PCBuilder.services;
 
 
-import it.Team3.PCBuilder.models.User;
+import it.Team3.PCBuilder.entity.User;
 import it.Team3.PCBuilder.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

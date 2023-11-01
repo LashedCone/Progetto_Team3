@@ -1,6 +1,6 @@
 package it.Team3.PCBuilder.repositories;
 
-import it.Team3.PCBuilder.models.Cpu;
+import it.Team3.PCBuilder.entity.Cpu;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

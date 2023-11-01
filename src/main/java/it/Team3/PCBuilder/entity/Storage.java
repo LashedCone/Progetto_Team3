@@ -1,6 +1,5 @@
-package it.Team3.PCBuilder.models;
+package it.Team3.PCBuilder.entity;
 
-import it.Team3.PCBuilder.IsCompatibleWith;
 import jakarta.persistence.*;
 
 
