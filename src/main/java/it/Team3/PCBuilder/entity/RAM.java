@@ -22,21 +22,6 @@ public class RAM {
     public RAM() {
     }
 
-    public RAM(int id, String serialPart, String ddrSpeed, String ddrGen,
-               String formFactor, int moduleCount, int capacityGb, int casLatency,
-               double voltage, String timing) {
-        this.id = id;
-        this.serialPart = serialPart;
-        this.ddrSpeed = ddrSpeed;
-        this.ddrGen = ddrGen;
-        this.formFactor = formFactor;
-        this.moduleCount = moduleCount;
-        this.capacityGb = capacityGb;
-        this.casLatency = casLatency;
-        this.voltage = voltage;
-        this.timing = timing;
-    }
-
     public int getId() {
         return id;
     }
@@ -117,25 +102,4 @@ public class RAM {
         this.timing = timing;
     }
 
-    @Override
-    public String toString() {
-        return "RAM details:\n\nPart: " + serialPart +
-                "\nSpeed: " + ddrSpeed + "MHz" +
-                "\nGen: " + ddrGen +
-                "\nFactor: " + formFactor +
-                "\nModule count: x" + moduleCount +
-                "\nCapacity: " + capacityGb + "GB" +
-                "\nLatency: " + casLatency +
-                "\nVoltage: " + voltage + "V" +
-                "\nTiming: " + timing;
-    }
-
-//    @Override
-//    public boolean isCompatibleWith(Component component) {
-//        if (component instanceof Motherboard) {
-//            Motherboard motherboard = (Motherboard) component;
-//            return this.ddrGen.equals(motherboard.getMemoryType());
-//        }
-//        return false;
-//    }
 }

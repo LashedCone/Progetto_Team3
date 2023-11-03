@@ -10,15 +10,7 @@ public class BuildComputerDTO {
     private int powerSupplyId;
     private int computerCaseId;
 
-    public BuildComputerDTO(int cpuId, int cpuCoolerId, int motherboardId, int ramId, int gpuId, int storageId, int powerSupplyId, int computerCaseId) {
-        this.cpuId = cpuId;
-        this.cpuCoolerId = cpuCoolerId;
-        this.motherboardId = motherboardId;
-        this.ramId = ramId;
-        this.gpuId = gpuId;
-        this.storageId = storageId;
-        this.powerSupplyId = powerSupplyId;
-        this.computerCaseId = computerCaseId;
+    public BuildComputerDTO() {
     }
 
     public int getCpuId() {

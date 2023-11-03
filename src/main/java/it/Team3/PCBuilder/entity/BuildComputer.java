@@ -38,24 +38,6 @@ public class BuildComputer {
     @JoinColumn(name = "power_supply_id")
     private PowerSupply powerSupply;
 
-    public BuildComputer(int id, User username, Cpu cpu, CpuCooler cpuCooler, Motherboard motherboard, RAM ram, Storage storage, Gpu gpu, ComputerCase computerCase, PowerSupply powerSupply) {
-        this.id = id;
-        this.user = username;
-        this.cpu = cpu;
-        this.cpuCooler = cpuCooler;
-        this.motherboard = motherboard;
-        this.ram = ram;
-        this.storage = storage;
-        this.gpu = gpu;
-        this.computerCase = computerCase;
-        this.powerSupply = powerSupply;
-    }
-
-    public BuildComputer(int id, User username) {
-        this.id = id;
-        this.user = username;
-    }
-
     public BuildComputer() {
     }
 
@@ -138,18 +120,5 @@ public class BuildComputer {
     public void setPowerSupply(PowerSupply powerSupply) {
         this.powerSupply = powerSupply;
     }
-    
-    @Override
-    public String toString() {
-        return "Build details:\nID:" + id +
-                "\nUser:" + user +
-                "\nCPU:" + cpu +
-                "\nCPU cooler:" + cpuCooler +
-                "\nMotherboard:" + motherboard +
-                "\nRAM:" + ram +
-                "\nStorage:" + storage +
-                "\nGPU:" + gpu +
-                "\nComputer case:" + computerCase +
-                "\nPower supply:" + powerSupply;
-    }
+
 }

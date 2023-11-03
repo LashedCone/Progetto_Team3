@@ -1,7 +1,7 @@
 package it.Team3.PCBuilder.controllers;
 
-import it.Team3.PCBuilder.entity.BuildComputer;
 import it.Team3.PCBuilder.dto.BuildComputerDTO;
+import it.Team3.PCBuilder.entity.BuildComputer;
 import it.Team3.PCBuilder.services.BuildComputerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -34,8 +34,8 @@ public class BuildComputerController {
     @PostMapping("/create/{username}")
     public ResponseEntity<?> createBuildWithComponent(@PathVariable String username, @RequestBody BuildComputerDTO build) {
         try {
-            buildComputerService.createBuildWithComponentsId(username, build);
-            return ResponseEntity.ok(build);
+            BuildComputer buildComputer = buildComputerService.createBuildWithComponentsId(username, build);
+            return ResponseEntity.ok(buildComputer);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -49,5 +49,4 @@ public class BuildComputerController {
         }
         return ResponseEntity.ok(modifiedBuild);
     }
-
 }

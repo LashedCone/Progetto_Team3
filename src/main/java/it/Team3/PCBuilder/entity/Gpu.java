@@ -20,25 +20,9 @@ public class Gpu {
     private int lengthMM;
     private int tdpWatt;
 
-    public Gpu() {}
-
-    public Gpu(int id, String manufacturer,
-               String partNumber, String chipset, int memorySizeGB,
-               String memoryType, int coreClockMHz, int boostClockMHz,
-               int effectiveMemoryClockMHz, String interfaceType, int lengthMM, int tdpWatt) {
-        this.id = id;
-        this.manufacturer = manufacturer;
-        this.partNumber = partNumber;
-        this.chipset = chipset;
-        this.memorySizeGB = memorySizeGB;
-        this.memoryType = memoryType;
-        this.coreClockMHz = coreClockMHz;
-        this.boostClockMHz = boostClockMHz;
-        this.effectiveMemoryClockMHz = effectiveMemoryClockMHz;
-        this.interfaceType = interfaceType;
-        this.lengthMM = lengthMM;
-        this.tdpWatt = tdpWatt;
+    public Gpu() {
     }
+
 
     public int getId() {
         return id;
@@ -136,24 +120,4 @@ public class Gpu {
         this.tdpWatt = tdpWatt;
     }
 
-    @Override
-    public String toString() {
-        return "Gpu details:" +
-                "\nManufacturer: " + manufacturer +
-                "\nPart Number: " + partNumber +
-                "\nChipset: " + chipset +
-                "\nMemory Size (GB): " + memorySizeGB +
-                "\nMemory Type: " + memoryType +
-                "\nCore Clock (MHz): " + coreClockMHz +
-                "\nBoost Clock (MHz): " + boostClockMHz +
-                "\nEffective Memory Clock (MHz): " + effectiveMemoryClockMHz +
-                "\nInterface Type: " + interfaceType +
-                "\nLength (mm): " + lengthMM +
-                "\nTDP (Watt): " + tdpWatt + "\n";
-    }
-
-//    @Override
-//    public boolean isCompatibleWith(Component component) {
-//        return false;
-//    }
 }

@@ -21,19 +21,6 @@ public class Storage {
     public Storage() {
     }
 
-    public Storage(int id, String manufacture, String model,
-                   String serial, short capacity, String type, String formFactor,
-                   String interfaceConnector, boolean isNvme) {
-        this.id = id;
-        this.manufacture = manufacture;
-        this.model = model;
-        this.serial = serial;
-        this.capacity = capacity;
-        this.type = type;
-        this.formFactor = formFactor;
-        this.interfaceConnector = interfaceConnector;
-        this.isNvme = isNvme;
-    }
 
     public int getId() {
         return id;
@@ -107,21 +94,4 @@ public class Storage {
         isNvme = nvme;
     }
 
-    @Override
-    public String toString() {
-        return "Storage details:" +
-                "\nManufacture: " + manufacture + '\'' +
-                "\nModel: " + model +
-                "\nSerial: " + serial +
-                "\nCapacity: " + capacity +
-                "\nType: " + type + '\'' +
-                "\nForm factor: " + formFactor + '\'' +
-                "\nInterface connector: " + interfaceConnector + '\'' +
-                "\nIs nvme=" + isNvme;
-    }
-
-//    @Override
-//    public boolean isCompatibleWith(Component component) {
-//        return false;
-//    }
 }
