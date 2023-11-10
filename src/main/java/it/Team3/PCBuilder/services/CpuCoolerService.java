@@ -61,14 +61,12 @@ public class CpuCoolerService {
             return null;
         }
     }
-
-
+    
     public Iterable<CpuCooler> findByManufacturer(String cpuSocket) {
-        return cpuCoolerRepository.findBycpuSocket(cpuSocket);
+        return cpuCoolerRepository.findByCpuSocket(cpuSocket);
     }
 
     public Iterable<CpuCooler> model(String model) {
-        return cpuCoolerRepository.findBymodel(model);
+        return cpuCoolerRepository.findByModel(model);
     }
 }
-

@@ -101,5 +101,4 @@ public class RAM {
     public void setTiming(String timing) {
         this.timing = timing;
     }
-
 }

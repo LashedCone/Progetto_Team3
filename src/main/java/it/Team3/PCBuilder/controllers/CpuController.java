@@ -14,39 +14,39 @@ public class CpuController {
     @Autowired
     CpuService cpuService;
 
-    @PostMapping("/add")
+    @PostMapping
     public String addCpu(@RequestBody Cpu cpu) {
         cpuService.addCpu(cpu);
         return "Cpu added";
     }
 
-    @GetMapping("/view")
+    @GetMapping
     public Iterable<Cpu> viewAllCpus() {
         return cpuService.viewAllCpus();
     }
 
-    @GetMapping("/search/{id}")
+    @GetMapping("/{id}")
     public Optional<Cpu> searchCpu(@PathVariable int id) {
         return cpuService.searchCpu(id);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public String deleteCpu(@PathVariable int id) {
         cpuService.deleteCpu(id);
         return "Cpu deleted";
     }
 
-    @GetMapping("/part/{part}")
+    @GetMapping("/{part}")
     public Optional<Cpu> findByPart(@PathVariable String part) {
         return cpuService.findByPart(part);
     }
 
-    @GetMapping("/manufacturer/{manufacturer}")
+    @GetMapping("/{manufacturer}")
     public Iterable<Cpu> findByManufacturer(@PathVariable String manufacturer) {
         return cpuService.findByManufacturer(manufacturer);
     }
 
-    @PutMapping("/update/{cpuId}")
+    @PutMapping("/{cpuId}")
     public ResponseEntity<Cpu> updateCpu(@PathVariable int cpuId, @RequestBody Cpu updatedCpu) {
         Cpu modifiedCpu = cpuService.updateCpu(cpuId, updatedCpu);
         if (modifiedCpu != null) {

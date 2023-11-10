@@ -93,5 +93,4 @@ public class Storage {
     public void setNvme(boolean nvme) {
         isNvme = nvme;
     }
-
 }

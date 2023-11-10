@@ -119,5 +119,4 @@ public class Gpu {
     public void setTdpWatt(int tdpWatt) {
         this.tdpWatt = tdpWatt;
     }
-
 }

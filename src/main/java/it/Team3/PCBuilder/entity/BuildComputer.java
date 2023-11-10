@@ -120,5 +120,4 @@ public class BuildComputer {
     public void setPowerSupply(PowerSupply powerSupply) {
         this.powerSupply = powerSupply;
     }
-
 }

@@ -181,5 +181,4 @@ public class Motherboard {
     public void setWirelessNetworking(String wirelessNetworking) {
         this.wirelessNetworking = wirelessNetworking;
     }
-
 }
