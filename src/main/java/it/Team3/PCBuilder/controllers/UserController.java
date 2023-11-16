@@ -33,7 +33,7 @@ public class UserController {
         return ResponseEntity.ok(String.format("User deleted at id: %d", id));
     }
 
-    @PutMapping("/{username}")
+    @PatchMapping("/{username}")
     public ResponseEntity<?> updateUser(@PathVariable String username, @RequestBody User updatedUser) {
         User modifiedUser = userService.updateUser(username, updatedUser);
         if (modifiedUser == null) {

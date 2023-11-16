@@ -41,7 +41,7 @@ public class BuildComputerController {
         }
     }
 
-    @PutMapping("/{username}/{buildId}")
+    @PatchMapping("/{username}/{buildId}")
     public ResponseEntity<?> updateBuild(@PathVariable String username, @PathVariable int buildId, @RequestBody BuildComputerDTO updatedBuild) {
         BuildComputer modifiedBuild = buildComputerService.updateBuild(username, buildId, updatedBuild);
         if (modifiedBuild == null) {

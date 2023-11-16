@@ -3,30 +3,32 @@ package it.Team3.PCBuilder.services;
 import it.Team3.PCBuilder.entity.CpuCooler;
 import it.Team3.PCBuilder.repositories.CpuCoolerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class CpuCoolerService {
     @Autowired
     CpuCoolerRepository cpuCoolerRepository;
 
-    public void addCpu(CpuCooler cpuCooler) {
-        cpuCoolerRepository.save(cpuCooler);
+    public CpuCooler addCpu(CpuCooler cpuCooler) {
+        return cpuCoolerRepository.save(cpuCooler);
     }
 
     public void deleteCpu(int id) {
         cpuCoolerRepository.deleteById(id);
     }
 
-    public Optional<CpuCooler> searchCpu(int id) {
+    public Optional<CpuCooler> searchCooler(int id) {
         return cpuCoolerRepository.findById(id);
     }
 
-    public Iterable<CpuCooler> viewAllCpus() {
+    public Iterable<CpuCooler> viewAllCoolers() {
         return cpuCoolerRepository.findAll();
     }
 
-    public CpuCooler updateCpu(int cpuCoolerId, CpuCooler updatedCpuCooler) {
+    public CpuCooler updateCpuCooler(int cpuCoolerId, CpuCooler updatedCpuCooler) {
         CpuCooler existingCpuCooler = cpuCoolerRepository.findById(cpuCoolerId).orElse(null);
         if (existingCpuCooler != null) {
             if (updatedCpuCooler.getManufacturer() != null) {
@@ -62,11 +64,15 @@ public class CpuCoolerService {
         }
     }
     
-    public Iterable<CpuCooler> findByManufacturer(String cpuSocket) {
-        return cpuCoolerRepository.findByCpuSocket(cpuSocket);
+    public Iterable<CpuCooler> findCpuCoolerByManufacturer(String manufacturer) {
+        return cpuCoolerRepository.findCpuCoolerByManufacturer(manufacturer);
     }
 
-    public Iterable<CpuCooler> model(String model) {
-        return cpuCoolerRepository.findByModel(model);
+    public Iterable<CpuCooler> findCpuCoolerByModel(String model) {
+        return cpuCoolerRepository.findCpuCoolerByModel(model);
+    }
+
+    public Iterable<CpuCooler> findCpuCoolerByCpuSocket(String cpuSocket) {
+        return cpuCoolerRepository.findCpuCoolerByCpuSocket(cpuSocket);
     }
 }

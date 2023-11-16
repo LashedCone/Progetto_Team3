@@ -15,38 +15,42 @@ public class CpuController {
     CpuService cpuService;
 
     @PostMapping
-    public String addCpu(@RequestBody Cpu cpu) {
-        cpuService.addCpu(cpu);
-        return "Cpu added";
+    public ResponseEntity<Cpu> addCpu(@RequestBody Cpu cpu) {
+        return ResponseEntity.ok(cpuService.addCpu(cpu));
     }
 
     @GetMapping
-    public Iterable<Cpu> viewAllCpus() {
-        return cpuService.viewAllCpus();
+    public ResponseEntity<Iterable<Cpu>> viewAllCpus() {
+        return ResponseEntity.ok().body(cpuService.viewAllCpus());
     }
 
     @GetMapping("/{id}")
-    public Optional<Cpu> searchCpu(@PathVariable int id) {
-        return cpuService.searchCpu(id);
+    public ResponseEntity<Optional<Cpu>> searchCpu(@PathVariable int id) {
+        return ResponseEntity.ok().body(cpuService.searchCpu(id));
     }
 
     @DeleteMapping("/{id}")
-    public String deleteCpu(@PathVariable int id) {
+    public ResponseEntity<String> deleteCpu(@PathVariable int id) {
         cpuService.deleteCpu(id);
-        return "Cpu deleted";
+        return ResponseEntity.ok().body("Cpu deleted");
     }
 
-    @GetMapping("/{part}")
-    public Optional<Cpu> findByPart(@PathVariable String part) {
-        return cpuService.findByPart(part);
+    @GetMapping("/part/{part}")
+    public Iterable<Cpu> findCpuByPart(@PathVariable String part) {
+        return cpuService.findCpuByPart(part);
     }
 
-    @GetMapping("/{manufacturer}")
-    public Iterable<Cpu> findByManufacturer(@PathVariable String manufacturer) {
-        return cpuService.findByManufacturer(manufacturer);
+    @GetMapping("/manufacturer/{manufacturer}")
+    public Iterable<Cpu> findCpuByManufacturer(@PathVariable String manufacturer) {
+        return cpuService.findCpuByManufacturer(manufacturer);
     }
 
-    @PutMapping("/{cpuId}")
+    @GetMapping("/socket/{socket}")
+    public Iterable<Cpu> findCpuBySocket(@PathVariable String socket) {
+        return cpuService.findCpuBySocket(socket);
+    }
+
+    @PatchMapping("/{cpuId}")
     public ResponseEntity<Cpu> updateCpu(@PathVariable int cpuId, @RequestBody Cpu updatedCpu) {
         Cpu modifiedCpu = cpuService.updateCpu(cpuId, updatedCpu);
         if (modifiedCpu != null) {

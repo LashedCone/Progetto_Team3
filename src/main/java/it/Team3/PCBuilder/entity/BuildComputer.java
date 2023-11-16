@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "build_computer_table")
-
-
 public class BuildComputer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

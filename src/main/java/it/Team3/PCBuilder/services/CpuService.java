@@ -12,8 +12,8 @@ public class CpuService {
     @Autowired
     CpuRepository cpuRepository;
 
-    public void addCpu(Cpu cpu) {
-        cpuRepository.save(cpu);
+    public Cpu addCpu(Cpu cpu) {
+        return cpuRepository.save(cpu);
     }
 
     public void deleteCpu(int id) {
@@ -70,11 +70,15 @@ public class CpuService {
         }
     }
 
-    public Iterable<Cpu> findByManufacturer(String manufacturer) {
-        return cpuRepository.findByManufacturer(manufacturer);
+    public Iterable<Cpu> findCpuByManufacturer(String manufacturer) {
+        return cpuRepository.findCpuByManufacturer(manufacturer);
     }
 
-    public Optional<Cpu> findByPart(String part) {
-        return cpuRepository.findByPart(part);
+    public Iterable<Cpu> findCpuByPart(String part) {
+        return cpuRepository.findCpuByPart(part);
+    }
+
+    public Iterable<Cpu> findCpuBySocket(String socket) {
+        return cpuRepository.findCpuBySocket(socket);
     }
 }
