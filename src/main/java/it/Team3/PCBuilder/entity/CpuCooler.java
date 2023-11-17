@@ -101,5 +101,4 @@ public class CpuCooler {
     public void setWaterCooled(boolean waterCooled) {
         isWaterCooled = waterCooled;
     }
-
 }

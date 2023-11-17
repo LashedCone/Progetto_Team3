@@ -13,12 +13,12 @@ public class BuildComputerController {
     @Autowired
     BuildComputerService buildComputerService;
 
-    @GetMapping("/view")
+    @GetMapping
     public Iterable<BuildComputer> viewAll() {
         return buildComputerService.viewAllBuilds();
     }
 
-    @GetMapping("/search/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> searchBuild(@PathVariable int id) {
         if (buildComputerService.searchBuildById(id).isEmpty()) {
             return ResponseEntity.status(404).body("Build not found at id: " + id);
@@ -26,12 +26,12 @@ public class BuildComputerController {
         return ResponseEntity.ok(buildComputerService.searchBuildById(id));
     }
 
-    @GetMapping("search/user/{username}")
+    @GetMapping("/{username}")
     public Iterable<BuildComputer> searchBuildByUsername(@PathVariable String username) {
         return buildComputerService.searchBuildByUsername(username);
     }
 
-    @PostMapping("/create/{username}")
+    @PostMapping("/{username}")
     public ResponseEntity<?> createBuildWithComponent(@PathVariable String username, @RequestBody BuildComputerDTO build) {
         try {
             BuildComputer buildComputer = buildComputerService.createBuildWithComponentsId(username, build);
@@ -41,7 +41,7 @@ public class BuildComputerController {
         }
     }
 
-    @PutMapping("/update/{username}/{buildId}")
+    @PatchMapping("/{username}/{buildId}")
     public ResponseEntity<?> updateBuild(@PathVariable String username, @PathVariable int buildId, @RequestBody BuildComputerDTO updatedBuild) {
         BuildComputer modifiedBuild = buildComputerService.updateBuild(username, buildId, updatedBuild);
         if (modifiedBuild == null) {

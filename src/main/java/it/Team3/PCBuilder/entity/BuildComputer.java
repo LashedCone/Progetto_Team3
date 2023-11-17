@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "build_computer_table")
-
-
 public class BuildComputer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -120,5 +118,4 @@ public class BuildComputer {
     public void setPowerSupply(PowerSupply powerSupply) {
         this.powerSupply = powerSupply;
     }
-
 }

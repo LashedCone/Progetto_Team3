@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 @Repository
 public interface CpuRepository extends JpaRepository<Cpu, Integer> {
-    Iterable<Cpu> findByManufacturer(String manufacturer);
+    Iterable<Cpu> findCpuByManufacturer(String manufacturer);
 
-    Optional<Cpu> findByPart(String part);
+    Iterable<Cpu> findCpuByPart(String part);
 
-    Iterable<Cpu> findBySocket(String socket);
+    Iterable<Cpu> findCpuBySocket(String socket);
 }

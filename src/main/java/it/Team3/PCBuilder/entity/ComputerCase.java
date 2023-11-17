@@ -119,5 +119,4 @@ public class ComputerCase {
     public void setRadiatorSupport(String radiatorSupport) {
         this.radiatorSupport = radiatorSupport;
     }
-
 }

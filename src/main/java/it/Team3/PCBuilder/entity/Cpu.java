@@ -110,5 +110,4 @@ public class Cpu {
     public void setMaxMemory(String maxMemory) {
         this.maxMemory = maxMemory;
     }
-
 }

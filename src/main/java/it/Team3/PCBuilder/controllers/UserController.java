@@ -12,19 +12,19 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/register")
+    @PostMapping
     public ResponseEntity<User> register(@RequestBody User user) {
         userService.saveUser(user);
         return ResponseEntity.ok(user);
     }
 
 
-    @GetMapping("/view-all-users")
+    @GetMapping
     public Iterable<String> viewAllUsers() {
         return userService.viewAllUsers();
     }
 
-    @DeleteMapping("/delete-user/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable int id) {
         if (userService.searchUserById(id).isEmpty()) {
             return ResponseEntity.status(404).body("User not found at id: " + id);
@@ -33,7 +33,7 @@ public class UserController {
         return ResponseEntity.ok(String.format("User deleted at id: %d", id));
     }
 
-    @PutMapping("/update-user/{username}")
+    @PatchMapping("/{username}")
     public ResponseEntity<?> updateUser(@PathVariable String username, @RequestBody User updatedUser) {
         User modifiedUser = userService.updateUser(username, updatedUser);
         if (modifiedUser == null) {

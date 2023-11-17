@@ -49,5 +49,4 @@ public class UserService {
         users.forEach(user -> usersUsername.add(user.getUsername()));
         return usersUsername;
     }
-
 }

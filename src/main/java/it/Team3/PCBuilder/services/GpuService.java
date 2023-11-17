@@ -3,30 +3,32 @@ package it.Team3.PCBuilder.services;
 import it.Team3.PCBuilder.entity.Gpu;
 import it.Team3.PCBuilder.repositories.GpuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class GpuService {
     @Autowired
     GpuRepository gpuRepository;
 
-    public void addCpu(Gpu gpu) {
-        gpuRepository.save(gpu);
+    public Gpu addGpu(Gpu gpu) {
+        return gpuRepository.save(gpu);
     }
 
-    public void deleteCpu(int id) {
+    public void deleteGpu(int id) {
         gpuRepository.deleteById(id);
     }
 
-    public Optional<Gpu> searchCpu(int id) {
+    public Optional<Gpu> searchGpu(int id) {
         return gpuRepository.findById(id);
     }
 
-    public Iterable<Gpu> viewAllCpus() {
+    public Iterable<Gpu> viewAllGpus() {
         return gpuRepository.findAll();
     }
 
-    public Gpu updateCpu(int gpuId, Gpu updatedGpu) {
+    public Gpu updateGpu(int gpuId, Gpu updatedGpu) {
         Gpu existingGpu = gpuRepository.findById(gpuId).orElse(null);
         if (existingGpu != null) {
             if (updatedGpu.getManufacturer() != null) {
