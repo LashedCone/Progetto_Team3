@@ -71,7 +71,7 @@ VALUES
 ('HyperX Fury', '3600', 'DDR4', 'DIMM', 2, 32, 18, 1.35, '18-22-22-42'),
 ('Corsair Vengeance LPX', '4000', 'DDR4', 'DIMM', 2, 64, 19, 1.35, '19-23-23-45');
 -- Inserimento dei dati degli storage nella tabella "Storage"
-INSERT INTO Storage (manufacture, model, serial, capacity, type, form_Factor, interface_Connector, is_Nvme)
+INSERT INTO Storage (manufacturer, model, serial, capacity, type, form_Factor, interface_Connector, is_Nvme)
 VALUES
 ('Samsung', '870 Evo 1TB', 'MZ-77E1T0BW', 1000, 'SSD', '2.5', 'SATA', false),
 ('Western Digital', 'Black SN770 2TB', 'WDS200T3X0E', 2000, 'SSD', 'M.2-2280', 'M.2 PCIe 4.0 X4', true),

@@ -13,7 +13,7 @@ public class CpuCoolerController {
 	CpuCoolerService cpuCoolerService;
 
 	@PostMapping
-	public ResponseEntity<CpuCooler> addCooler(CpuCooler cpuCooler) {
+	public ResponseEntity<CpuCooler> addCooler(@RequestBody CpuCooler cpuCooler) {
 		return ResponseEntity.ok().body(cpuCoolerService.addCpu(cpuCooler));
 	}
 

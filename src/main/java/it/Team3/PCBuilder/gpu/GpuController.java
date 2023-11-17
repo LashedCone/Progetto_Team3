@@ -13,12 +13,12 @@ public class GpuController {
 	GpuService gpuService;
 
 	@PostMapping
-	public ResponseEntity<Gpu> addGpu(Gpu gpu) {
+	public ResponseEntity<Gpu> addGpu(@RequestBody Gpu gpu) {
 		return ResponseEntity.ok().body(gpuService.addGpu(gpu));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deleteGpu(int id) {
+	public ResponseEntity<String> deleteGpu(@PathVariable int id) {
 		gpuService.deleteGpu(id);
 		return ResponseEntity.ok().body("Gpu deleted");
 	}
@@ -29,18 +29,18 @@ public class GpuController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<Gpu>> searchGpu(int id) {
+	public ResponseEntity<Optional<Gpu>> searchGpu(@PathVariable int id) {
 		return ResponseEntity.ok().body(gpuService.searchGpu(id));
 	}
 
 	@GetMapping("/manufacturer/{manufacturer}")
-	public ResponseEntity<Iterable<Gpu>> findByManufacturer(String manufacturer) {
-		return ResponseEntity.ok().body(gpuService.findByManufacturer(manufacturer));
+	public ResponseEntity<Iterable<Gpu>> findGpuByManufacturer(@PathVariable String manufacturer) {
+		return ResponseEntity.ok().body(gpuService.findGpuByManufacturer(manufacturer));
 	}
 
 	@GetMapping("/chipset/{chipset}")
-	public ResponseEntity<Iterable<Gpu>> findByChipset(String chipset) {
-		return ResponseEntity.ok().body(gpuService.findByChipset(chipset));
+	public ResponseEntity<Iterable<Gpu>> findGpuByChipset(@PathVariable String chipset) {
+		return ResponseEntity.ok().body(gpuService.findGpuByChipset(chipset));
 	}
 
 	@PatchMapping("/{gpuId}")

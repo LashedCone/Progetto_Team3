@@ -13,12 +13,12 @@ public class MotherboardController {
 	MotherboardService motherboardService;
 
 	@PostMapping
-	public ResponseEntity<Motherboard> addMotherboard(Motherboard motherboard) {
+	public ResponseEntity<Motherboard> addMotherboard(@RequestBody Motherboard motherboard) {
 		return ResponseEntity.ok(motherboardService.addMotherboard(motherboard));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deleteMotherboard(int id) {
+	public ResponseEntity<String> deleteMotherboard(@PathVariable int id) {
 		motherboardService.deleteMotherboard(id);
 		return ResponseEntity.ok().body("Motherboard deleted");
 	}
@@ -29,22 +29,22 @@ public class MotherboardController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<Motherboard>> searchMotherboard(int id) {
+	public ResponseEntity<Optional<Motherboard>> searchMotherboard(@PathVariable int id) {
 		return ResponseEntity.ok().body(motherboardService.searchMotherboard(id));
 	}
 
 	@GetMapping("/manufacturer/{manufacturer}")
-	public ResponseEntity<Iterable<Motherboard>> findMotherboardByManufacturer(String manufacturer) {
+	public ResponseEntity<Iterable<Motherboard>> findMotherboardByManufacturer(@PathVariable String manufacturer) {
 		return ResponseEntity.ok().body(motherboardService.findMotherboardByManufacturer(manufacturer));
 	}
 
 	@GetMapping("/socket/{socket}")
-	public ResponseEntity<Iterable<Motherboard>> findMotherboardBySocket(String socket) {
+	public ResponseEntity<Iterable<Motherboard>> findMotherboardBySocket(@PathVariable String socket) {
 		return ResponseEntity.ok().body(motherboardService.findMotherboardBySocket(socket));
 	}
 
 	@GetMapping("/formFactor/{formFactor}")
-	public ResponseEntity<Iterable<Motherboard>> findMotherboardByFormFactor(String formFactor) {
+	public ResponseEntity<Iterable<Motherboard>> findMotherboardByFormFactor(@PathVariable String formFactor) {
 		return ResponseEntity.ok().body(motherboardService.findMotherboardByFormFactor(formFactor));
 	}
 
