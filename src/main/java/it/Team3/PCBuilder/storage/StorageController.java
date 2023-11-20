@@ -1,4 +1,4 @@
-package it.Team3.PCBuilder.memory;
+package it.Team3.PCBuilder.storage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,16 +12,6 @@ public class StorageController {
 	@Autowired
 	StorageService storageService;
 
-	@PostMapping
-	public ResponseEntity<Storage> addStorage(@RequestBody Storage storage) {
-		return ResponseEntity.ok().body(storageService.addStorage(storage));
-	}
-
-	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deleteStorage(@PathVariable int id) {
-		storageService.deleteStorage(id);
-		return ResponseEntity.ok().body("Storage deleted");
-	}
 
 	@GetMapping
 	public ResponseEntity<Iterable<Storage>> viewAllStorage() {

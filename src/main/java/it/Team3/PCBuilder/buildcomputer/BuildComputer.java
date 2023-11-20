@@ -4,7 +4,7 @@ import it.Team3.PCBuilder.computercase.ComputerCase;
 import it.Team3.PCBuilder.cpu.Cpu;
 import it.Team3.PCBuilder.cpucooler.CpuCooler;
 import it.Team3.PCBuilder.gpu.Gpu;
-import it.Team3.PCBuilder.memory.Storage;
+import it.Team3.PCBuilder.storage.Storage;
 import it.Team3.PCBuilder.motherboard.Motherboard;
 import it.Team3.PCBuilder.powersupply.PowerSupply;
 import it.Team3.PCBuilder.ram.RAM;

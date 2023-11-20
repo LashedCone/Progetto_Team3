@@ -2,6 +2,7 @@ package it.Team3.PCBuilder.user;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import it.Team3.PCBuilder.admin.Role;
 import it.Team3.PCBuilder.buildcomputer.BuildComputer;
 import jakarta.persistence.*;
 
@@ -25,6 +26,9 @@ public class User {
     private String email;
     @JsonIgnore
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role = Role.USER;
     //cascade aggiorna tutte le modifiche effettuate orphanRemoval rimuove le build se non c'è utente
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
@@ -75,5 +79,13 @@ public class User {
 
     public void setBuilds(Set<BuildComputer> builds) {
         this.builds = builds;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

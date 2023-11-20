@@ -16,19 +16,13 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-
-    @GetMapping
-    public Iterable<String> viewAllUsers() {
-        return userService.viewAllUsers();
-    }
-
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable int id) {
+    public ResponseEntity<?> deleteUser(@PathVariable int id) {
         if (userService.searchUserById(id).isEmpty()) {
-            return ResponseEntity.status(404).body("User not found at id: " + id);
+            return ResponseEntity.notFound().build();
         }
         userService.deleteUser(id);
-        return ResponseEntity.ok(String.format("User deleted at id: %d", id));
+        return ResponseEntity.ok().build();
     }
 
     @PatchMapping("/{username}")

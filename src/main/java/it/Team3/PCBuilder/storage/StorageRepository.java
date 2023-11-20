@@ -1,4 +1,4 @@
-package it.Team3.PCBuilder.memory;
+package it.Team3.PCBuilder.storage;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

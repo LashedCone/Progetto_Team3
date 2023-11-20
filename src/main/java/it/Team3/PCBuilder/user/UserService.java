@@ -1,6 +1,7 @@
 package it.Team3.PCBuilder.user;
 
 
+import it.Team3.PCBuilder.admin.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,5 +47,11 @@ public class UserService {
         List<String> usersUsername = new ArrayList<>();
         users.forEach(user -> usersUsername.add(user.getUsername()));
         return usersUsername;
+    }
+
+    public void editRole(int id, Role role) {
+        User user = userRepository.findById(id).get();
+        user.setRole(role);
+        userRepository.save(user);
     }
 }

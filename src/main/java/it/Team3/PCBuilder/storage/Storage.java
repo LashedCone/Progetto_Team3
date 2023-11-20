@@ -1,4 +1,4 @@
-package it.Team3.PCBuilder.memory;
+package it.Team3.PCBuilder.storage;
 
 import jakarta.persistence.*;
 

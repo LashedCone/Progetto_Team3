@@ -5,7 +5,7 @@ import it.Team3.PCBuilder.cpu.CpuRepository;
 import it.Team3.PCBuilder.cpucooler.CpuCoolerRepository;
 import it.Team3.PCBuilder.user.User;
 import it.Team3.PCBuilder.gpu.GpuRepository;
-import it.Team3.PCBuilder.memory.StorageRepository;
+import it.Team3.PCBuilder.storage.StorageRepository;
 import it.Team3.PCBuilder.motherboard.MotherboardRepository;
 import it.Team3.PCBuilder.powersupply.PowerSupplyRepository;
 import it.Team3.PCBuilder.ram.RAMRepository;
