@@ -8,7 +8,7 @@ import it.Team3.PCBuilder.gpu.GpuRepository;
 import it.Team3.PCBuilder.storage.StorageRepository;
 import it.Team3.PCBuilder.motherboard.MotherboardRepository;
 import it.Team3.PCBuilder.powersupply.PowerSupplyRepository;
-import it.Team3.PCBuilder.ram.RAMRepository;
+import it.Team3.PCBuilder.ram.RamRepository;
 import it.Team3.PCBuilder.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,13 +21,13 @@ public class BuildComputerService {
     @Autowired
     BuildComputerRepository buildComputerRepository;
     @Autowired
-	CpuRepository cpuRepository;
+    CpuRepository cpuRepository;
     @Autowired
     CpuCoolerRepository cpuCoolerRepository;
     @Autowired
     MotherboardRepository motherboardRepository;
     @Autowired
-    RAMRepository ramRepository;
+    RamRepository ramRepository;
     @Autowired
     StorageRepository storageRepository;
     @Autowired
@@ -118,5 +118,18 @@ public class BuildComputerService {
         user.getBuilds().add(build);
         userRepository.save(user);
         return build;
+    }
+
+    public BuildComputer createAdminBuildWithComponents(BuildComputerDTO parts) {
+        BuildComputer build = new BuildComputer();
+        build.setCpu(cpuRepository.findById(parts.getCpuId()).orElse(null));
+        build.setCpuCooler(cpuCoolerRepository.findById(parts.getCpuCoolerId()).orElse(null));
+        build.setMotherboard(motherboardRepository.findById(parts.getMotherboardId()).orElse(null));
+        build.setRam(ramRepository.findById(parts.getRamId()).orElse(null));
+        build.setStorage(storageRepository.findById(parts.getStorageId()).orElse(null));
+        build.setGpu(gpuRepository.findById(parts.getGpuId()).orElse(null));
+        build.setPowerSupply(powerSupplyRepository.findById(parts.getPowerSupplyId()).orElse(null));
+        build.setComputerCase(computerCaseRepository.findById(parts.getComputerCaseId()).orElse(null));
+        return buildComputerRepository.save(build);
     }
 }

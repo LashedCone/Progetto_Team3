@@ -19,12 +19,12 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
     private int id;
+
     private String username;
-    @JsonIgnore
+
     private String email;
-    @JsonIgnore
+
     private String password;
 
     @Enumerated(EnumType.STRING)

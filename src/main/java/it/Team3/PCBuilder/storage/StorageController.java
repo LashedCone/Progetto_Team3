@@ -43,8 +43,8 @@ public class StorageController {
 		return ResponseEntity.ok().body(storageService.searchStorageByInterfaceConnector(interfaceConnector));
 	}
 
-//	@GetMapping("/nvme/{nvme}")
-//	public ResponseEntity<Iterable<Storage>> searchStorageByNvme(@PathVariable boolean nvme) {
-//		return ResponseEntity.ok().body(storageService.searchStorageByNvme(nvme));
-//	}
+	@GetMapping("/nvme/{nvme}")
+	public ResponseEntity<Iterable<Storage>> searchStorageByIsNvme(@PathVariable boolean isNvme) {
+		return ResponseEntity.ok().body(storageService.searchStorageByIsNvme(isNvme));
+	}
 }

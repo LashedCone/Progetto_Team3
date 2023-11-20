@@ -8,16 +8,27 @@ public class ComputerCase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String manufacturer;
+
     private String modelName;
+
     private String type;
+
     private String color;
+
     private String frontPanelUSB;
+
     private String motherboardFormFactor;
+
     private String maximumVideoCardLength;
+
     private int internal35DriveBays;
+
     private int internal25DriveBays;
+
     private int expansionSlots;
+
     private String radiatorSupport;
 
     public ComputerCase() {

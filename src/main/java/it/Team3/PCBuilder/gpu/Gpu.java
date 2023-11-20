@@ -8,16 +8,27 @@ public class Gpu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String manufacturer;
+
     private String partNumber;
+
     private String chipset;
+
     private int memorySizeGB;
+
     private String memoryType;
+
     private int coreClockMHz;
+
     private int boostClockMHz;
+
     private int effectiveMemoryClockMHz;
+
     private String interfaceType;
+
     private int lengthMM;
+
     private int tdpWatt;
 
     public Gpu() {

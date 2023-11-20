@@ -8,15 +8,25 @@ public class Cpu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String manufacturer;
+
     private String part;
+
     private int coreCount;
+
     private String coreClock;
+
     private String boostClock;
+
     private int tdpW;
+
     private String series;
+
     private String socket;
+
     private String integratedGraphics;
+
     private String maxMemory;
 
     public Cpu() {

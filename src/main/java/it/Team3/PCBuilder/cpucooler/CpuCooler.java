@@ -8,14 +8,23 @@ public class CpuCooler {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     String manufacturer;
+
     String model;
+
     String partId;
+
     short minRPM;
+
     short maxRPM;
+
     byte noiseMin;
+
     byte noiseMax;
+
     String cpuSocket;
+
     boolean isWaterCooled;
 
     public CpuCooler() {

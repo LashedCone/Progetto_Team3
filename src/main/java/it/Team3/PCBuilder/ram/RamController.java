@@ -10,37 +10,37 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/ram")
-public class RAMController {
+public class RamController {
     @Autowired
-    RAMService ramService;
+    RamService ramService;
 
     @GetMapping
-    public Iterable<RAM> getAllRAM() {
+    public Iterable<Ram> getAllRAM() {
         return ramService.getAllRAM();
     }
 
     @GetMapping("/{id}")
-    public Optional<RAM> getRAMById(@PathVariable int id) {
+    public Optional<Ram> getRAMById(@PathVariable int id) {
         return ramService.searchRAMById(id);
     }
 
     @GetMapping("serialPart/{serialPart}")
-    public Iterable<RAM> getRAMBySerialPart(@PathVariable String serialPart) {
-        return ramService.getAllRAMBySerialPart(serialPart);
+    public Iterable<Ram> getRAMBySerialPart(@PathVariable String serialPart) {
+        return ramService.getRAMBySerialPart(serialPart);
     }
 
     @GetMapping("capacityGb/{capacityGb}")
-    public Iterable<RAM> getRAMByCapacityGb(@PathVariable int capacityGb) {
-        return ramService.getAllRAMByCapacityGb(capacityGb);
+    public Iterable<Ram> getRAMByCapacityGb(@PathVariable int capacityGb) {
+        return ramService.getRAMByCapacityGb(capacityGb);
     }
 
     @GetMapping("ddrSpeed/{ddrSpeed}")
-    public Iterable<RAM> getRAMByDdrSpeed(@PathVariable String ddrSpeed) {
-        return ramService.getAllRAMByDdrSpeed(ddrSpeed);
+    public Iterable<Ram> getRAMByDdrSpeed(@PathVariable String ddrSpeed) {
+        return ramService.getRAMByDdrSpeed(ddrSpeed);
     }
 
     @GetMapping("ddrGen/{ddrGen}")
-    public Iterable<RAM> getRAMByDdrGen(@PathVariable String ddrGen) {
-        return ramService.getAllRAMByDdrGen(ddrGen);
+    public Iterable<Ram> getRAMByDdrGen(@PathVariable String ddrGen) {
+        return ramService.getRAMByDdrGen(ddrGen);
     }
 }

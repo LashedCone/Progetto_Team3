@@ -12,17 +12,6 @@ public class ComputerCaseController {
     @Autowired
     ComputerCaseService computerCaseService;
 
-    @PostMapping
-    public ResponseEntity<ComputerCase> addComputerCase(@RequestBody ComputerCase computerCase) {
-        return ResponseEntity.ok().body(computerCaseService.addComputerCase(computerCase));
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteComputerCase(@PathVariable int id) {
-        computerCaseService.deleteComputerCase(id);
-        return ResponseEntity.ok().body("Computer case deleted");
-    }
-
     @GetMapping
     public ResponseEntity<Iterable<ComputerCase>> viewAllComputerCases() {
         return ResponseEntity.ok().body(computerCaseService.viewAllComputerCases());
@@ -41,16 +30,6 @@ public class ComputerCaseController {
     @GetMapping("/model/{modelName}")
     public ResponseEntity<Iterable<ComputerCase>> findByModelName(@PathVariable String modelName) {
         return ResponseEntity.ok().body(computerCaseService.findComputerCaseByModelName(modelName));
-    }
-
-    @PatchMapping("/{computerCaseId}")
-    public ResponseEntity<ComputerCase> updateComputerCase(@PathVariable int computerCaseId, @RequestBody ComputerCase updatedComputerCase) {
-        ComputerCase modifiedComputerCase = computerCaseService.updateComputerCase(computerCaseId, updatedComputerCase);
-        if (modifiedComputerCase != null) {
-            return ResponseEntity.ok(modifiedComputerCase);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
     }
 
     @GetMapping("/motherboardFormFactor/{motherboardFormFactor}")
