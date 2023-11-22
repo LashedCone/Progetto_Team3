@@ -26,8 +26,8 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public User updateUser(String username, User updatedUser) {
-        Optional<User> userOptional = userRepository.findByUsername(username);
+    public User updateUser(int usernameId, User updatedUser) {
+        Optional<User> userOptional = userRepository.findById(usernameId);
 
         User existingUser = userOptional.get();
         if (updatedUser.getUsername() != null) {
@@ -49,9 +49,9 @@ public class UserService {
         return usersUsername;
     }
 
-    public void editRole(int id, Role role) {
+    public void editRole(int id, User role) {
         User user = userRepository.findById(id).get();
-        user.setRole(role);
+        user.setRole(role.getRole());
         userRepository.save(user);
     }
 }

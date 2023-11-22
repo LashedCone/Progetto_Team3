@@ -19,7 +19,7 @@ public class BuildComputerAdminController {
         return ResponseEntity.ok(buildComputerService.createAdminBuildWithComponents(build));
     }
 
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteBuild(@PathVariable int id) {
         buildComputerService.deleteBuildById(id);
         return ResponseEntity.ok().body("Build deleted");

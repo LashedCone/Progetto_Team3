@@ -23,7 +23,7 @@ public class UserAdminController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> editRole(@PathVariable int id, @RequestBody Role role) {
+    public ResponseEntity<?> editRole(@PathVariable int id, @RequestBody User role) {
         userService.editRole(id, role);
         return ResponseEntity.ok().build();
     }
