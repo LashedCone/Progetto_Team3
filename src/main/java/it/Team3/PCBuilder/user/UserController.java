@@ -16,26 +16,20 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-
-    @GetMapping
-    public Iterable<String> viewAllUsers() {
-        return userService.viewAllUsers();
-    }
-
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable int id) {
+    public ResponseEntity<?> deleteUser(@PathVariable int id) {
         if (userService.searchUserById(id).isEmpty()) {
-            return ResponseEntity.status(404).body("User not found at id: " + id);
+            return ResponseEntity.notFound().build();
         }
         userService.deleteUser(id);
-        return ResponseEntity.ok(String.format("User deleted at id: %d", id));
+        return ResponseEntity.ok().build();
     }
 
-    @PatchMapping("/{username}")
-    public ResponseEntity<?> updateUser(@PathVariable String username, @RequestBody User updatedUser) {
-        User modifiedUser = userService.updateUser(username, updatedUser);
+    @PatchMapping("/{usernameId}")
+    public ResponseEntity<?> updateUser(@PathVariable int usernameId, @RequestBody User updatedUser) {
+        User modifiedUser = userService.updateUser(usernameId, updatedUser);
         if (modifiedUser == null) {
-            return ResponseEntity.status(404).body("User not found at username: " + username);
+            return ResponseEntity.status(404).body("User not found at index: " + usernameId);
         }
         return ResponseEntity.ok(modifiedUser);
     }

@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ram")
-public class RAM {
+public class Ram {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,7 +19,7 @@ public class RAM {
     private double voltage;
     private String timing;
 
-    public RAM() {
+    public Ram() {
     }
 
     public int getId() {

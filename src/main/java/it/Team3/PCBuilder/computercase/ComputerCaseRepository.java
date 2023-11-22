@@ -5,8 +5,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ComputerCaseRepository extends JpaRepository<ComputerCase, Integer> {
-    Iterable<ComputerCase>findByManufacturer(String manufacturer);
-    Iterable<ComputerCase> findByMotherboardFormFactor(String motherboardFormFactor);
+    Iterable<ComputerCase> findComputerCaseByMotherboardFormFactor(String motherboardFormFactor);
 
     Iterable<ComputerCase> findComputerCaseByManufacturer(String manufacturer);
 

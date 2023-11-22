@@ -8,23 +8,41 @@ public class Motherboard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String manufacturer;
+
     private String part;
+
     private String socket;
+
     private String formFactor;
+
     private String chipset;
+
     private int memoryCapacity;
+
     private String memoryType;
+
     private int memorySlots;
+
     private String memorySpeed;
+
     private int pcieX16Slots;
+
     private int pcieX8Slots;
+
     private int pcieX4Slots;
+
     private int pcieX1Slots;
+
     private int pciSlots;
+
     private String m2Slots;
+
     private int sataPorts;
+
     private String onboardEthernet;
+
     private String wirelessNetworking;
 
     public Motherboard() {

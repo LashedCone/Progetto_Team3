@@ -4,10 +4,10 @@ import it.Team3.PCBuilder.computercase.ComputerCase;
 import it.Team3.PCBuilder.cpu.Cpu;
 import it.Team3.PCBuilder.cpucooler.CpuCooler;
 import it.Team3.PCBuilder.gpu.Gpu;
-import it.Team3.PCBuilder.memory.Storage;
 import it.Team3.PCBuilder.motherboard.Motherboard;
 import it.Team3.PCBuilder.powersupply.PowerSupply;
-import it.Team3.PCBuilder.ram.RAM;
+import it.Team3.PCBuilder.ram.Ram;
+import it.Team3.PCBuilder.storage.Storage;
 import it.Team3.PCBuilder.user.User;
 import jakarta.persistence.*;
 
@@ -17,30 +17,39 @@ public class BuildComputer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
     @ManyToOne
     @JoinColumn(name = "cpu_id")
     private Cpu cpu;
+
     @ManyToOne
     @JoinColumn(name = "cpu_cooler_id")
     private CpuCooler cpuCooler;
+
     @ManyToOne
     @JoinColumn(name = "motherboard_id")
     private Motherboard motherboard;
+
     @ManyToOne
     @JoinColumn(name = "ram_id")
-    private RAM ram;
+    private Ram ram;
+
     @ManyToOne
     @JoinColumn(name = "storage_id")
     private Storage storage;
+
     @ManyToOne
     @JoinColumn(name = "gpu_id")
     private Gpu gpu;
+
     @ManyToOne
     @JoinColumn(name = "computer_case_id")
     private ComputerCase computerCase;
+
     @ManyToOne
     @JoinColumn(name = "power_supply_id")
     private PowerSupply powerSupply;
@@ -88,11 +97,11 @@ public class BuildComputer {
         this.motherboard = motherboard;
     }
 
-    public RAM getRam() {
+    public Ram getRam() {
         return ram;
     }
 
-    public void setRam(RAM ram) {
+    public void setRam(Ram ram) {
         this.ram = ram;
     }
 

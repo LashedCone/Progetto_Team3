@@ -68,11 +68,11 @@ public class GpuService {
         }
     }
 
-    public Iterable<Gpu> findByManufacturer(String manufacturer) {
-        return gpuRepository.findByManufacturer(manufacturer);
+    public Iterable<Gpu> findGpuByManufacturer(String manufacturer) {
+        return gpuRepository.findGpuByManufacturer(manufacturer);
     }
 
-    public Iterable<Gpu> findByChipset(String chipset) {
-        return gpuRepository.findByChipset(chipset);
+    public Iterable<Gpu> findGpuByChipset(String chipset) {
+        return gpuRepository.findGpuByChipset(chipset);
     }
 }
