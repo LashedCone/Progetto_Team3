@@ -1,8 +1,8 @@
 package it.Team3.PCBuilder.user;
 
 
-import it.Team3.PCBuilder.admin.Role;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,8 +13,12 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    PasswordEncoder passwordEncoder;
+    //usato per codificare le password nel DB
 
     public void saveUser(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
 
@@ -37,9 +41,13 @@ public class UserService {
             existingUser.setEmail(updatedUser.getEmail());
         }
         if (updatedUser.getPassword() != null) {
-            existingUser.setPassword(updatedUser.getPassword());
+            existingUser.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
         }
         return userRepository.save(existingUser);
+    }
+
+    public Iterable<User> viewAllUsersAdmin() {
+        return userRepository.findAll();
     }
 
     public Iterable<String> viewAllUsers() {

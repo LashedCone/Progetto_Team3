@@ -13,8 +13,8 @@ public class UserAdminController {
     UserService userService;
 
     @GetMapping
-    public Iterable<String> viewAllUsers() {
-        return userService.viewAllUsers();
+    public Iterable<User> viewAllUsers() {
+        return userService.viewAllUsersAdmin();
     }
 
     @GetMapping("/{id}")

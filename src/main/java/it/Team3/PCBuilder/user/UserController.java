@@ -10,6 +10,11 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @GetMapping
+    public Iterable<String> viewAllUsers() {
+        return userService.viewAllUsers();
+    }
+
     @PostMapping
     public ResponseEntity<User> register(@RequestBody User user) {
         userService.saveUser(user);
