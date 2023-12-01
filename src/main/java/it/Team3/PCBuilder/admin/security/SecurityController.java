@@ -11,9 +11,9 @@ public class SecurityController {
         return "login";
     }
 
-    public void login(String username, String password) {
-
-    }
+//    public void login(String username, String password) {
+//
+//    }
 
     @GetMapping("/logout")
     public String logout() {
