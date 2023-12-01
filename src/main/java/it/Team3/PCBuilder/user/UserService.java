@@ -1,6 +1,7 @@
 package it.Team3.PCBuilder.user;
 
 
+import it.Team3.PCBuilder.admin.security.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -58,8 +59,22 @@ public class UserService {
     }
 
     public void editRole(int id, User role) {
-        User user = userRepository.findById(id).get();
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException
+                        ("User not found with id: " + id));
         user.setRole(role.getRole());
         userRepository.save(user);
+    }
+
+    public Optional<User> findByUsernameOrEmail(String username, String email) {
+        return userRepository.findByUsernameOrEmail(username, email);
+    }
+
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    public Iterable<User> findByRole(Role role) {
+        return userRepository.findByRole(role);
     }
 }
