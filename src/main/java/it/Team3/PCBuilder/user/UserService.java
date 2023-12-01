@@ -17,12 +17,12 @@ import java.util.Optional;
 public class UserService implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
-    @Autowired
-    PasswordEncoder passwordEncoder;
+//    @Autowired
+//     PasswordEncoder passwordEncoder;
     //usato per codificare le password nel DB
 
     public void saveUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+//        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
 
@@ -45,7 +45,8 @@ public class UserService implements UserDetailsService {
             existingUser.setEmail(updatedUser.getEmail());
         }
         if (updatedUser.getPassword() != null) {
-            existingUser.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
+            existingUser.setPassword(updatedUser.getPassword());
+//            existingUser.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
         }
         return userRepository.save(existingUser);
     }
@@ -84,6 +85,6 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
         return userRepository.findByUsernameOrEmail(usernameOrEmail, usernameOrEmail)
-                .orElseThrow(IllegalArgumentException::new);
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with username or email: " + usernameOrEmail));
     }
 }

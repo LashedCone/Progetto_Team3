@@ -28,6 +28,11 @@ public class UserAdminController {
         return ResponseEntity.ok().build();
     }
 
+    @GetMapping("/username/{usernameOrEmail}")
+    public ResponseEntity<User> searchUserByUsernameOrEmail(@PathVariable String usernameOrEmail) {
+        return ResponseEntity.ok(userService.findByUsernameOrEmail(usernameOrEmail, usernameOrEmail).get());
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable int id) {
         if (userService.searchUserById(id).isEmpty()) {
