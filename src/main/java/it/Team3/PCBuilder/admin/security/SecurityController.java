@@ -4,8 +4,6 @@ import it.Team3.PCBuilder.user.User;
 import it.Team3.PCBuilder.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,10 +19,6 @@ public class SecurityController {
         return "login";
     }
 
-//    public void login(String username, String password) {
-//
-//    }
-
     @GetMapping("/logout")
     public String logout() {
         return "logout";
@@ -35,7 +29,6 @@ public class SecurityController {
         userService.saveUser(user);
         return ResponseEntity.ok(user);
     }
-
 }
 
 

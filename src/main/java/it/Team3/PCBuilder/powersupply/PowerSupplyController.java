@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/powerSupply")
+@RequestMapping("/powersupply")
 public class PowerSupplyController {
     @Autowired
     PowerSupplyService powerSupplyService;

@@ -17,12 +17,12 @@ import java.util.Optional;
 public class UserService implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
-//    @Autowired
-//     PasswordEncoder passwordEncoder;
+    @Autowired
+     PasswordEncoder passwordEncoder;
     //usato per codificare le password nel DB
 
     public void saveUser(User user) {
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
 

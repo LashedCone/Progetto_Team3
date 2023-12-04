@@ -4,8 +4,6 @@ import it.Team3.PCBuilder.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -30,20 +28,20 @@ public class SecurityConfig {
 //				metodo alternativo suggerito dall'IDE
 //				.csrf(AbstractHttpConfigurer::disable)
                 .csrf(c -> c.disable())
-                .csrf(csfr -> csfr.ignoringRequestMatchers("/register"))
+//                .csrf(csfr -> csfr.ignoringRequestMatchers("/register"))
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/cpu/**").permitAll()
                         .requestMatchers("/ram/**").permitAll()
                         .requestMatchers("/motherboard/**").permitAll()
                         .requestMatchers("/case/**").permitAll()
                         .requestMatchers("/gpu/**").permitAll()
-                        .requestMatchers("/ssd/**").permitAll()
-                        .requestMatchers("/hdd/**").permitAll()
-                        .requestMatchers("/psu/**").permitAll()
-                        .requestMatchers("/register").permitAll()
+                        .requestMatchers("/cpucooler/**").permitAll()
+                        .requestMatchers("/storage/**").permitAll()
+                        .requestMatchers("/powersupply/**").permitAll()
+                        .requestMatchers("/buildcomputer/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
-
+                        .anyRequest().authenticated()
                 );
         return http.build();
     }
