@@ -1,15 +1,13 @@
-package it.Team3.PCBuilder.admin.security;
+package it.Team3.PCBuilder.security;
 
 import it.Team3.PCBuilder.user.User;
 import it.Team3.PCBuilder.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping ("/security")
 public class SecurityController {
     @Autowired
     UserService userService;

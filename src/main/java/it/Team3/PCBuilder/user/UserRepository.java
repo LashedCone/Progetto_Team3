@@ -1,6 +1,6 @@
 package it.Team3.PCBuilder.user;
 
-import it.Team3.PCBuilder.admin.security.Role;
+import it.Team3.PCBuilder.security.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

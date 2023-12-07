@@ -1,4 +1,4 @@
-package it.Team3.PCBuilder.admin.security;
+package it.Team3.PCBuilder.security;
 
 import it.Team3.PCBuilder.user.User;
 import it.Team3.PCBuilder.user.UserRepository;

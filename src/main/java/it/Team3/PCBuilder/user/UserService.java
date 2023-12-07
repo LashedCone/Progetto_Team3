@@ -1,7 +1,7 @@
 package it.Team3.PCBuilder.user;
 
 
-import it.Team3.PCBuilder.admin.security.Role;
+import it.Team3.PCBuilder.security.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;

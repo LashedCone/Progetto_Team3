@@ -2,7 +2,7 @@ package it.Team3.PCBuilder.user;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import it.Team3.PCBuilder.admin.security.Role;
+import it.Team3.PCBuilder.security.Role;
 import it.Team3.PCBuilder.buildcomputer.BuildComputer;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
