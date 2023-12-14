@@ -104,32 +104,37 @@ public class BuildComputerService {
             throw new Exception(String.format("User not found: %s", username));
         }
         User user = userOptional.get();
-        BuildComputer build = new BuildComputer();
+        BuildComputer build = DTOToBuild(partsId);
         build.setUser(user);
-        build.setCpu(cpuRepository.findById(partsId.getCpuId()).orElse(null));
-        build.setCpuCooler(cpuCoolerRepository.findById(partsId.getCpuCoolerId()).orElse(null));
-        build.setMotherboard(motherboardRepository.findById(partsId.getMotherboardId()).orElse(null));
-        build.setRam(ramRepository.findById(partsId.getRamId()).orElse(null));
-        build.setStorage(storageRepository.findById(partsId.getStorageId()).orElse(null));
-        build.setGpu(gpuRepository.findById(partsId.getGpuId()).orElse(null));
-        build.setPowerSupply(powerSupplyRepository.findById(partsId.getPowerSupplyId()).orElse(null));
-        build.setComputerCase(computerCaseRepository.findById(partsId.getComputerCaseId()).orElse(null));
         buildComputerRepository.save(build);
         user.getBuilds().add(build);
         userRepository.save(user);
         return build;
     }
 
-    public BuildComputer createAdminBuildWithComponents(BuildComputerDTO parts) {
+    public BuildComputer DTOToBuild(BuildComputerDTO partsId) {
         BuildComputer build = new BuildComputer();
-        build.setCpu(cpuRepository.findById(parts.getCpuId()).orElse(null));
-        build.setCpuCooler(cpuCoolerRepository.findById(parts.getCpuCoolerId()).orElse(null));
-        build.setMotherboard(motherboardRepository.findById(parts.getMotherboardId()).orElse(null));
-        build.setRam(ramRepository.findById(parts.getRamId()).orElse(null));
-        build.setStorage(storageRepository.findById(parts.getStorageId()).orElse(null));
-        build.setGpu(gpuRepository.findById(parts.getGpuId()).orElse(null));
-        build.setPowerSupply(powerSupplyRepository.findById(parts.getPowerSupplyId()).orElse(null));
-        build.setComputerCase(computerCaseRepository.findById(parts.getComputerCaseId()).orElse(null));
-        return buildComputerRepository.save(build);
+        build.setCpu(cpuRepository.findById(partsId.getCpuId()).orElseThrow(() ->new IllegalArgumentException("Cpu cannot be null, define one")));
+        build.setCpuCooler(cpuCoolerRepository.findById(partsId.getCpuCoolerId()).orElseThrow(() ->new IllegalArgumentException("Cpu cooler cannot be null, define one")));
+        build.setMotherboard(motherboardRepository.findById(partsId.getMotherboardId()).orElseThrow(() ->new IllegalArgumentException("Motherboard cannot be null, define one")));
+        build.setRam(ramRepository.findById(partsId.getRamId()).orElseThrow(() ->new IllegalArgumentException("Ram cannot be null, define one")));
+        build.setStorage(storageRepository.findById(partsId.getStorageId()).orElseThrow(() ->new IllegalArgumentException("Storage cannot be null, define one")));
+        build.setGpu(gpuRepository.findById(partsId.getGpuId()).orElse(null)); // componente facoltativo
+        build.setPowerSupply(powerSupplyRepository.findById(partsId.getPowerSupplyId()).orElseThrow(() ->new IllegalArgumentException("Psu cannot be null, define one")));
+        build.setComputerCase(computerCaseRepository.findById(partsId.getComputerCaseId()).orElseThrow(() ->new IllegalArgumentException("Case cannot be null, define one")));
+        return build;
     }
+
+//    public BuildComputer createAdminBuildWithComponents(BuildComputerDTO parts) {
+//        BuildComputer build = new BuildComputer();
+//        build.setCpu(cpuRepository.findById(parts.getCpuId()).orElse(null));
+//        build.setCpuCooler(cpuCoolerRepository.findById(parts.getCpuCoolerId()).orElse(null));
+//        build.setMotherboard(motherboardRepository.findById(parts.getMotherboardId()).orElse(null));
+//        build.setRam(ramRepository.findById(parts.getRamId()).orElse(null));
+//        build.setStorage(storageRepository.findById(parts.getStorageId()).orElse(null));
+//        build.setGpu(gpuRepository.findById(parts.getGpuId()).orElse(null));
+//        build.setPowerSupply(powerSupplyRepository.findById(parts.getPowerSupplyId()).orElse(null));
+//        build.setComputerCase(computerCaseRepository.findById(parts.getComputerCaseId()).orElse(null));
+//        return buildComputerRepository.save(build);
+//    }
 }
