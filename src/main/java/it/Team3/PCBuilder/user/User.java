@@ -2,11 +2,12 @@ package it.Team3.PCBuilder.user;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import it.Team3.PCBuilder.security.Role;
 import it.Team3.PCBuilder.buildcomputer.BuildComputer;
+import it.Team3.PCBuilder.security.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -66,7 +67,7 @@ public class User implements UserDetails {
     //consigliato da Intellij DA VERIFICARE
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(() -> role.name());
+        return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
     public int getId() {
@@ -116,5 +117,4 @@ public class User implements UserDetails {
     public void setRole(Role role) {
         this.role = role;
     }
-
 }

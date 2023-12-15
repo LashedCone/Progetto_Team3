@@ -21,7 +21,6 @@ public class UserService implements UserDetailsService {
     UserRepository userRepository;
 
     //usato per codificare le password nel DB
-//    @Autowired
      PasswordEncoder passwordEncoder;
     @Bean
     public PasswordEncoder passwordEncoder() {
