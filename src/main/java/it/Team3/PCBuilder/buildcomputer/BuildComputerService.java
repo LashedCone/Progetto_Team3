@@ -1,5 +1,6 @@
 package it.Team3.PCBuilder.buildcomputer;
 
+import it.Team3.PCBuilder.checker.BuildCheckers;
 import it.Team3.PCBuilder.computercase.ComputerCaseRepository;
 import it.Team3.PCBuilder.cpu.CpuRepository;
 import it.Team3.PCBuilder.cpucooler.CpuCoolerRepository;
@@ -38,6 +39,9 @@ public class BuildComputerService {
     PowerSupplyRepository powerSupplyRepository;
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    BuildCheckers buildCheckers;
 
 
     public Iterable<BuildComputer> viewAllBuilds() {
@@ -106,6 +110,9 @@ public class BuildComputerService {
         User user = userOptional.get();
         BuildComputer build = DTOToBuild(partsId);
         build.setUser(user);
+        if (!buildCheckers.checkerBuild(build)) {
+            throw new Exception("Build not valid");
+        }
         buildComputerRepository.save(build);
         user.getBuilds().add(build);
         userRepository.save(user);
@@ -114,14 +121,14 @@ public class BuildComputerService {
 
     public BuildComputer DTOToBuild(BuildComputerDTO partsId) {
         BuildComputer build = new BuildComputer();
-        build.setCpu(cpuRepository.findById(partsId.getCpuId()).orElseThrow(() ->new IllegalArgumentException("Cpu cannot be null, define one")));
-        build.setCpuCooler(cpuCoolerRepository.findById(partsId.getCpuCoolerId()).orElseThrow(() ->new IllegalArgumentException("Cpu cooler cannot be null, define one")));
-        build.setMotherboard(motherboardRepository.findById(partsId.getMotherboardId()).orElseThrow(() ->new IllegalArgumentException("Motherboard cannot be null, define one")));
-        build.setRam(ramRepository.findById(partsId.getRamId()).orElseThrow(() ->new IllegalArgumentException("Ram cannot be null, define one")));
-        build.setStorage(storageRepository.findById(partsId.getStorageId()).orElseThrow(() ->new IllegalArgumentException("Storage cannot be null, define one")));
+        build.setCpu(cpuRepository.findById(partsId.getCpuId()).orElseThrow(() -> new IllegalArgumentException("Cpu cannot be null, define one")));
+        build.setCpuCooler(cpuCoolerRepository.findById(partsId.getCpuCoolerId()).orElseThrow(() -> new IllegalArgumentException("Cpu cooler cannot be null, define one")));
+        build.setMotherboard(motherboardRepository.findById(partsId.getMotherboardId()).orElseThrow(() -> new IllegalArgumentException("Motherboard cannot be null, define one")));
+        build.setRam(ramRepository.findById(partsId.getRamId()).orElseThrow(() -> new IllegalArgumentException("Ram cannot be null, define one")));
+        build.setStorage(storageRepository.findById(partsId.getStorageId()).orElseThrow(() -> new IllegalArgumentException("Storage cannot be null, define one")));
         build.setGpu(gpuRepository.findById(partsId.getGpuId()).orElse(null)); // componente facoltativo
-        build.setPowerSupply(powerSupplyRepository.findById(partsId.getPowerSupplyId()).orElseThrow(() ->new IllegalArgumentException("Psu cannot be null, define one")));
-        build.setComputerCase(computerCaseRepository.findById(partsId.getComputerCaseId()).orElseThrow(() ->new IllegalArgumentException("Case cannot be null, define one")));
+        build.setPowerSupply(powerSupplyRepository.findById(partsId.getPowerSupplyId()).orElseThrow(() -> new IllegalArgumentException("Psu cannot be null, define one")));
+        build.setComputerCase(computerCaseRepository.findById(partsId.getComputerCaseId()).orElseThrow(() -> new IllegalArgumentException("Case cannot be null, define one")));
         return build;
     }
 
