@@ -23,7 +23,7 @@ public class BuildComputerController {
         return ResponseEntity.ok(buildComputerService.searchBuildById(id));
     }
 
-    @GetMapping("/{username}")
+    @GetMapping("user/{username}")
     public Iterable<BuildComputer> searchBuildByUsername(@PathVariable String username) {
         return buildComputerService.searchBuildByUsername(username);
     }

@@ -14,10 +14,10 @@ public class BuildComputerAdminController {
     @Autowired
     BuildComputerService buildComputerService;
 
-    @PostMapping
-    public ResponseEntity<?> createBuildWithComponentId(@RequestBody BuildComputerDTO build) {
-        return ResponseEntity.ok(buildComputerService.createAdminBuildWithComponents(build));
-    }
+//    @PostMapping
+//    public ResponseEntity<?> createBuildWithComponentId(@RequestBody BuildComputerDTO build) {
+//        return ResponseEntity.ok(buildComputerService.createAdminBuildWithComponents(build));
+//    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteBuild(@PathVariable int id) {
